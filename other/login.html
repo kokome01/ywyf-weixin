@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>登录</title>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/login.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/login.css" />
+		<script type="text/javascript">
+			$(document).ready(function(){
+				code()
+			})
+			/*提示*/
+			var login_phone = false
+
+			function login() {
+				if($("#login_name").val() == "" || $("#login_name").val().length < 11) {
+					cue(".login_cue", "请输入正确的手机号码", "#CC0000")
+					login_phone = false
+				} else if($("#login_password").val() == "") {
+					cue(".login_cue", "密码不能为空", "#CC0000")
+					login_phone = false
+				} else if($("#login_test").val() == "") {
+					cue(".login_cue", "你输入的验证码为空", "#CC0000")
+					login_phone = false
+				} else {
+					login_phone = true
+				}
+			}
+			/*点击登录*/
+			function login_true() {
+				login()
+				if(login_phone == true) {
+					//ajax
+					$.ajax({
+						url: 'http://192.168.0.103/ywyf-weixin/login/apply', //地址
+						dataType: "json",
+						type: "post",
+						xhrFields: {
+				           withCredentials: true
+				       	},
+						timeout: 50000,
+						data: $('#form1').serialize()+'&returnUrl=',
+						success: function(data) {
+							//成功
+							cue(".login_cue", data.msg, "#cc0000");
+							if(data.msg=="登录成功!"){
+								window.history.back(-1);
+							}
+							//window.location.href = '../index.html';
+						},
+						error: function(XMLHttpRequest, textStatus, errorThrown) {
+							//alert(XMLHttpRequest.status);
+							//alert(XMLHttpRequest.readyState);
+							//alert(textStatus);
+							console.log("网络请求失败，请联系网站管理员!");
+						},
+					})
+
+				}
+			}
+			/*验证码*/
+			function code(){
+				$("#codeValidateImg").attr("src",'http://192.168.0.103/ywyf-weixin/getSysManageLoginCode');
+			}
+		</script>
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="head">
+			<a href="javascript:history.back(-1);" class="back">取消</a>
+			<div>
+				<span class="login_head">用户登录</span>
+			</div>
+			<div>
+				<a href="register.html" class="register_on">快速注册</a>
+			</div>
+		</div>
+		<!--热门搜索-->
+		<div class="body">
+			<form action="##" method="post" name="login" id="form1" action="" >
+				<div class="account_name account_empty">
+					<span>账号：</span>
+					<input type="text" name="tel" id="login_name" value="" placeholder="请输入手机号码" maxlength="11" class="account_input" />
+					<img src="../img/ca2.png" onclick="empty(this)" />
+				</div>
+				<div class="account_password account_empty">
+					<span>密码：</span>
+					<input type="password" name="password" id="login_password" value="" class="account_pass_an account_input" placeholder="请输入密码" />
+					<input type="text" name="" id="login_password2" value="" class="account_pass_ming account_input" placeholder="请输入密码" onblur="zhuan()" />
+					<img src="../img/eye2.png" class="account_pass_img" onclick="eye()" name="0" />
+					<img src="../img/ca2.png" onclick="empty(this)" />
+				</div>
+				<div class="account_code account_empty">
+					<span>验证码：</span>
+					<input type="text" name="verifyCode" id="login_test" value="" placeholder="请输入图形验证码" class="account_input" />
+					<div class="verification_code" onclick="code()">
+						<img src="../img/huo.jpg" id="codeValidateImg"/>
+					</div>
+				</div>
+				<div class="account_but">
+					<input type="button" name="" id="" value="登录" onclick="login_true()" />
+					<div class="login_cue" >
+					</div>
+				</div>
+				<a href="forget.html" class="password">忘记密码</a>
+			</form>
+
+		</div>
+	</body>
+
+</html>

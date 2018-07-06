@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>交易异常</title>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/pay.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/pay.css" />
+		<style type="text/css">
+			* {
+				font-family: "微软雅黑";
+				margin: 0px;
+				padding: 0px;
+				font-size: 14px;
+				color: #666;
+			}
+			
+			body {
+				background-color: white;
+			}
+			
+			li {
+				display: inline;
+			}
+			
+			textarea {
+				width: 100%;
+				outline: none;
+				resize: none
+			}
+			
+			table {
+				border-spacing: 0px;
+				width: 100%;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			body {
+				background-color: #f1f1f1;
+			}
+			
+			.ovfHiden {
+				overflow: hidden;
+				height: 100%;
+			}
+			/*input{border: none;}*/
+			
+			input:focus {
+				color: #666;
+				border: 1px solid #f1f1f1;
+				background-color: #fff;
+				outline: none;
+			}
+			
+			.head {
+				position: fixed;
+				top: 0px;
+				width: 100%;
+				background-color: #fff;
+				z-index: 500;
+			}
+			
+			.head_l {
+				text-align: center;
+				padding: 10px 0px;
+				position: relative;
+				border-bottom: 8px solid #f1f1f1;
+			}
+			
+			.back {
+				float: left;
+				position: absolute;
+				left: 15px;
+				top: 5px;
+			}
+			
+			.back img {
+				width: 25px;
+			}
+			
+			.login_head {
+				font-size: 16px;
+			}
+			
+			.register_on {
+				position: absolute;
+				right: 15px;
+				top: 10px;
+			}
+			/*body*/
+			
+			.body {
+				margin: 50px 0px;
+				/*background-image: url(../img/123.jpg);
+				background-size: 100% 100%;
+				display: inline-block;
+				width: 100%;*/
+			}
+			
+			.pay_box {
+				background-color: #FFFFFF;
+				padding: 20px;
+				height: 180px;
+				position: relative;
+			}
+			.pay_box_t del{
+				color: #CDCDCD;
+				margin-top:5px ;
+				display: inline-block;
+			}
+			.pay_box>p:nth-child(2){
+				color: #cc0000;
+				font-size: 16px;
+				font-weight: 800;
+				margin-left: 30px;
+			}
+			.option{
+				margin-top:15px ;
+			}
+			.option a span{
+				color: #0A79E5;
+			}
+			.icon{
+				width: 25px;
+				height: 25px;
+				text-align: center;
+				margin: auto;display: block;
+				position: absolute;
+				top: 20px;
+				left: 20px;
+			}
+			
+			/*推荐*/
+			
+			.non_recommend>p {
+				background-color: #F1F1F1;
+				padding: 10px;
+			}
+			
+			.non_recommend_li {
+				padding: 10px;
+				display: block;
+				position: relative;
+				border: 1px solid #f1f1f1;
+				background-color: #fff;
+			}
+			
+			.non_recommend_li img {
+				width: 80px;
+				height: 80px;
+				position: absolute;
+			}
+			
+			.non_recommend_li_t {
+				margin-left: 90px;
+			}
+			
+			.non_recommend_li_t p:nth-child(1) {
+				height: 40px;
+				overflow: hidden;
+			}
+			
+			.non_recommend_li_t p:nth-child(2) {
+				color: #cdcdcd;
+			}
+			
+			.non_recommend_li_t p:nth-child(2) span {
+				color: #cdcdcd;
+			}
+			
+			.non_recommend_li_t p:nth-child(3) span {
+				color: #cc0000;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="head">
+			<div class="head_l">
+				<a href="javascript:history.back(-1);" class="back"><img src="../img/left.png" /></a>
+				<div>
+					<span class="login_head">交易异常</span>
+				</div>
+			</div>
+		</div>
+		<div class="body">
+			<div class="pay_box">
+				<img src="../img/sty-ca.png" class="icon"/>
+				<p>支付失败或支付异常</p>
+				<div class="pay_box_t">
+					<del>付款金额<del>¥9.90</del></del>
+					<p>订单编号：<span>123456789123</span></p>
+					<p>支付异常，可能存在商品已被下架，如有资金错误，请联系客服。</p> 
+				</div>
+				<div class="option">
+					<span class="info">您可以</span>
+					<a href="../index.html" class="J_MakePoint">返回<span>首页</span></a>
+					<a href="../person/order.html" class="J_MakePoint">查看<span>交易详情</span></a>
+				</div>
+			</div>
+			<div class="non_recommend">
+				<p>为你推荐</p>
+				<ul>
+					<li class="non_recommend_li">
+						<img src="../img/ad3.jpg"/>
+						<div class="non_recommend_li_t">
+							<p>同仁堂踩刹车上插上</p>
+							<p>规格：<span>15g</span></p>
+							<p><span>￥</span><span>15.00</span></p>
+						</div>
+					</li>
+					<li class="non_recommend_li">
+						<img src="../img/ad3.jpg"/>
+						<div class="non_recommend_li_t">
+							<p>同仁堂踩刹车上插上</p>
+							<p>规格：<span>15g</span></p>
+							<p><span>￥</span><span>15.00</span></p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+	</body>
+
+</html>

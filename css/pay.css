@@ -1,0 +1,243 @@
+* {
+				font-family: "微软雅黑";
+				margin: 0px;
+				padding: 0px;
+				font-size: 14px;
+				color: #666;
+			}
+			
+			body {
+				background-color: white;
+			}
+			
+			li {
+				display: inline;
+			}
+			
+			textarea {
+				width: 100%;
+				outline: none;
+				resize: none
+			}
+			
+			table {
+				border-spacing: 0px;
+				width: 100%;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			body {
+				background-color: #fff;
+			}
+			
+			.ovfHiden {
+				overflow: hidden;
+				height: 100%;
+			}
+			/*input{border: none;}*/
+			
+			input:focus {
+				color: #666;
+				border: 1px solid #f1f1f1;
+				background-color: #fff;
+				outline: none;
+			}
+			
+			.head {
+				position: fixed;
+				top: 0px;
+				width: 100%;
+				background-color: #fff;
+				z-index: 500;
+			}
+			
+			.head_l {
+				text-align: center;
+				padding: 10px 0px;
+				position: relative;
+				border-bottom: 8px solid #f1f1f1;
+			}
+			
+			.back {
+				float: left;
+				position: absolute;
+				left: 15px;
+				top: 5px;
+			}
+			
+			.back img {
+				width: 25px;
+			}
+			
+			.login_head {
+				font-size: 16px;
+			}
+			
+			.register_on {
+				position: absolute;
+				right: 15px;
+				top: 10px;
+			}
+			/*body*/
+			.body{
+				margin: 50px 0px;
+				background-color:#f1f1f1 ;
+			}
+			.address{
+				position: relative;
+				padding:10px 10px 12px 10px;
+				height: 50px;
+				background: #fff;
+				border-bottom: 10px solid #f1f1f1;
+			}
+			.address p{
+				margin-left: 30px;
+				margin-bottom: 5px;
+			}
+			.address_comm{
+				top: 35px;
+				left: 10px;
+			}
+			.address_comm img{
+				width: 20px;
+				height: 20px;
+			}
+			.address_href {
+				top:20px;
+				right: 10px;
+			}
+			.address_href img{
+				width: 20px;
+				height: 20px;
+			}
+			.address_flex{
+				position: absolute;
+			}
+			.address_bor{
+				width: 100%;
+				height: 4px;
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+			}
+			.address_add{
+				width: 80%;
+				overflow: hidden; 
+				text-overflow: ellipsis;
+				white-space:nowrap;
+			}
+			.address_t{
+				font-size: 16px;
+				font-weight:500 ;
+				color: #000;
+			}
+			.address_t:first-child{
+				margin-right: 20px;
+			}
+			.pay_list_h{
+				height: 20px;
+				border-top:2px solid #f1f1f1 ;
+				border-bottom:3px solid #f1f1f1 ;
+				padding:5px 10px;
+				background: #fff;
+			}
+			.pay_list_b{
+				padding: 10px;
+				position: relative;
+				border: 1px solid #f1f1f1;
+				background: #fff;
+				display: block;
+			}
+			.pay_list_b img{
+				width: 80px;
+				height: 80px;
+				position: absolute;
+				top: 10px;
+				left: 10px;
+			}
+			.pay_list_b_t{
+				margin-left:90px ;
+			}
+			.pay_list_b_t p:nth-child(1){
+				height: 40px;
+				overflow: hidden;
+			}
+			.pay_list_b_t p:nth-child(2){
+				color: #cdcdcd;
+			}
+			.pay_list_b_t p:nth-child(2) span{
+				color: #cdcdcd;
+			}
+			.pay_list_b_t p:nth-child(3) span{
+				color: #cc0000;
+			}
+			.pay_list_b_t p:nth-child(3) label{
+				float: right;
+			}
+			.pay_list_f{
+				background-color: #fff;
+				text-align: right;
+				padding: 10px;
+			}
+			.non_stock{
+				background-color: #cc0000;
+				color: #fff;
+				padding: 2px;
+				margin-right: 15px;
+			}
+			.payment{
+				border-top:10px solid #f1f1f1;
+				padding: 10px;
+				border-bottom:10px solid #f1f1f1;
+				background: #fff;
+			}
+			.payment span{
+				float: left;
+			}
+			.payment_right{
+				text-align: right;
+			}
+			.pay_money{
+				padding: 10px;
+				border-bottom: 10px solid #f1f1f1;
+				background: #fff;
+			}
+			.cc0000{
+				color: #cc0000;
+				float: right;
+			}
+			/*foot*/
+			.foot{
+				height: 50px;
+				display: flex;
+				position: fixed;
+				bottom: 0px; 
+				width: 100%;
+				background-color: #fff;
+			}
+			.foot_but{
+				width: 150px;
+				text-align: center;
+				background-color: #cc0000;
+				border: none;
+				color: #fff;
+				padding: 12px 0px;
+				font-size: 16px;
+			}
+			.foot_money{
+				flex: 1 1 auto;
+				padding: 12px 0px;
+				padding-right: 20px;
+			}
+			.foot_money p{
+				float: right;
+				color: #cc0000;
+				font-size:16px ;
+			}
+			.foot_money p span{
+				color: #cc0000;
+				font-size:16px 
+			}

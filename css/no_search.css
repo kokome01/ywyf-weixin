@@ -1,0 +1,81 @@
+.non_cue {
+	width: 250px;
+	margin: auto;
+	text-align: left;
+	position: relative;
+	margin-top: 20px;
+}
+
+.non_cue img {
+	width: 30px;
+	height: 30px;
+	display: block;
+	margin: 20px auto;
+	position: absolute;
+	top: -15px;
+	left: -50px
+}
+
+.non_cue p:nth-child(2) {
+	color: #cc0000;
+}
+
+.non_cue p:nth-child(3) {
+	margin-top: 10px;
+	font-size: 12px;
+}
+
+.non_cue p:nth-child(4) {
+	font-size: 12px;
+}
+
+.non_cue p:nth-child(5) {
+	font-size: 12px;
+}
+
+.non_cue p:nth-child(6) {
+	font-size: 12px;
+}
+
+
+/*推荐*/
+
+.non_recommend>p {
+	margin-top: 20px;
+	background-color: #F1F1F1;
+	padding: 10px;
+}
+
+.non_recommend_li {
+	padding: 10px;
+	display: block;
+	position: relative;
+	border: 1px solid #f1f1f1;
+}
+
+.non_recommend_li img {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+}
+
+.non_recommend_li_t {
+	margin-left: 90px;
+}
+
+.non_recommend_li_t p:nth-child(1) {
+	height: 40px;
+	overflow: hidden;
+}
+
+.non_recommend_li_t p:nth-child(2) {
+	color: #cdcdcd;
+}
+
+.non_recommend_li_t p:nth-child(2) span {
+	color: #cdcdcd;
+}
+
+.non_recommend_li_t p:nth-child(3) span {
+	color: #cc0000;
+}

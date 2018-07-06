@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>分类</title>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/classification.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/classification.css" />
+		<script>
+			$.ajax({
+				url: 'http://192.168.0.101/ywyf-weixin/product/typesList', //地址
+				dataType: "json",
+				type: "post",
+				timeout: 50000,
+				success: function(data) {
+					if(data.status == 1) {
+						var shtml = "<div class='class_left'>" +
+							"<ul>" +
+							"<li>" +
+							"<div class='class_list class_on' onclick='class_but(this,0)'>" +
+							"全部" +
+							"</div>" +
+							"</li>"
+						for(var i = 0; i < data.data.length; i++) {
+							shtml += "<li>" +
+								"<div class='class_list class' x='" + data.data[i].id + "' onclick='class_but(this," + i + ")'>" +
+								data.data[i].typeName +
+								"</div>" +
+								"</li>";
+
+						}
+						shtml +=
+							"</ul>" +
+							"</div>" +
+							"<div class='class_right'>" +
+							"<ul>";
+						for(var j = 0; j < data.data.length; j++) {
+							for(var k = 0; k < data.data[j].funTypes.length; k++) {
+								shtml += "<li class='class_r_li ' id=" + data.data[j].id + " x="+(j+1)+">" +
+									"<div class=''>" +
+									"<div class='class_r_head'>" +
+									data.data[j].funTypes[k].name +
+									"</div>" +
+									"<div class='class_r_body'>" +
+									"<ul>";
+								for(var h = 0; h < data.data[j].funTypes[k].diseases.length; h++) {
+									shtml += "<li onclick="+"window.location.href='choice.html'"+">" +
+										"<span>" + data.data[j].funTypes[k].diseases[h].name + "</span>" +
+										"</li>";
+								}
+								shtml += "</ul>" +
+									"</div>" +
+									"</div>" +
+									"</li>";
+							}
+						}
+
+						shtml += "</ul>" +
+							"</div>";
+					}
+
+					$(".body").empty();
+					$(shtml).appendTo($(".body"));
+
+					//获取到index 的url值
+					console.log(GetQueryString("txt"))
+					if(GetQueryString("txt")!=0||GetQueryString("txt")!=""){
+						$(".class_r_li").css("display","none");
+						$(".class_r_li[x="+GetQueryString("txt")+"]").css("display","inline-block");
+						$(".class_list").removeClass("class_on");
+						$(".class_left ul").find("li").eq(GetQueryString("txt")).find("div").addClass("class_on")
+					}else{
+						$(".class_r_li").css("display","inline-block");
+						$(".class_list").removeClass("class_on");
+						$(".class_left ul").find("li").eq(0).find("div").addClass("class_on");
+					}
+					//展开收缩
+					deploy();
+				},
+				error: function(XMLHttpRequest,textStatus, errorThrown) {
+					/*alert(XMLHttpRequest.status);
+					alert(XMLHttpRequest.readyState);
+					alert(textStatus);*/
+					//alert("网络请求失败，请联系网站管理员!");
+				},
+			})
+			//获取到url的值
+
+			function GetQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg); //获取url中"?"符后的字符串并正则匹配           
+				var context = "";
+				if(r != null) context = r[2];
+				reg = null;
+				r = null;
+				return context == null || context == "" || context == "undefined" ? "" : context;
+			}
+			/*var storage=window.localStorage;
+			storage.a=1;
+			alert(storage.a)*/
+		</script>
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="head">
+			<div class="head_l">
+				<div>
+					<span class="login_head">分类</span>
+				</div>
+			</div>
+		</div>
+		<div class="body">
+			<div class="class_left">
+				<ul>
+					<li>
+						<div class="class_list class_on" onclick="class_but(this,0)">
+							全部
+						</div>
+					</li>
+					<c:forEach items="${proType}" var="pro">
+						<li>
+							<div class="class_list class" onclick="class_but(this,${pro.id})">
+								${pro.typeName}
+							</div>
+						</li>
+					</c:forEach>
+				</ul>
+			</div>
+			<div class="class_right">
+				<ul>
+					<li class="class_r_li">
+						<div class="">
+							<div class="class_r_head">
+								呼吸系统
+							</div>
+							<div class="class_r_body">
+								<ul>
+									<li onclick="window.location.href='choice.html'">
+										<span>胃炎</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="foot">
+			<div class="container">
+				<div class="center foot_img" onclick="window.location.href='../index.html'">
+					<img src="../img/home (2).png" />
+					<p>首页</p>
+				</div>
+				<div class="center center_good foot_img">
+					<img src="../img/list (1).png" />
+					<p>分类</p>
+				</div>
+				<div class="center foot_img" onclick="window.location.href='../shop.html'">
+					<img src="../img/shop (2).png" />
+					<p>购物车</p>
+				</div>
+				<div class="center foot_img" onclick="window.location.href='../person/person.html'">
+					<img src="../img/me (2).png" />
+					<p>我的</p>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

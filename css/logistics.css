@@ -1,0 +1,125 @@
+* {
+				font-family: "微软雅黑";
+				margin: 0px;
+				padding: 0px;
+				font-size: 14px;
+				color: #666;
+			}
+			
+			body {
+				background-color: #f1f1f1;
+			}
+			
+			li {
+				display: inline;
+			}
+			
+			textarea {
+				width: 100%;
+				outline: none;
+				resize: none
+			}
+			
+			table {
+				border-spacing: 0px;
+				width: 100%;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			.ovfHiden {
+				overflow: hidden;
+				height: 100%;
+			}
+			/*input{border: none;}*/
+			
+			input:focus {
+				color: #666;
+				border: 1px solid #f1f1f1;
+				background-color: #fff;
+				outline: none;
+			}
+			
+			.head {
+				position: fixed;
+				top: 0px;
+				width: 100%;
+				background-color: #fff;
+				z-index: 500;
+			}
+			
+			.head_l {
+				text-align: center;
+				padding: 10px 0px;
+				position: relative;
+				border-bottom: 8px solid #f1f1f1;
+			}
+			
+			.back {
+				float: left;
+				position: absolute;
+				left: 15px;
+				top: 5px;
+			}
+			
+			.back img {
+				width: 25px;
+			}
+			
+			.login_head {
+				font-size: 16px;
+			}
+			
+			.register_on {
+				position: absolute;
+				right: 15px;
+				top: 10px;
+			}
+			/*body*/
+			.body {
+				margin: 50px 0px;
+				border-bottom: 8px solid #f1f1f1;
+				background-color: #FFFFFF;
+			}
+			.logis_head{
+				border-bottom:8px solid #F1F1F1 ;
+				padding: 5px;   
+			}
+			.logis_body{
+				padding: 5px;
+				margin-left:20px;
+				border-left:2px solid #f1f1f1;
+				
+			}
+			.logis_body li{
+				border-bottom: 1px solid #f1f1f1;
+				padding-bottom: 5px;
+				display: block;
+				position: relative;
+			}
+			.logis_body li:last-child{
+				border: 0px;
+			}
+			.logis_time span{
+				color: #cdcdcd;
+			}
+			.logis_wire{
+				margin-left:20px;
+			}
+			.logis_body li:first-child .logis_symbol{
+				background-image: url(../img/kuai1.png);
+			}
+			.logis_symbol{
+				position: absolute;
+				top: 10px;
+				left: -34px;
+				width: 20px;
+				height: 20px;
+				background-image: url(../img/kuai.png);
+				background-color: #fff;
+				background-repeat:no-repeat;
+				background-size:20px 20px;
+				display: inline-block;
+			}

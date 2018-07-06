@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>我的账单</title>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/billist.css" />
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var strhtml = ""
+				$.ajax({
+					url: 'http://192.168.0.102/ywyf-weixin/user/toBill', //地址
+					dataType: "json",
+					type: "post",
+					timeout: 50000,
+			  		xhrFields: {
+						withCredentials: true
+					},   //跨域产生问题（跨域请求设置withCredentials）登录，退出登录
+					success: function(data) {
+						for(i=0;i<data;i++){
+							strhtml += '<li><div class="bill_list"><p>订单编号：<span>'
+							+123456789+
+							'</span></p><p>'
+							+康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美+
+							'</p><p>'
+							+formatDateTime(inputTime)+
+							'</p></div></li>'
+						}
+					},
+					error: function(XMLHttpRequest,textStatus, errorThrown) {
+						/*alert(XMLHttpRequest.status);
+						alert(XMLHttpRequest.readyState);
+						alert(textStatus);*/
+						console.log("网络请求失败，请联系网站管理员!");
+					},
+				})
+			})
+			function formatDateTime(inputTime) { var date = new Date(inputTime); var y = date.getFullYear(); var m = date.getMonth() + 1; m = m < 10 ? ('0' + m) : m; var d = date.getDate(); d = d < 10 ? ('0' + d) : d; var h = date.getHours(); h = h < 10 ? ('0' + h) : h; var minute = date.getMinutes(); var second = date.getSeconds(); minute = minute < 10 ? ('0' + minute) : minute; second = second < 10 ? ('0' + second) : second; return y + '-' + m + '-' + d+' '+h+':'+minute+':'+second; }
+		</script>
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="head">
+			<div class="head_l">
+				<a href="javascript:history.back(-1);" class="back"><img src="../img/left.png" /></a>
+				<div>
+					<span class="login_head">我的账单</span>
+				</div>
+			</div>
+		</div>
+		<div class="body">
+			<ul class="bill_ul">
+				<li>
+					<div class="bill_list">
+						<p>订单编号：<span>123456789</span></p>
+						<p>康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美花费25软妹币</p>
+						<p>2018-06-12 16：40</p>
+					</div>
+				</li>
+				<li>
+					<div class="bill_list">
+						<p>订单编号：<span>123456789</span></p>
+						<p>康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美</p>
+						<p>2018-06-12 16：40</p>
+					</div>
+				</li>
+				<li>
+					<div class="bill_list">
+						<p>订单编号：<span>123456789</span></p>
+						<p>康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美</p>
+						<p>2018-06-12 16：40</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+
+</html>

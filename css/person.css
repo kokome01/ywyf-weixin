@@ -1,0 +1,230 @@
+		* {
+			font-family: "微软雅黑";
+			margin: 0px;
+			padding: 0px;
+			font-size: 14px;
+			color: #666;
+		}
+		
+		body {
+			background-color: white;
+		}
+		
+		li {
+			display: inline;
+		}
+		
+		textarea {
+			width: 100%;
+			outline: none;
+			resize: none
+		}
+		
+		table {
+			border-spacing: 0px;
+			width: 100%;
+		}
+		
+		a {
+			text-decoration: none;
+		}
+		
+		body {
+			background-color: #fff;
+		}
+		
+		.ovfHiden {
+			overflow: hidden;
+			height: 100%;
+		}
+		/*input{border: none;}*/
+		
+		input:focus {
+			color: #666;
+			border: 1px solid #f1f1f1;
+			background-color: #fff;
+			outline: none;
+		}
+		
+		.head {
+			width: 100%;
+			background-color: #fff;
+			z-index: 500;
+			background-image: url(../img/person.png);
+			background-size: 100% 100%;
+			height: 200px;
+		}
+		
+		.head_img {
+			padding: 10px;
+		}
+		
+		.head_img img {
+			width: 25px;
+			height: 25px;
+			float: right;
+			margin: 0px 10px;
+		}
+		
+		.head_new {
+			position: relative;
+		}
+		
+		.head_new span {
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			display: inline-block;
+			color: #fff;
+			background-color: #cc0000;
+			width: 16px;
+			height: 16px;
+			font-size: 10px;
+			text-align: center;
+			border-radius: 20px;
+		}
+		
+		.head_tou_img {
+			width: 100%;
+			text-align: center;
+		}
+		
+		.head_tou_img img {
+			background-color: #f1f1f1;
+			padding: 5px;
+			width: 80px;
+			height: 80px;
+			border-radius: 100px;
+			margin-left: 100px;
+		}
+		
+		.head_tou_name {
+			color: #fff;
+			text-align: center;
+		}
+		
+		.head_tou_name span {
+			color: #fff;
+		}
+		
+		.head_tou_vip {
+			background-color: rgba(0, 0, 0, 0.5);
+			width: 50px;
+			text-align: center;
+			border-radius: 10px;
+			margin: auto;
+			margin-top: 10px;
+		}
+		
+		.person_head {
+			display: flex;
+		}
+		
+		.person_h_order {
+			flex: 1 1 auto;
+		}
+		/*body*/
+		
+		.body {
+			margin-top: 0px;
+			margin-bottom: 50px;
+		}
+		
+		.person_head {
+			padding-bottom: 10px;
+			border-bottom: 10px solid #f1f1f1;
+		}
+		
+		.person_h_order {
+			padding-top: 8px;
+			text-align: center;
+		}
+		
+		.person_h_order img {
+			width: 40px;
+			height: 40px;
+		}
+		
+		.person_h_order span {
+			display: block;
+			font-size: 12px;
+		}
+		
+		.person_h_order label {
+			color: #cc0000;
+			font-size: 12px;
+			margin-left: 1px;
+		}
+		
+		.person_ad img {
+			width: 100%;
+			height: 180px;
+		}
+		
+		.person_wo {
+			border-bottom: 1px solid #f1f1f1;
+			padding: 10px;
+		}
+		
+		.person_body {
+			border-bottom: 10px solid #f1f1f1;
+		}
+		
+		.person_body_li {
+			padding: 5px;
+			position: relative;
+			display: block;
+			border: 1px solid #f1f1f1;
+		}
+		
+		.person_body_li img:nth-child(1) {
+			width: 80px;
+			height: 80px;
+		}
+		
+		.person_body_li_t {
+			padding: 10px;
+			position: absolute;
+			top: 0px;
+			left: 90px;
+			display: inline-block
+		}
+		
+		.person_body_li_t b {
+			height: 40px;
+			display: inline-block;
+			margin-top: 5px;
+			margin-right: 20px;
+		}
+		/*foot*/
+		
+		.foot {
+			background-color: #fff;
+			padding-top: 7px;
+			position: fixed;
+			bottom: 0px;
+			width: 100%;
+		}
+		
+		.container {
+			display: flex;
+			/* 设置为 FlexBox 容器 */
+			text-align: center;
+		}
+		
+		.center {
+			flex: 1 1 auto;
+			/* 子集平分 */
+		}
+		
+		.foot_img img {
+			width: 25px;
+		}
+		
+		.center_good p {
+			color: #0b74df;
+		}
+		
+		.foot_img p {
+			font-size: 12px;
+		}

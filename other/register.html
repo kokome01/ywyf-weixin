@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>注册</title>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/login.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/login.css" />
+		<script type="text/javascript">
+			//验证码倒计时,获取验证码
+			function sendMobileCode(ob) {
+				$.ajax({
+					url: 'http://192.168.0.102/ywyf-weixin/sendSms?tel=' + $("#login_name").val() , //地址
+					dataType: "json",
+					type: "post",
+					timeout: 50000,
+					success: function(data) {
+						$("#login_test").attr("token",data.token)
+						cue(".login_cue", data.msg, "#35c048");
+						//倒计时效果
+						if($(ob).val() == "获取验证码") {
+							$(ob).css({
+								"background-color": "#cdcdcd",
+								"color": "#fff",
+								"border-color": "#fff"
+							})
+							var times = ""
+							var num = 30
+							times = setInterval(function() {
+								num--
+								if(num <= 0) {
+									clearInterval(times); //清除js定时器
+									$(ob).disabled = false;
+									$(ob).val("获取验证码");
+									nums = 30; //重置时间
+									$(ob).css({
+										"background-color": "#0e90d2",
+										"color": "#fff",
+										"border-color": "#0b74df"
+									})
+								} else {
+									$(ob).val(num);
+								}
+							}, 1000);
+						}
+					},
+					error: function(XMLHttpRequest, textStatus, errorThrown) {
+						/*alert(XMLHttpRequest.status);
+						alert(XMLHttpRequest.readyState);
+						alert(textStatus);*/
+						console.log("网络请求失败，请联系网站管理员!");
+					},
+				})
+			}
+			/*提示*/
+			var login_phone = false
+
+			function login() {
+				if($("#login_name").val() == "" || $("#login_name").val().length < 11) {
+					cue(".login_cue", "请输入正确的手机号码", "#CC0000")
+					login_phone = false
+				} else if($("#login_test").val() == "") {
+					cue(".login_cue", "你输入的验证码为空", "#CC0000")
+					login_phone = false
+				} else if($("#login_password").val() == "") {
+					cue(".login_cue", "密码不能为空", "#CC0000")
+					login_phone = false
+				} else if($("#login_password_two").val() == "") {
+					cue(".login_cue", "新密码不能为空", "#CC0000")
+					login_phone = false;
+				} else {
+					login_phone = true;
+				}
+			}
+			/*修改密码*/
+			function login_true() {
+				login()
+				if(login_phone == true) {
+					$.ajax({
+						url: 'http://192.168.0.102/ywyf-weixin/register/apply', //地址
+						dataType: "json",
+						type: "post",
+						timeout: 50000,
+						data:$('#form1').serialize()+'&addType=1&token='+$("#login_test").attr("token"),
+						success: function(data) {
+							console.log($('#form1').serialize()+'&addType=1&token='+$("#login_test").attr("token"))
+							console.log(data.msg)
+							console.log(data.status)
+							cue(".login_cue", "成功注册", "#35c048")
+							window.location.href = 'login.html';
+						},
+						error: function(XMLHttpRequest, textStatus, errorThrown) {
+							/*alert(XMLHttpRequest.status);
+							alert(XMLHttpRequest.readyState);
+							alert(textStatus);*/
+							console.log("网络请求失败，请联系网站管理员!");
+						},
+					})
+					//console.log("注册成功")
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="head">
+			<a href="javascript:history.back(-1);" class="back">取消</a>
+			<div>
+				<span class="login_head">注册</span>
+			</div>
+			<div>
+				<a href="login.html" class="register_on">返回登录</a>
+			</div>
+		</div>
+		<!--热门搜索-->
+		<div class="body">
+			<form id="form1"  action="##" method="post">
+				<div class="account_name account_empty">
+					<span>账号：</span>
+					<input type="text" name="tel" id="login_name" value="" placeholder="请输入手机号码" maxlength="11" class="account_input" />
+					<img src="../img/ca2.png" onclick="empty(this)" />
+				</div>
+				<div class="account_code account_empty">
+					<span>验证码：</span>
+					<input type="text" name="code" id="login_test" value="" placeholder="请输入手机验证码" class="account_input" />
+					<div class="handset_code">
+						<input type="button" id="" value="获取验证码" onclick="sendMobileCode(this);" />
+					</div>
+				</div>
+				<div class="account_password account_empty">
+					<span>密码：</span>
+					<input type="password" name="pwd" id="login_password" value="" class="account_pass_an account_input" placeholder="请输入密码" />
+					<img src="../img/ca2.png" onclick="empty(this)" />
+				</div>
+				<div class="account_password account_empty">
+					<span>密码：</span>
+					<input type="password" name="pwd1" id="login_password_two" value="" class="account_pass_an account_input" placeholder="请再次输入密码" />
+					<img src="../img/ca2.png" onclick="empty(this)" />
+				</div>
+				<div class="account_label account_empty">
+					<input type="checkbox" name="" id="" value="" checked="checked" /> 点击表示您同意商城《服务协议》
+				</div>
+				<div class="account_but">
+					<input type="button" name="" id="" value="确认注册" onclick="login_true()" />
+					<div class="login_cue">
+
+					</div>
+				</div>
+			</form>
+
+		</div>
+	</body>
+
+</html>

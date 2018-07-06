@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>产品页</title>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/introduction.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/introduction.css" />
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$.ajax({
+					url: 'http://192.168.0.101/ywyf-weixin/product/query?id=87', //地址
+					dataType: "json",
+					type: "post",
+					timeout: 50000,
+					success: function(data) {
+						//l轮播滚动图
+						var strhtml = "",
+							prohtml = "",
+							commhtml = ""
+						if(data.product.pics!=null){
+							for(i=0;i<data.product.pics.length;i++){
+								strhtml += '<li><img src="'
+								+data.product.pics[i]+
+								'" class="ad" /></li>'
+							}
+						}
+						else{
+							strhtml = '<li><img src="'+data.product.pic+'" class="ad" /></li>'
+						}
+						$(".ad_ul").empty().append(strhtml);
+						slide()
+						$(".ad").css("width", document.body.clientWidth);
+						$(".ad_b").height($(".ad_ul li img").height());
+						//是否为处方
+						if(data.product.isCounter){
+							$(".commodity_body1").find("img").attr("src","../img/ico_bs2.jpg");
+							$("#commodity_isCounter").text("处方");
+						}else{
+							$(".commodity_body1").find("img").attr("src","../img/ico_bs1.jpg")
+							$("#commodity_isCounter").text("非处方");
+						}
+						//商品名字
+						$(".commodity_body1").find("h4").text(data.product.name); 
+						//商品价格
+						$(".commodity_text_mo").text(data.product.skus[0].price.toFixed(2));  
+						//商品运费
+						if(data.product.freight==0.0){
+							$("#commodity_freight").text("包邮")
+						}
+						else{
+							$("#commodity_freight").text(data.product.freight.price);
+						};
+						//浏览量
+						$("#commodity_zom1").text(data.product.clickNum);  
+						 //累积销量
+						$("#commodity_zom2").text(data.product.sales); 
+						//累积评价
+						$("#commodity_zom3").text(data.disComments.good+data.disComments.mid+data.disComments.low);
+						//生产厂家
+						$("#commodity_fac_name").text(data.product.fac_name);
+						//规格
+						$("#commodity_specs").text(data.product.specs);
+						//品牌
+						if(data.product.brand_name==null){
+							$("#commodity_brand_name").text("无");
+						}
+						else{
+							$("#commodity_brand_name").text(data.product.brand_name);
+						}
+						//药房
+						$("#commodity_ph_name").text(data.product.ph_name);
+						//批准文号
+						$("#commodity_batchNum").text(data.product.batchNum);
+						//剂型
+						$("#commodity_dosage").text(data.product.dosage);
+						//默认商品图片
+						$(".black_img").find("img").attr("src",data.product.products[0].pic);
+						//默认价格
+						$("#intro_shop_num").text(data.product.skus[0].price.toFixed(2));
+						//规格
+						for(i=0;i<data.product.skus.length;i++){
+							prohtml += '<div class="black_spec_list" skuId="'
+								+data.product.skus[i].id+
+								'" onclick="spec(this,'
+								+data.product.skus[i].price+
+								')">'
+								+data.product.skus[i].spec+
+								'</div>'
+						}
+						$(".black_spec_b").empty().append(prohtml);
+						$(".black_spec_b").find("div").eq(0).addClass("black_spec_o");
+						//评价名称
+						$(".evaluate_name span").text($(".commodity_body1 h4").text());
+						
+						//好评
+						$("#evaluate_num2").text(data.disComments.good)
+						//中评
+						$("#evaluate_num3").text(data.disComments.mid)
+						//差评
+						$("#evaluate_num4").text(data.disComments.low)
+						//计算好评率
+						evaluate_ratio()
+						//清空评论详情
+						//$(".evaluate_body ul").empty();
+						for(i=0;i<data.disComments.comments.length;i++){
+							commhtml = '<li><div class="user_head"><img src="'
+							+data.disComments.comments[i].user.pic+
+							'" /><p class="user_name">'
+							+data.disComments.comments[i].user.nickname+
+							'</p><span class="evaluate_time">评论于<label>'
+							+formatDateTime(data.disComments.comments[i].addtime)+
+							'</label></span></div><div class="user_evaluate"><p>'
+							+data.disComments.comments[i].content+
+							'</p></div><div class="user_ass">评价：<span>'
+							+great(0)+
+							'</span></div></li>'
+						}
+						$(".evaluate_body ul").empty().append(commhtml)
+						//产品细节
+						$(".comm_details_img").html(data.product.description)
+						//产品id
+						$(".commodity_body1").attr("preId",data.product.id);
+						
+						
+					},
+					error: function(XMLHttpRequest,textStatus, errorThrown) {
+						/*alert(XMLHttpRequest.status);
+						alert(XMLHttpRequest.readyState);
+						alert(textStatus);*/
+						console.log("网络请求失败，请联系网站管理员!");
+					},
+				})
+			})
+			//时间戳
+			function formatDateTime(inputTime) { var date = new Date(inputTime); var y = date.getFullYear(); var m = date.getMonth() + 1; m = m < 10 ? ('0' + m) : m; var d = date.getDate(); d = d < 10 ? ('0' + d) : d; var h = date.getHours(); h = h < 10 ? ('0' + h) : h; var minute = date.getMinutes(); var second = date.getSeconds(); minute = minute < 10 ? ('0' + minute) : minute; second = second < 10 ? ('0' + second) : second; return y + '-' + m + '-' + d+' '+h+':'+minute+':'+second; }
+    		//好评差评
+    		function great(g){
+    			var val = ""
+    			if(g == 0){
+    				val = "好评"
+	    		}
+	    		else if(g == 1){
+	    			val = "中评"
+	    		}
+	    		else{
+	    			val = "差评"
+	    		}
+	    		return val
+    		}
+		</script>
+	</head>
+	<body>
+		<!--头部-->
+		<div class="head">
+			<a href="javascript:history.back(-1);" class="back"><img src="../img/left.png" /></a>
+			<div class="commodity_top">
+				<h4 class="comm_on" onclick="intro(this,'.body1')">商品</h4>
+				<h4 class="" onclick="intro(this,'.body2')">详情</h4>
+				<h4 class="" onclick="intro(this,'.body3')">评价</h4>
+			</div>
+			<a href="#" class="more"><img src="../img/more2.png" /></a>
+		</div>
+		<!--身躯-->
+		<div class="body">
+			<div class="body1 body_o">
+				<!--滚动图-->
+				<div class="ad_b">
+					<ul class="ad_ul">
+						<li>
+							<img src="../img/mo1.jpg" class="ad" />
+						</li>
+					</ul>
+					<div class="ad_spot_b1">
+						<ul class="ad_spot_b">
+						</ul>
+					</div>
+				</div>
+				<!--滚动图-->
+				<div class="commodity_body1">
+					<img src="../img/ico_bs1.jpg" />
+					<h4>name</h4>
+					<p>零售价<span class="commodity_text_y">￥</span><span class="commodity_text_mo">00.00</span></p>
+					<p>运费<span class="commodity_text_y" id="commodity_freight">0.0</span></p>
+				</div>
+				<div class="commodity_body2">
+					<span>浏览量<label id="commodity_zom1">-1</label></span>
+					<span>累积销量<label id="commodity_zom2">-1</label></span>
+					<span>累积评价<label id="commodity_zom3">-1</label></span>
+				</div>
+				<div class="commodity_body3" onclick="black_show()">
+						<span>可选规格</span>
+						<span id="norms">黑色 ，L，</span>
+						<img src="../img/right (1).png"/>
+				</div>
+				<div class="commodity_body4">
+					<img src="../img/good1.png"/>
+					<span>店铺发货&售后</span>
+					<img src="../img/good1.png"/>
+					<span>货到付款</span>
+					<img src="../img/good1.png"/>
+					<span>七天无理由退货</span>
+				</div>
+			</div>	
+			<div class="body2 body_o">
+				<!--商品详情-->
+				<div class="commodity_head">
+					
+					<div class="commodity_body5">
+						<div class="comm_details">
+							<div >
+								<h4>产品参数</h4>
+					<div class="comm_details_text">
+						<p>生产厂家:&nbsp;<span id="commodity_fac_name">0</span></p>
+						<p>产品规格:&nbsp;<span id="commodity_specs">0</span></p>
+						<p>品牌:&nbsp;<span id="commodity_brand_name">0</span></p>
+						<p>是否处方:&nbsp;<span id="commodity_isCounter">0</span></p>
+						<p>经营药房:&nbsp;<span id="commodity_ph_name">0</span></p>
+						<p>批准文号:&nbsp;<span id="commodity_batchNum">0</span></p>
+						<p>剂型:&nbsp;<span id="commodity_dosage">0</span></p>
+					</div>
+				</div>
+				<div>
+					<h4>产品细节</h4>
+					<div class="comm_details_img">
+						
+					</div>
+				</div>
+			</div>
+			<div class="">
+
+			</div>
+			<div class="">
+
+			</div>
+		</div>
+		</div>
+		<!--商品详情-->
+		</div>
+			<div class="body3 body_o">
+				<div class="evaluate_head">
+					<div class="evaluate_name">
+						商品名称:&nbsp;<span >必利劲 盐酸达泊西汀片 30mg*3片 【厂家授权 正品正…货】</span>
+					</div >
+					<span class="evaluate_ratio">好评率<label id="evaluate_num0">99</label>%</span>
+				</div>
+				<div class="evaluate_score">
+					<span>全部（<label id="evaluate_num1">-1</label>）</span>
+					<span>好评（<label id="evaluate_num2">-1</label>）</span>
+					<span>中评（<label id="evaluate_num3">-1</label>）</span>
+					<span>差评（<label id="evaluate_num4">-1</label>）</span>
+				</div>
+				<div class="evaluate_body">
+					<ul>
+						<li>
+							<div class="user_head">
+								<img src="../img/2017.jpg" />
+								<p class="user_name">覅覅偶佛一覅偶</p>
+								<span class="evaluate_time">评论于<label>2018-6-15</label></span>
+	
+							</div>
+							<div class="user_evaluate">
+								<p>服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和</p>
+							</div>
+							<div class="user_ass">
+								评价：<span>好评</span>
+							</div>
+						</li>
+						<li>
+							<div class="user_head">
+								<img src="../img/2017.jpg" />
+								<p class="user_name">覅覅偶佛一覅偶</p>
+								<span class="evaluate_time">评论于<label>2018-6-15</label></span>
+	
+							</div>
+							<div class="user_evaluate">
+								<p>服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和</p>
+							</div>
+							<div class="user_ass">
+								评价：<span>好评</span>
+							</div>
+						</li>
+						<li>
+							<div class="user_head">
+								<img src="../img/2017.jpg" />
+								<p class="user_name">覅覅偶佛一覅偶</p>
+								<span class="evaluate_time">评论于<label>2018-6-15</label></span>
+	
+							</div>
+							<div class="user_evaluate">
+								<p>服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和</p>
+							</div>
+							<div class="user_ass">
+								评价：<span>好评</span>
+							</div>
+						</li>
+						<li>
+							<div class="user_head">
+								<img src="../img/2017.jpg" />
+								<p class="user_name">覅覅偶佛一覅偶</p>
+								<span class="evaluate_time">评论于<label>2018-6-15</label></span>
+	
+							</div>
+							<div class="user_evaluate">
+								<p>服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和服务器二和我和我和</p>
+							</div>
+							<div class="user_ass">
+								评价：<span>好评</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--脚部-->
+		<div class="foot">
+			<div class="intro_foot1">
+				<div onclick="window.location.href='../index.html'"><img src="../img/home (2).png" />
+					<p>首页</p>
+				</div>
+				<div onclick="window.location.href='shop.html'">
+					<div class="intro_shop_div">
+						<img src="../img/shop (2).png" />
+						<span class="intro_shop_i">1</span>
+						<span class="intro_shop_anima"></span>
+					</div>
+					<p>购物车</p>
+				</div>
+				<div onclick="collection(this)" style="width: 40px;">
+					<img src="../img/xin (1).png" />
+					<p>收藏</p>
+				</div>
+				<a class="intro_but">
+					<input type="button" name="" id="" value="加入购物车" onclick="black_show()" />
+				</a>
+				<a class="intro_but_check">
+					<input type="button" name="" id="" value="需求登记" onclick="window.location.href='prescription.html'" />
+				</a>
+			</div>
+		</div>
+		<!--弹窗-->
+		<div class="black">
+			<div class="black_head">
+				<div class="black_img">
+					<img src="../img/TB.jpg" />
+				</div>
+				<img src="../img/ca1.png" class="black_del" onclick="del()" />
+				<div class="black_price">
+					<h4>￥<h4 id="intro_shop_num">120.23</h4></h4>
+					<p>商品编号：<label>13213213231</label></p>
+				</div>
+			</div>
+
+			<div class="black_box">
+				<div class="black_spec">
+					<span>规格</span>
+					<div class="black_spec_b">
+						<div class="black_spec_list" onclick="spec(this,0.01)">
+							3000g*200片
+						</div>
+						<div class="black_spec_list" onclick="spec(this,0.02)">
+							30g*300片
+						</div>
+						<div class="black_spec_list" onclick="spec(this,0.03)">
+							30g*200片
+						</div>
+					</div>
+				</div>
+				<div class="black_num">
+					<span>数量</span>
+					<div>
+						<input type="button" id="minus" value="-" onclick="minus()" />
+						<input type="text" name="" id="number" value="1" placeholder="1" />
+						<input type="button" id="add" value="+" onclick="add()" />
+					</div>
+				</div>
+			</div>
+			<div class="black_but">
+				<input type="button" name="" id="" value="确认" onclick="del(),add_but()"/>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,261 @@
+* {
+	font-family: "微软雅黑";
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	color: #666;
+}
+
+body {
+	background-color: white;
+}
+
+li {
+	display: inline;
+}
+
+textarea {
+	width: 100%;
+	outline: none;
+	resize: none
+}
+
+table {
+	border-spacing: 0px;
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background-color: #fff;
+}
+
+.ovfHiden {
+	overflow: hidden;
+	height: 100%;
+}
+
+
+/*input{border: none;}*/
+
+input:focus {
+	color: #666;
+	border: 1px solid #f1f1f1;
+	background-color: #fff;
+	outline: none;
+}
+
+.head {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	background-color: #fff;
+	z-index: 500;
+}
+
+.head_l {
+	text-align: center;
+	padding: 10px 0px;
+	position: relative;
+	border-bottom: 8px solid #f1f1f1;
+}
+
+.back {
+	float: left;
+	position: absolute;
+	left: 15px;
+	top: 5px;
+}
+
+.back img {
+	width: 25px;
+}
+
+.login_head {
+	font-size: 16px;
+}
+
+.register_on {
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}
+
+
+/*body*/
+
+.body {
+	margin: 50px 0px;
+}
+
+.body1 {}
+
+.address_list {
+	padding: 10px;
+	position: relative;
+	border-bottom: 2px solid #f1f1f1;
+}
+
+.address_list img {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+}
+
+.address_list img:nth-child(1) {
+	top: 42px;
+	left: 15px;
+}
+
+.address_list_b {
+	margin-left: 30px;
+}
+
+.address_list_b p {
+	margin: 5px;
+}
+
+.address_list_b p:first-child span {
+	font-size: 16px;
+	font-weight: 500;
+	color: #000;
+}
+
+.address_list_b p:first-child span:first-child {
+	margin-right: 25px;
+}
+
+.address_list_f span:nth-child(1) {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 66px;
+	left: 15px;
+	background-image: url(../img/gou1.png);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+}
+
+.address_list_f span:nth-child(2) {
+	margin-left: 35px;
+}
+
+.address_list_f img:nth-child(3) {
+	top: 66px;
+	right: 66px;
+}
+
+.address_list_f span:nth-child(4) {
+	float: right;
+	margin-right: 20px;
+}
+
+.address_list_f img:nth-child(5) {
+	top: 66px;
+	right: 135px;
+}
+
+.address_list_f span:nth-child(6) {
+	float: right;
+	margin-right: 40px;
+}
+
+.body2 {
+	padding: 10px;
+	display: none;
+}
+
+.address_edit {
+	width: 100%;
+	padding: 10px 0px;
+}
+
+.address_edit input {
+	width: 75%;
+	border: none;
+	padding-left: 10px;
+}
+
+
+/*foot*/
+
+.foot {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+}
+
+.foot_but {
+	text-align: center;
+	width: 100%;
+	background-color: #cc0000;
+	height: 50px;
+}
+
+.foot_but span {
+	font-size: 18px;
+	color: #fff;
+	margin: 10px;
+	display: inline-block;
+}
+
+.cue_box {
+	margin-bottom: 80px;
+	text-align: center;
+	background-color: #cc0000;
+	opacity: 0.5;
+	padding: 5px;
+	display: none;
+}
+
+.cue_box span {
+	color: #fff;
+}
+/*cue*/
+
+.black {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 500;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
+}
+
+.cue {
+	margin: auto;
+	background-color: #fff;
+	width: 280px;
+	height: 106px;
+	border-radius: 5px;
+	text-align: center;
+	margin-top: 200px;
+}
+
+.cue p {
+	font-weight: 500;
+	padding: 25px;
+}
+
+.cue span {
+	display: inline-block;
+	width: 122px;
+}
+
+.cue_cancel {
+	background-color: #f1f1f1;
+	padding: 8px;
+	border-bottom-left-radius: 5px
+}
+
+.cue_confirm {
+	background-color: #cc0000;
+	padding: 8px;
+	color: #fff;
+	border-bottom-right-radius: 5px;
+}

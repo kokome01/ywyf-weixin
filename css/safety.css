@@ -1,0 +1,364 @@
+* {
+				font-family: "微软雅黑";
+				margin: 0px;
+				padding: 0px;
+				font-size: 14px;
+				color: #666;
+			}
+			
+			body {
+				background-color: white;
+			}
+			
+			li {
+				display: inline;
+			}
+			
+			textarea {
+				width: 100%;
+				outline: none;
+				resize: none
+			}
+			
+			table {
+				border-spacing: 0px;
+				width: 100%;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			body {
+				background-color: #f1f1f1;
+			}
+			
+			.ovfHiden {
+				overflow: hidden;
+				height: 100%;
+			}
+			/*input{border: none;}*/
+			
+			input:focus {
+				color: #666;
+				border: 1px solid #f1f1f1;
+				background-color: #fff;
+				outline: none;
+			}
+			
+			.head {
+				position: fixed;
+				top: 0px;
+				width: 100%;
+				background-color: #fff;
+				z-index: 500;
+			}
+			
+			.head_l {
+				text-align: center;
+				padding: 10px 0px;
+				position: relative;
+				border-bottom: 8px solid #f1f1f1;
+			}
+			
+			.back {
+				float: left;
+				position: absolute;
+				left: 15px;
+				top: 5px;
+			}
+			
+			.back img {
+				width: 25px;
+			}
+			
+			.login_head {
+				font-size: 16px;
+			}
+			
+			.register_on {
+				position: absolute;
+				right: 15px;
+				top: 10px;
+			}
+			/*body*/
+			
+			.body {
+				margin: 50px 0px;
+			}
+			
+			.safety_head {
+				height: 51px;
+				padding: 10px;
+				border-bottom: 1px solid #F1F1F1;
+				background-color: #fff;
+				position: relative;
+			}
+			
+			.safety_val {
+				color: #cdcdcd;
+				float: right;
+				margin-right: 40px;
+			}
+			
+			.safety_val label {
+				color: #cdcdcd;
+			}
+			
+			.safety_head span:nth-child(1) {
+				display: inline-block;
+				margin-top: 15px;
+			}
+			.safety_head input:nth-child(2) {
+				height: 50px;
+				width: 50px;
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				opacity: 0;
+			}
+			.safety_head img:nth-child(3) {
+				height: 50px;
+				width: 50px;
+				float: right;
+				border-radius:50px ;
+			}
+			
+			.right_img {
+				width: 25px;
+				height: 25px;
+				position: absolute;
+				top: 10px;
+				right: 10px;
+			}
+			
+			.right_i {
+				margin-top: 13px;
+			}
+			
+			.safety_list {
+				height: 24px;
+				padding: 10px;
+				border-bottom: 1px solid #F1F1F1;
+				background-color: #fff;
+				position: relative;
+			}
+			
+			.safety_out {
+				background-color: #cc0000;
+				padding: 8px;
+				color: #fff;
+				text-align: center;
+				margin: 25px;
+			}
+			
+			.body2 {}
+			
+			.safety_entry {
+				position: relative;
+				width: 100%;
+				background-color: #fff;
+				height: 40px;
+			}
+			
+			.safety_entry input {
+				width: 90%;
+				height: 40px;
+				border: 0px;
+				padding-left: 10px;
+			}
+			
+			.safety_entry img {
+				width: 20px;
+				height: 20px;
+				position: absolute;
+				top: 10px;
+				right: 10px;
+			}
+			
+			.safety_entry_b p {
+				color: #999;
+				padding: 5px;
+				font-size: 12px;
+			}
+			
+			.safety_sex {
+				background-color: #fff;
+				padding: 10px;
+				border-bottom: 1px solid #F1F1F1;
+			}
+			
+			.safety_sex img {
+				width: 20px;
+				height: 20px;
+				float: right;
+				display: none;
+			}
+			
+			.safety_birthday_b {
+				background-color: #fff;
+			}
+			
+			.safety_birthday {
+				padding: 10px;
+				display: flex;
+			}
+			
+			.safety_birth {
+				flex: 1 1 auto;
+				text-align: center;
+			}
+			
+			.safety_day {
+				font-weight: 500;
+				font-size: 16px;
+			}
+			
+			.safety_day span {
+				font-weight: 500;
+				font-size: 16px;
+			}
+			
+			.safety_birt_num b {
+				display: inline-block;
+				width: 80px;
+				border: 1px solid #cdcdcd;
+				margin: 5px;
+				padding: 5px;
+			}
+			
+			.safety_yom {
+				width: 92px;
+				border: 1px solid #cdcdcd;
+				margin: auto;
+				height: 100px;
+				overflow: scroll;
+				overflow-x: hidden;
+			}
+			
+			.safety_hide {
+				display: none;
+			}
+			
+			.safety_sex_gou {
+				display: block !important;
+			}
+			/**/
+			
+			.account_name {
+				width: 100%;
+				position: relative;
+			}
+			
+			.account_name input {
+				border: 1px solid #fff;
+				height: 40px;
+				width: 80%;
+				background-color: #fff;
+			}
+			
+			.account_name img {
+				width: 25px;
+				position: absolute;
+				top: 10px;
+				right: 5px;
+			}
+			
+			.account_password {
+				width: 100%;
+				position: relative;
+				border-top: 1px solid #f1f1f1;
+			}
+			
+			.account_password input {
+				border: 1px solid #fff;
+				height: 40px;
+				width: 80%;
+			}
+			
+			.account_password img {
+				width: 25px;
+				position: absolute;
+				top: 10px;
+				right: 45px;
+			}
+			
+			.account_code {
+				width: 100%;
+				position: relative;
+				border-top: 1px solid #f1f1f1;
+			}
+			
+			.account_code input[type="text"] {
+				border: 1px solid #fff;
+				height: 40px;
+				width: 40%;
+			}
+			
+			.account_code input[type="button"] {
+				margin-right: 10px;
+				float: right;
+				border: 1px solid #fff;
+				width: 100px;
+				height: 40px;
+				border-radius: 2px;
+				color: #fff;
+				background-color: #0B74DF;
+			}
+			
+			.account_code img {
+				width: 25px;
+				position: absolute;
+				top: 10px;
+				right: 5px;
+			}
+			
+			.account_password img:last-child {
+				width: 25px;
+				position: absolute;
+				top: 10px;
+				right: 5px;
+			}
+			
+			.account_empty {
+				background-color: #fff;
+			}
+			
+			.account_empty span {
+				margin-left: 10px;
+			}
+			/*foot*/
+			
+			.foot {
+				position: fixed;
+				bottom: 0px;
+				width: 100%;
+			}
+			
+			.foot_but {
+				text-align: center;
+				width: 100%;
+				background-color: #cc0000;
+				height: 50px;
+			}
+			
+			.foot_but span {
+				font-size: 18px;
+				color: #fff;
+				margin: 10px;
+				display: inline-block;
+			}
+			
+			.cue_box {
+				margin-bottom: 80px;
+				text-align: center;
+				background-color: #cc0000;
+				opacity: 0.5;
+				padding: 5px;
+				display: none;
+				color: #fff;
+			}
+			
+			.cue_box span {
+				color: #fff;
+			}

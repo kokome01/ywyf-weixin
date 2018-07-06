@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>账户设置</title>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/safety.css" />
+		<script src="../js/safety.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var sex = "",
+					age = "",
+					pic = "../img/tou.png";
+				//加载地址列表
+				$.ajax({
+					url: 'http://192.168.0.102/ywyf-weixin/user/apply', //地址
+					dataType: "json",
+					type: "post",
+					timeout: 50000,
+					xhrFields: {
+						withCredentials: true
+					},
+					success: function(data) {
+						//赋值
+						if(data.status == 1) {
+							//头像
+							if(data.user.pic !=null){
+								pic = data.user.pic
+							}
+							//性别
+							if(data.user.sex != null){
+								if(data.user.sex==0){
+									sex="女"
+								}
+								else{
+									sex="男"
+								}
+							}
+							//console.log(JSON.stringify(data));
+							$(".safety_image").attr("src",pic)
+							$(".safety_name").find(".safety_val").text(data.user.nickname);
+							$(".safety_sexuality").find(".safety_val").text(sex);
+						} else {
+							alert("请登录");
+							window.location.href = '../other/login.html'
+						}
+
+					},
+					error: function(XMLHttpRequest, textStatus, errorThrown) {
+						/*alert(XMLHttpRequest.status);
+						alert(XMLHttpRequest.readyState);
+						alert(textStatus);*/
+						console.log("网络请求失败，请联系网站管理员!");
+					},
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="head">
+			<div class="head_l">
+				<a href="javascript:history.back(-1);" class="back"><img src="../img/left.png" /></a>
+				<div>
+					<span class="login_head">账户设置</span>
+				</div>
+			</div>
+		</div>
+		<div class="body">
+			<form id="jvForm" action="http://192.168.0.102/ywyf-weixin/upload/uploadPic1.do" method="post" name="login" enctype="multipart/form-data"/>
+				<div class="safety_head">
+					<span>头像</span>
+					<input type="file" accept="image/jpeg,image/jpg,image/png,image/svg" id="file" name="pic" onchange="uploadPic()" class="fileimg_f" />
+					<img src="../img/tou.png" class="safety_image" />
+				</div>
+			</form>
+			<div class="safety_list safety_name" onclick="name()">
+				<span>用户名</span>
+				<span class="safety_val">kokome</span>
+				<img src="../img/right (1).png" class="right_img" />
+			</div>
+			<div class="safety_list safety_sexuality" onclick="sex()">
+				<span>性别</span>
+				<span class="safety_val">男</span>
+				<img src="../img/right (1).png" class="right_img" />
+			</div>
+			<!--<div class="safety_list safety_times" onclick="birthday()">
+				<span>年龄</span>
+				<span class="safety_val"><label>00</label></span>
+				<img src="../img/right (1).png" class="right_img" />
+			</div>-->
+			<div class="safety_list" onclick="window.location.href='../other/adddress.html'">
+				<span>地址管理</span>
+				<img src="../img/right (1).png" class="right_img" />
+			</div>
+			<div class="safety_list" onclick="password()">
+				<span>修改密码</span>
+				<img src="../img/right (1).png" class="right_img" />
+			</div>
+			<div class="safety_out">
+				退出登录
+			</div>
+		</div>
+		<div class="head head2 safety_hide">
+			<div class="head_l">
+				<a href="#" class="back" onclick="back()"><img src="../img/left.png" /></a>
+				<div>
+					<span class="login_head safety_title"></span>
+				</div>
+			</div>
+			<div>
+				<a href="#" class="register_on" onclick="">确定</a>
+			</div>
+		</div>
+		<div class="body body2" style="display:none;">
+			<div class="safety_entry_b safety_hide">
+				<div class="safety_entry">
+					<input type="text" placeholder="这里输入新昵称" />
+					<img src="../img/ca2.png" onclick="name_ovem()" />
+				</div>
+				<p>4-20个字符，可由中英文、数字组成</p>
+			</div>
+			<div class="safety_sex_b safety_hide">
+				<div class="safety_sex" onclick="sex_choice(this)">
+					<span>男</span>
+					<img src="../img/gou3.png" class="safety_sex_gou" />
+				</div>
+				<div class="safety_sex" onclick="sex_choice(this)">
+					<span>女</span>
+					<img src="../img/gou3.png" class="safety_sex_gou" />
+				</div>
+				<!--<div class="safety_sex" onclick="sex_choice(this)">
+					<span>保密</span>
+					<img src="../img/gou3.png" class="safety_sex_gou" />
+				</div>-->
+			</div>
+			<div class="safety_birthday_b safety_hide">
+				<div class="safety_birthday">
+					<p class="safety_day"><b class="year_val" id="year_val1">1920</b>年<b class="month_val" id="month_val1">01</b>月<b class="day_val" id="day_val1">01</b>日</p>
+				</div>
+				<div class="safety_birthday">
+					<div class="safety_birth safety_birt_num">
+						<b class="year_val" id="year_val2">1920</b>
+						<div class="safety_yom yom_year">
+						</div>
+					</div>
+					__
+					<div class="safety_birth safety_birt_num">
+						<b class="month_val" id="month_val2">01</b>
+						<div class="safety_yom yom_month">
+						</div>
+					</div>
+					__
+					<div class="safety_birth safety_birt_num">
+						<b class="day_val" id="day_val2">01</b>
+						<div class="safety_yom yom_day">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="safety_password_b ">
+				<div class="safety_password">
+					<div class="account_name account_empty">
+						<span>&nbsp;&nbsp;&nbsp;账号：</span>
+						<input type="text" name="" id="login_name" value="" placeholder="15967125243" maxlength="11" class="account_input" disabled="disabled" />
+					</div>
+					<div class="account_code account_empty">
+						<span>验证码：</span>
+						<input type="text" name="" id="login_test" value="" placeholder="请输入手机验证码" class="account_input" />
+						<input type="button" id="" value="获取验证码" onclick="sendMobileCode(this);" />
+					</div>
+					<div class="account_password account_empty">
+						<span>新密码：</span>
+						<input type="text" name="" id="login_password" value="" class="account_pass_an account_input" placeholder="请输入密码" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="foot">
+			<div class="cue_box">
+			</div>
+		</div>
+	</body>
+
+</html>

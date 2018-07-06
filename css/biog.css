@@ -1,0 +1,149 @@
+* {
+				font-family: "微软雅黑";
+				margin: 0px;
+				padding: 0px;
+				font-size: 14px;
+				color: #666;
+			}
+			
+			body {
+				background-color: white;
+			}
+			
+			li {
+				display: inline;
+			}
+			
+			textarea {
+				width: 100%;
+				outline: none;
+				resize: none
+			}
+			
+			table {
+				border-spacing: 0px;
+				width: 100%;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			body {
+				background-color: #fff;
+			}
+			
+			.ovfHiden {
+				overflow: hidden;
+				height: 100%;
+			}
+			/*input{border: none;}*/
+			
+			input:focus {
+				color: #666;
+				border: 1px solid #f1f1f1;
+				background-color: #fff;
+				outline: none;
+			}
+			
+			.head {
+				position: fixed;
+				top: 0px;
+				width: 100%;
+				background-color: #fff;
+				z-index: 500;
+			}
+			
+			.head_l {
+				text-align: center;
+				padding: 10px 0px;
+				position: relative;
+				border-bottom: 8px solid #f1f1f1;
+			}
+			
+			.back {
+				float: left;
+				position: absolute;
+				left: 15px;
+				top: 5px;
+			}
+			
+			.back img {
+				width: 25px;
+			}
+			
+			.login_head {
+				font-size: 16px;
+			}
+			
+			.register_on {
+				position: absolute;
+				right: 15px;
+				top: 10px;
+			}
+			/*body*/
+			.body {
+				margin-top: 50px;
+				padding: 10px;
+			}
+			.h1{
+				font-size: 20px;
+				font-weight: 800;
+			}
+			.blog_time{
+				margin-top:5px ;
+			}
+			.blog_time b{
+				background-color: #FBD0AE;
+				color: #fff;
+				padding: 2px;
+			}
+			.blog_time span{
+				color: #cdcdcd;
+				padding: 2px;
+				float: right;
+			}
+			.blog_text{
+				margin-top:10px ;
+			}
+			.blog_text p{
+				text-indent:2em;
+			}
+			/*foot*/
+			.foot li{
+				display:block;
+				padding: 10px;
+			}
+			.foot>p{
+				background-color: #F1F1F1;
+				padding: 10px;
+			}
+			.foot_li{
+				margin-top:3px ;
+				position: relative;
+			}
+			.foot_li img{
+				width: 150px;
+				height: 80px;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+			}
+			.foot_li div{
+				margin-right: 160px;
+				
+			}
+			.blog_f_name{
+				border: 1px solid #cdcdcd;
+				border-radius:3px ;
+				font-size: 12px;
+				color: #cdcdcd;
+			}
+			.blog_f_time{
+				font-size: 12px;
+				color: #cdcdcd;
+				padding-left: 10px ;
+			}
+			.blog_f_subject{
+				height: 60px;
+			}	

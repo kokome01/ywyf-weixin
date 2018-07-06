@@ -1,0 +1,174 @@
+* {
+				font-family: "微软雅黑";
+				margin: 0px;
+				padding: 0px;
+				font-size: 14px;
+				color: #666;
+			}
+			
+			body {
+				background-color: white;
+			}
+			
+			li {
+				display: inline;
+			}
+			
+			textarea {
+				width: 100%;
+				outline: none;
+				resize: none
+			}
+			
+			table {
+				border-spacing: 0px;
+				width: 100%;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			body {
+				background-color: #fff;
+			}
+			
+			.ovfHiden {
+				overflow: hidden;
+				height: 100%;
+			}
+			/*input{border: none;}*/
+			
+			input:focus {
+				color: #666;
+				border: 1px solid #f1f1f1;
+				background-color: #fff;
+				outline: none;
+			}
+			
+			.head {
+				position: fixed;
+				top: 0px;
+				width: 100%;
+				background-color: #fff;
+				z-index: 500;
+			}
+			
+			.head_l {
+				text-align: center;
+				padding: 10px 0px;
+				position: relative;
+				border-bottom: 8px solid #f1f1f1;
+			}
+			
+			.back {
+				float: left;
+				position: absolute;
+				left: 15px;
+				top: 5px;
+			}
+			
+			.back img {
+				width: 25px;
+			}
+			
+			.login_head {
+				font-size: 16px;
+			}
+			
+			.register_on {
+				position: absolute;
+				right: 15px;
+				top: 10px;
+			}
+			/*body*/
+			
+			.body {
+				margin: 50px 0px;
+			}
+			
+			.class_left {
+				position: fixed;
+				width: 100px;
+				background-color: #f1f1f1;
+				text-align: center;
+				height: 100%;
+			}
+			
+			.class_list {
+				padding: 15px 0px;
+				border: 1px solid #fff;
+			}
+			
+			.class_on {
+				background-color: #fff;
+				border-left: 2px solid #0A79E5;
+			}
+			
+			.class_right {
+				padding: 10px 10px 10px 110px;
+			}
+			
+			.class_r_body {
+				margin-top: 20px;
+			}
+			
+			.class_r_body img {
+				width: 15px;
+				height: 15px;
+				position: absolute;
+				top: 14px;
+				right: 20px;
+			}
+			
+			.class_r_body li {
+				text-align: center;
+				width: 32%;
+				float: left;
+				padding: 10px 0px;
+				border: 1px solid #f1f1f1;
+			}
+			
+			.class_r_li {
+				display: inline-block;
+				margin-bottom: 20px;
+				width: 100%;
+			}
+			.class_deploy{
+				position: relative;
+			}
+			.class_deploy span{
+				padding-right: 10px;
+				color: #0A79E5;
+			}
+			/*foot*/
+			.foot {
+				background-color: #fff;
+				padding-top: 7px;
+				position: fixed;
+				bottom: 0px;
+				width: 100%;
+			}
+			
+			.container {
+				display: flex;
+				/* 设置为 FlexBox 容器 */
+				text-align: center;
+			}
+			
+			.center {
+				flex: 1 1 auto;
+				/* 子集平分 */
+			}
+			
+			.foot_img img {
+				width: 25px;
+			}
+			
+			.center_good p {
+				color: #0b74df;
+			}
+			
+			.foot_img p {
+				font-size: 12px;
+			}

@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>我的订单</title>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/order.css" />
+		<script src="../js/order.js"></script>
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="head">
+			<div class="head_l">
+				<a href="javascript:history.back(-1);" class="back"><img src="../img/left.png" /></a>
+				<div>
+					<span class="login_head">我的订单</span>
+				</div>
+			</div>
+			<div class="order_head">
+				<span onclick="list(this)" class="order_head_i order_head_but">全部</span>
+				<span onclick="list(this)" class="order_head_i">待付款</span>
+				<span onclick="list(this)" class="order_head_i">待发货</span>
+				<span onclick="list(this)" class="order_head_i">待收货</span>
+				<span onclick="list(this)" class="order_head_i">待评价</span>
+			</div>
+		</div>
+		<div class="body">
+			
+			<div class="order_box">
+				<ul>
+					<li class="order_list">
+						<div class="order_vender">
+							<span>湖南一格</span>
+						</div>
+						<ul>
+							<li class="order_li" >
+								<img src="../img/ad2.jpg"/>
+								<div class="order_name">
+									<p>问问企翁无群二翁无群二</p>
+									<p class="order_spec">规格：<span>125g</span></p>
+								</div>
+								<div class="order_price">
+									<p>共<span>2</span>件商品，实付<span>￥</span><span>286.00</span></p>
+								</div>
+								<div class="order_operation">
+									<span class="order_del" onclick="del(this)">删除订单</span>
+									<span class="order_warn"  onclick="warn(this)"><b>提醒发货</b><label>一天只能提醒一次</label></span>
+									<span class="order_take" onclick="take(this)">确认收货</span>
+									<span class="order_assess">评价商品</span>
+									<span class="order_pay" onclick="window.location.href='../other/pay.html'">一键支付</span>
+								</div>
+							</li>
+							<li class="order_li" >
+								<img src="../img/ad2.jpg"/>
+								<div class="order_name">
+									<p>问问企翁无群二翁无群二</p>
+									<p class="order_spec">规格：<span>125g</span></p>
+								</div>
+								<div class="order_price">
+									<p>共<span>2</span>件商品，实付<span>￥</span><span>286.00</span></p>
+								</div>
+								<div class="order_operation">
+									<span class="order_del" onclick="del(this)">删除订单</span>
+									<span class="order_warn"  onclick="warn(this)"><b>提醒发货</b><label>一天只能提醒一次</label></span>
+									<span class="order_take" onclick="take(this)">确认收货</span>
+									<span class="order_assess">评价商品</span>
+									<span class="order_pay" onclick="window.location.href='../other/pay.html'">一键支付</span>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="black">
+			<div class="cue">
+				<p class="cue_text"></p>
+				<span class="cue_cancel" onclick="cue_del()">取消</span>
+				<span class="cue_confirm" onclick="cue_but()">确认</span>
+			</div>
+		</div>
+	</body>
+
+</html>

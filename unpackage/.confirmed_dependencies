@@ -1,0 +1,275 @@
+{
+	"index.html": {
+		"resources": [
+			"img/ad3.jpg",
+			"img/list (2).png",
+			"img/more.png",
+			"img/ad1.jpg",
+			"img/menu (2).png",
+			"img/menu (1).png",
+			"img/shop (2).png",
+			"img/menu (7).png",
+			"img/hot.png",
+			"img/home (1).png",
+			"img/ad2.jpg",
+			"img/menu (5).png",
+			"img/me (2).png",
+			"css/home.css",
+			"img/search.png",
+			"img/news.png",
+			"js/jquery-1.8.3.min.js",
+			"img/search1.png",
+			"img/xi.png",
+			"img/menu (6).png",
+			"img/TB.jpg",
+			"img/menu (3).png",
+			"img/TJ2.jpg",
+			"img/2017.jpg",
+			"img/menu (4).png",
+			"js/home.js",
+			"other/search.html",
+			"css/index.css",
+			"js/index.js",
+			"other/introduction.html",
+			"img/menu (9).png",
+			"img/menu (8).png",
+			"img/menu (0).png",
+			"other/login.html",
+			"person/person.html"
+		],
+		"refer": [
+			"other/search.html",
+			"other/introduction.html",
+			"other/login.html",
+			"person/person.html"
+		]
+	},
+	"other/search.html": {
+		"resources": [
+			"index.html",
+			"css/search.css",
+			"img/left.png",
+			"img/search.png"
+		],
+		"refer": [
+			"index.html"
+		]
+	},
+	"other/introduction.html": {
+		"resources": [
+			"img/ico_bs1.jpg",
+			"css/introduction.css",
+			"js/introduction.js",
+			"index.html",
+			"img/left.png",
+			"img/search.png",
+			"img/ad3.jpg",
+			"img/ad1.jpg",
+			"js/jquery-1.8.3.min.js",
+			"img/ad2.jpg",
+			"img/home (2).png",
+			"img/xin (1).png",
+			"img/right (2).png",
+			"img/shop (2).png",
+			"img/right (1).png",
+			"img/tw5.jpg",
+			"img/good1.png",
+			"img/ca1.png",
+			"img/more2.png",
+			"img/sys_item.gif",
+			"img/TB.jpg",
+			"img/xin (2).png",
+			"img/2017.jpg",
+			"other/shop.html"
+		],
+		"refer": [
+			"index.html",
+			"other/shop.html"
+		]
+	},
+	"other/shop.html": {
+		"resources": [
+			"js/jquery-1.8.3.min.js",
+			"img/left.png",
+			"img/2017.jpg",
+			"css/shop.css",
+			"img/shop (1).png",
+			"js/shop.js",
+			"other/pay.html",
+			"index.html"
+		],
+		"refer": [
+			"other/pay.html",
+			"index.html"
+		]
+	},
+	"other/pay.html": {
+		"resources": [
+			"img/address_bor.jpg",
+			"img/address.png",
+			"css/pay.css",
+			"other/adddress.html",
+			"js/pay.js",
+			"js/jquery-1.8.3.min.js",
+			"img/left.png",
+			"img/right (1).png",
+			"other/pay_successl.html",
+			"img/2017.jpg",
+			"person/order.html"
+		],
+		"refer": [
+			"other/adddress.html",
+			"other/pay_successl.html",
+			"person/order.html"
+		]
+	},
+	"other/adddress.html": {
+		"resources": [
+			"css/address.css",
+			"img/del.png",
+			"js/address.js",
+			"img/editor.png",
+			"img/gou2.png",
+			"img/gou1.png",
+			"other/pay.html"
+		],
+		"refer": [
+			"other/pay.html"
+		]
+	},
+	"other/pay_successl.html": {
+		"resources": [
+			"img/T13iv.XiFdXXa94Hfd-32-32.png",
+			"other/pay.html",
+			"index.html"
+		],
+		"refer": [
+			"other/pay.html",
+			"index.html"
+		]
+	},
+	"other/login.html": {
+		"resources": [
+			"img/ca2.png",
+			"css/login.css",
+			"img/huo.jpg",
+			"js/login.js",
+			"img/eye2.png",
+			"img/eye.png",
+			"index.html",
+			"other/register.html",
+			"other/forget.html"
+		],
+		"refer": [
+			"index.html",
+			"other/register.html",
+			"other/forget.html"
+		]
+	},
+	"other/register.html": {
+		"resources": [
+			"other/login.html"
+		],
+		"refer": [
+			"other/login.html"
+		]
+	},
+	"other/forget.html": {
+		"resources": [
+			"other/login.html"
+		],
+		"refer": [
+			"other/login.html"
+		]
+	},
+	"other/classification.html": {
+		"resources": [
+			"img/home (2).png",
+			"css/classification.css",
+			"img/list (1).png",
+			"other/shop.html",
+			"js/classification.js"
+		],
+		"refer": [
+			"other/shop.html"
+		]
+	},
+	"person/person.html": {
+		"resources": [
+			"img/me (1).png",
+			"css/person.css",
+			"img/dai (1).png",
+			"img/dai (2).png",
+			"img/TJ2.jpg",
+			"img/dai (5).png",
+			"img/person.png",
+			"img/cilun.png",
+			"img/dai (3).png",
+			"img/list (2).png",
+			"img/shop (2).png",
+			"img/news.png",
+			"img/home (2).png",
+			"js/jquery-1.8.3.min.js",
+			"img/2017.jpg",
+			"person/safety.html",
+			"person/order.html",
+			"person/blog.html",
+			"person/news.html"
+		],
+		"refer": [
+			"person/safety.html",
+			"person/order.html",
+			"person/blog.html",
+			"person/news.html"
+		]
+	},
+	"person/safety.html": {
+		"resources": [
+			"img/gou3.png",
+			"person/person.html",
+			"img/left.png",
+			"img/right (1).png",
+			"css/safety.css",
+			"img/tou.png",
+			"img/ca2.png"
+		],
+		"refer": [
+			"person/person.html"
+		]
+	},
+	"person/order.html": {
+		"resources": [
+			"js/order.js",
+			"img/left.png",
+			"css/order.css",
+			"img/ad2.jpg",
+			"other/pay.html",
+			"person/person.html"
+		],
+		"refer": [
+			"other/pay.html",
+			"person/person.html"
+		]
+	},
+	"person/blog.html": {
+		"resources": [
+			"img/ad3.jpg",
+			"css/biog.css",
+			"person/person.html"
+		],
+		"refer": [
+			"person/person.html"
+		]
+	},
+	"person/news.html": {
+		"resources": [
+			"css/new.css",
+			"js/news.js",
+			"img/ca1.png",
+			"person/person.html"
+		],
+		"refer": [
+			"person/person.html"
+		]
+	}
+}

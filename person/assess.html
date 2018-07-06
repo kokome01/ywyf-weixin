@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>评价商品</title>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/assess.css" />
+		<script src="../js/assess.js"></script>
+		
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="head">
+			<div class="head_l">
+				<a href="javascript:history.back(-1);" class="back"><img src="../img/left.png" /></a>
+				<div>
+					<span class="login_head">商品评价</span>
+				</div>
+			</div>
+		</div>
+		<div class="body">
+			<div class="evaluate_head">
+				<img src="../img/ad3.jpg" />
+				<div class="evaluate_name">
+					<p>如何更靠谱换个靠谱换个卡活泼克欧靠谱换个卡活泼克欧卡活泼克欧克破口</p>
+					<p>商品品评分：<span class="pin pin_good" onclick="pin(this)" pin="0">好评</span><span class="pin" onclick="pin(this)" pin="1">中评</span><span class="pin" onclick="pin(this)" pin="2">差评</span></p>
+				</div>
+			</div>
+			<div class="evaluate_body">
+				<textarea name="" rows="10" cols="10" placeholder="商品怎么样？说说体验心得吧，字数至少6个字。"></textarea>
+			</div>
+			<div class="imgOnloadWrap">
+				<p>晒照片(<label class="fileimg_num">0</label>/5)</p>
+				<div class="filePic">
+					<input type="file" accept="image/jpeg,image/jpg,image/png,image/svg" onchange="upimg(this)" class="fileimg_f" />
+					<img src="../img/image.jpg" class="fileimg_imgs" />
+				</div>
+
+			</div>
+		</div>
+		<div class="foot">
+			<div class="cue_box">
+				<span></span> 
+			</div>
+			<div class="foot_but" onclick="assess()">
+				<span>提交评价</span>
+			</div>
+		</div>
+	</body>
+
+</html>

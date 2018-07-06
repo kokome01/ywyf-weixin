@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>搜索商品</title>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/choice.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/choice.css" />
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$.ajax({
+					url: '/ywyf-weixin/product/query?id=97', //地址
+					dataType: "json",
+					type: "post",
+					timeout: 50000,
+					success: function(data) {
+						var strhtml = ""
+						for(i=0;i<data.i++){
+							strhtml += '<li class="choice_li" onclick="window.location.href='introduction.html'"><img src="'
+							+../img/2017.jpg+
+							'"/><div class="choice_p"><p>'
+							+钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片+
+							'</p><p>规格：<span>'
+							+256g+
+							'</span></p><p><span>￥</span><span >'
+							+26.44+
+							'</span></p></div></li>'
+						}
+						$(".choice_body ul").empty().append("strhtml");
+						//隐藏大于10条
+						for(i=10;i<30;i++){
+							$(".choice_body ul").eq(i).hide();
+						}
+						
+						
+					},
+					error: function(XMLHttpRequest,textStatus, errorThrown) {
+						/*alert(XMLHttpRequest.status);
+						alert(XMLHttpRequest.readyState);
+						alert(textStatus);*/
+						//alert("网络请求失败，请联系网站管理员!");
+					},
+				})
+				$(window).scroll(function() {
+					var off_on = false;
+					var page = 1;
+					//当时滚动条离底部60px时开始加载下一页的内容
+					if (($(window).height() + $(window).scrollTop() + 60) >= $(document).height()) {
+						console.log("123")
+						//开始加载
+						if(page % 3 == 0){
+							
+						}
+						else{
+							
+						}
+						//这里用 [ off_on ] 来控制是否加载 （这样就解决了 当上页的条件满足时，一下子加载多次的问题啦）
+					    if (off_on) {
+					        //off_on = false;
+					        //page++;
+					        //console.log("第"+page+"页");
+					        //LoadingDataFn();  //调用执行上面的加载方法
+					    }
+					}
+				});
+			})
+				
+		</script>
+	</head>
+	<body>
+		<!--头部-->
+		<div class="head">
+			<div class="head_l">
+				<a href="javascript:history.back(-1);" class="back"><img src="../img/left.png" /></a>
+				<div>
+					<span class="login_head">搜索商品</span>
+				</div>
+			</div>
+		</div>
+		<div class="body">
+			<div class="choice_head">
+				<div class="choice_xu" onclick="choice_head(this)">综合排序</div>
+				<div class="choice_sharp" onclick="price()" uname="1">价格优先<img src="../img/down2.png" class="sharp_down"/><img src="../img/up2.png" class="sharp_up"/></div>
+				<div class="choice_screen" onclick="choice_head(this),screen()">筛选 <img src="../img/screen.png"/></div>
+			</div>
+			<div class="choice_body">
+				<ul>
+					<li class="choice_li" onclick="window.location.href='introduction.html'">
+						<img src="../img/2017.jpg"/>
+						<div class="choice_p">
+							<p>钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片</p>
+							<p>规格：<span>256g</span></p>
+							<p><span>￥</span><span >26.44</span></p>
+						</div>
+					</li>
+					<li class="choice_li" onclick="window.location.href='introduction.html'">
+						<img src="../img/2017.jpg"/>
+						<div class="choice_p">
+							<p>钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片</p>
+							<p>规格：<span>256g</span></p>
+							<p><span>￥</span><span >26.44</span></p>
+						</div>
+					</li>
+					<li class="choice_li" onclick="window.location.href='introduction.html'">
+						<img src="../img/2017.jpg"/>
+						<div class="choice_p">
+							<p>钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片</p>
+							<p>规格：<span>256g</span></p>
+							<p><span>￥</span><span >26.44</span></p>
+						</div>
+					</li>
+					<li class="choice_li" onclick="window.location.href='introduction.html'">
+						<img src="../img/2017.jpg"/>
+						<div class="choice_p">
+							<p>钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片</p>
+							<p>规格：<span>256g</span></p>
+							<p><span>￥</span><span >26.44</span></p>
+						</div>
+					</li>
+					<li class="choice_li" onclick="window.location.href='introduction.html'">
+						<img src="../img/2017.jpg"/>
+						<div class="choice_p">
+							<p>钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片</p>
+							<p>规格：<span>256g</span></p>
+							<p><span>￥</span><span >26.44</span></p>
+						</div>
+					</li>
+					<li class="choice_li" onclick="window.location.href='introduction.html'">
+						<img src="../img/2017.jpg"/>
+						<div class="choice_p">
+							<p>钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片</p>
+							<p>规格：<span>256g</span></p>
+							<p><span>￥</span><span >26.44</span></p>
+						</div>
+					</li>
+					<li class="choice_li" onclick="window.location.href='introduction.html'">
+						<img src="../img/2017.jpg"/>
+						<div class="choice_p">
+							<p>钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片</p>
+							<p>规格：<span>256g</span></p>
+							<p><span>￥</span><span >26.44</span></p>
+						</div>
+					</li>
+					<li class="choice_li" onclick="window.location.href='introduction.html'">
+						<img src="../img/2017.jpg"/>
+						<div class="choice_p">
+							<p>钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片</p>
+							<p>规格：<span>256g</span></p>
+							<p><span>￥</span><span >26.44</span></p>
+						</div>
+					</li>
+					<li class="choice_li" onclick="window.location.href='introduction.html'">
+						<img src="../img/2017.jpg"/>
+						<div class="choice_p">
+							<p>钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片钙尔奇跑碳酸钙主角片</p>
+							<p>规格：<span>256g</span></p>
+							<p><span>￥</span><span >26.44</span></p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="choice_black">
+				<div class="choice_pop choice_pop1">
+					<div class="choice_pop_h">
+						<span class="choice_pop_h1" onclick="pop_del1()">取消</span>
+						<span>筛选</span>
+					</div>
+					<div class="choice_pop_b">
+						<ul>
+							<li class="choice_pop_li choice_pop_lei" onclick="pop_filter(this)" uname="0" >
+								<span>品牌</span>
+								<img src="../img/right (1).png"/>
+								<span class="choice_pop_i"></span>
+							</li>
+							<li class="choice_pop_li choice_pop_lei" onclick="pop_filter(this)" uname="0">
+								<span>厂家</span>
+								<img src="../img/right (1).png"/>
+								<span class="choice_pop_i"></span>
+							</li>
+							<li class="choice_pop_li choice_pop_lei" onclick="pop_filter(this)" uname="0">
+								<span>规格</span>
+								<img src="../img/right (1).png"/>
+								<span class="choice_pop_i"></span>
+							</li>
+						</ul>
+					</div>
+					<div class="choice_pop_f">
+						<div class="choice_pop_but1" onclick="chong()">
+							重置
+						</div>
+						<div class="choice_pop_but2" onclick="pop_but()">
+							确定
+						</div>
+					</div>
+				</div>
+				<div class="choice_pop choice_pop2">
+					<div class="choice_pop_h">
+						<span class="choice_pop_h1" onclick="pop_del2()">取消</span>
+						<span>产品类型</span>
+						<span class="choice_pop_h2" onclick="pop_make()">确定</span>
+					</div>
+					<div class="choice_pop_b">
+						<ul>
+							<li class="choice_pop_li choice_pop_gou" onclick="pop_gou(this)" gou="0">
+								<span>中医西药</span>
+								<img src=""/>
+							</li>
+							<li class="choice_pop_li choice_pop_gou" onclick="pop_gou(this)" gou="0">
+								<span>养生保健</span>
+								<img src=""/>
+							</li>
+							<li class="choice_pop_li choice_pop_gou" onclick="pop_gou(this)" gou="0">
+								<span>计生用品</span>
+								<img src=""/>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>	
+		</div>
+	</body>
+
+</html>
