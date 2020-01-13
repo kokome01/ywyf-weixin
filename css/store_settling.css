@@ -1,0 +1,400 @@
+		* {
+			font-family: "微软雅黑";
+			margin: 0px;
+			padding: 0px;
+			font-size: 14px;
+			color: #666;
+		}
+		
+		body {
+			background-color: white;
+		}
+		
+		li {
+			display: inline;
+		}
+		
+		textarea {
+			width: 100%;
+			outline: none;
+			resize: none
+		}
+		
+		table {
+			border-spacing: 0px;
+			width: 100%;
+		}
+		
+		a {
+			text-decoration: none;
+		}
+		
+		body {
+			background-color: #fff;
+		}
+		
+		.ovfHiden {
+			overflow: hidden;
+			height: 100%;
+		}
+		/*input{border: none;}*/
+		
+		input:focus {
+			color: #666;
+			border: 1px solid #f1f1f1;
+			background-color: #fff;
+			outline: none;
+		}
+		/*综合图标*/
+		
+		.store_img {
+			background-image: url(../img/便利店标签.png);
+		}
+		
+		.head {
+			width: 100%;
+			z-index: 500;
+			background-color: #454a50;
+			position: fixed;
+			top: 0px;
+		}
+		
+		.head span {
+			color: #fff;
+		}
+		.index_i_back {
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			top: 8px;
+			left: 5px;
+			background-position: -150px -30px;
+			background-repeat: no-repeat;
+			background-size: 240px 150px;
+		}
+		
+		.index_head {
+			text-align: center;
+			font-size: 16px;
+			padding: 15px;
+		}
+		
+		.index_head span:nth-child(1) {
+			padding: 10px;
+			font-size: 16px;
+		}
+		/*body*/
+		
+		.body {
+			margin-top: 50px;
+			margin-bottom: 50px;
+			position: relative;
+		}
+		.settling_background{
+			width: 100%;
+			height: 400px;
+			background: linear-gradient(#454a50, #fff);
+		}
+		.settling_body{
+			width: 100%;
+			position: absolute;
+			top:0px;
+		}
+		.settling_address{
+			margin: 10px;
+			padding: 10px;
+			background-color: #FFFFFF;
+		}
+		.settling_address1{
+			font-size: 18px;
+		}
+		.settling_address2{
+			padding-bottom: 5px;
+			border-bottom: 1px solid #f1f1f1;
+		}
+		.settling_add{
+			text-align: right;
+			padding-top: 10px;
+			height: 20px;
+			position: relative;
+		}
+		.settling_add span{
+			margin-right: 40px;
+			font-size: 16px;
+		}
+		.store_i_add{
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			right: 0px;
+			top: 5px;
+			background-position: -120px -90px;
+			background-repeat: no-repeat;
+			background-size: 240px 150px;
+		}
+		.store_i_address{
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			right: -5px;
+			top:-50px;
+			background-position: -40px -40px;
+			background-repeat: no-repeat;
+			background-size: 320px 200px;
+		}
+		.settling_commodity{
+			background-color: #fff;
+			margin: 10px;
+			padding:0px 10px;
+			border: 1px solid #f1f1f1;
+		}
+		.commodity_shop{
+			color: #000;
+			padding: 5px 0px;
+			border-bottom: 1px solid #F1F1F1;
+		}
+		.settling_commodity_ul{
+			border-bottom: 1px solid #f1f1f1;
+		}
+		.settling_commodity_li{
+			display: block;
+			padding: 5px 0px;
+			position: relative;
+			margin:10px 0px;
+		}
+		.settling_commodity_li img{
+			width: 60px;
+			height: 60px;
+			border: 1px solid #f1f1f1;
+			position: absolute;
+			top: 5px;
+			left: 5px;
+		}
+		.settling_commodity_text{
+			margin-left: 80px;
+		}
+		.settling_commodity_name{
+			height: 40px;
+		}
+		.settling_commodity_price{
+			float: right;
+			color: #000;
+		}
+		.settling_commodity_price span{
+			color: #000;
+		}
+		.settling_packing{
+			border-bottom: 1px solid #f1f1f1;
+			padding: 5px 0px;
+		}
+		.settling_packing p{
+			padding: 5px 0px;
+		}
+		.settling_discount{
+			border-bottom:1px solid #f1f1f1 ;
+			padding: 10px 0px;
+		}
+		.discount_mang{
+			background-color: #0A79E5;
+			color: #fff;
+			padding: 1px 5px;
+			margin-right: 10px;
+		}
+		.red_t{
+			color: #cc0000;
+		}
+		.right_t{
+			float: right;
+		}
+		.settling_balance{
+			padding: 10px 0px;
+		}
+		.settling_other{
+			background-color: #fff;
+			border: 1px solid #F1F1F1;
+			margin: 10px;
+			padding:0px 10px;
+			margin-bottom: 60px;
+		}
+		.settling_other_list{
+			padding: 10px 0px;
+			border-bottom: 1px solid #F1F1F1;
+			position: relative;
+		}
+		.settling_other_list p{
+			color: #000;
+			font-size: 14px;
+		}
+		.store_i_remarks{
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			right: -5px;
+			top:5px;
+			background-position: -30px -30px;
+			background-repeat: no-repeat;
+			background-size: 240px 150px;
+		}
+		.settling_invoice_box{
+			background-color: #cdcdcd;
+			width: 50px;
+			height: 20px;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			border-radius:5px ;
+		}
+		.settling_invoice{
+			border: 1px solid #cdcdcd;
+			width: 30px;
+			height: 30px;
+			border-radius:5px ;
+			background-color: #fff;
+			position: absolute;
+			top: -5px;
+			right: 20px;
+		}
+		.small_plan{
+			font-size: 18px;
+		}
+		.other_txt{
+			display: inline-block;
+			padding-left: 10px;
+			color: #999;
+			width: 200px;
+			height: 20px;
+			overflow: hidden;
+			position: absolute;
+			top: 10px;
+			left: 30px;
+		}
+		.stroke{
+			text-decoration: line-through;
+			color: #cdcdcd;
+		}
+		/*foot*/
+		.foot {
+			background-color: #454a50;
+			position: fixed;
+			bottom: 0px;
+			width: 100%;
+			z-index: 5000;
+		}
+		.store_i_box{
+			width: 40px;
+			height: 40px;
+			background-position: -200px -80px;
+			background-repeat: no-repeat;
+			background-size: 320px 200px;
+			position: absolute;
+			top: 8px;
+			left: 10px;
+		}
+		.store_i_box_t{
+			color: #fff;
+			text-align: center;
+			font-size: 10px;
+			background-color: #cc0000;
+			width: 15px;
+			height: 15px;
+			border-radius:15px ;
+			position: absolute;
+			top: 0px;
+			left: 25px;
+			display: none;
+		}
+		.store_balance{
+			background-color: #0A79E5;
+			display: inline-block;
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			height: 50px;
+			padding: 15px 30px;
+		}
+		.store_balance p{
+			color: #fff;
+		}
+		.store_balance p span{
+			color: #999;
+		}
+		.store_money{
+			display: inline-block;
+			margin-left: 60px;
+		}
+		.store_money p {
+			color: #fff;
+		}
+		.store_money p:nth-child(1){
+			font-size: 20px;
+			margin: 12px;
+		}
+		.store_money p:nth-child(1) span{
+			font-size: 20px;
+		}
+		.store_money p:nth-child(2){
+			font-size: 14px;
+			color: #999;
+			margin-left:10px ;
+		}
+		.store_money p:nth-child(2) span{
+			color: #999;
+		}
+		.store_money p span{
+			color: #fff;
+		}
+		.store_balance_on{
+			background-color: #0B74DF;
+			color: #fff;
+			padding: 14px 30px;
+		}
+		.store_balance_on>p{
+			color: #fff;
+			font-size: 16px;
+		}
+		/*other*/
+		.other{
+			position: fixed;
+			top: 0px;
+			z-index: 5000;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0.5);
+			display: none;
+		}
+		.other_box{
+			margin:100px 10px 0px 10px;
+			padding: 10px;
+			background-color: #fff;
+			position: relative;
+		}
+		.other_box p{
+			padding-bottom: 10px;
+		}
+		.other_box textarea{
+			border: 0px;
+			background-color: #f1f1f1;
+		}
+		.other_text{
+			background-color: #f1f1f1;
+			padding: 10px;
+		}
+		.other_complete{
+			margin:0px 10px 10px 10px;
+			
+			display: flex;
+		}
+		.other_complete p:nth-child(1){
+			text-align: center;
+			color: #fff;
+			flex: 1 1 auto;
+			padding: 10px;
+			background-color: #0A79E5;
+		}
+		.other_complete p:nth-child(2){
+			text-align: center;
+			color: #fff;
+			padding: 10px;
+			flex: 1 1 auto;
+			background-color: #cdcdcd;
+		}

@@ -51,7 +51,6 @@ input{outline:none}
 	right: 10px;
 	font-size:10px !important;
 	color: #FFFFFF;
-	background-color:red ;
 	width: 15px;
 	height: 15px;
 	text-align: center;
@@ -164,7 +163,7 @@ input{outline:none}
 	color: #FF0000;
 	position: absolute;
 	left: 50px;
-	top: 5px;
+	top:3px;
 }
 .hot_new_box{
 	height: 20px;
@@ -194,7 +193,7 @@ input{outline:none}
 	padding: 1px;
 	position: absolute;
 	left: 12px;
-	top: 2px;
+	top: 1px;
 }
 .hot_new_a{
 	position: absolute;
@@ -207,16 +206,12 @@ input{outline:none}
 	text-align: left;
 }
 .activity_head {
-	margin: 8px 0px;
+	margin-top:10;
 }
 .activity_head strong{
+	display: inline-block;
 	color: #ff6d6d;
-	margin:0px 10px;
-}
-.activity_head span{
-	background-color: #666;
-	color: #fff;
-	padding: 1px;
+	margin:10px 10px 0px 15px;
 }
 .activity_body{
 	padding: 10px;
@@ -237,16 +232,18 @@ input{outline:none}
 }
 .activity_b_list img{
 	border: 1px solid #f1f1f1;
+	box-shadow: -2px 2px 3px #f1f1f1;
+	border-radius:5px ;
 	width:99px;
 	height: 99px;
 }
 .activity_b_list p{
-	font-size:12px ;
+	font-size:12px;
 	display: block;
 	height: 35px;
 	overflow: hidden;
 	text-align: left;
-	padding: 0px 8px;
+	padding: 8px 8px;
 }
 .key{
 	padding-top: 20px;
@@ -255,7 +252,6 @@ input{outline:none}
 .ware_head{
 	margin:10px 5px;
 	position: relative;
-	
 }
 .ware_head_a{
 	color: #ff6d96;
@@ -266,7 +262,6 @@ input{outline:none}
 	background-size:323px 35px;
 	background-position:-61px -7px ;
 	background-repeat: no-repeat;
-
 }
 .ware_head a{
 	color: #ad37c5;
@@ -289,7 +284,8 @@ input{outline:none}
 	text-align: left;
 	background-color: #fff;
 	display: inline-block;
-	border: 2px solid #F1F1F1;
+	border: 1px solid #F1F1F1;
+	box-shadow: -2px 2px 3px #f1f1f1;
 }
 .ware_img{
 	text-align: center;
@@ -324,7 +320,6 @@ input{outline:none}
 	bottom: 0px;
 	width: 100%;
 }
-
 .container {
  	display: flex;    /* 设置为 FlexBox 容器 */
  	text-align: center;
@@ -340,4 +335,79 @@ input{outline:none}
 }
 .foot_img p{
 	font-size: 12px;
+}
+/*项目*/
+.item_index{
+	margin:10px 10px 20px 10px;
+	display: block;
+	box-shadow: -2px 2px 3px #f1f1f1;
+	border-radius: 5px;
+}
+.item_relax{
+	position: relative;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.item_box{
+	background-color: #fff;
+	border-bottom:5px solid #f1f1f1 ;
+	text-align: left;
+}
+.item_img{
+	height: 160px;
+	width: 100%;
+}
+
+.item_abs{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	min-height: 48px;
+	background-color: rgba(0,0,0,0.6);
+}
+.item_name{
+	color: #fff;
+	margin: 5px 10px;
+	font-size: 14px;
+	font-weight:800;
+}
+.item_details{
+	display: inline-block;
+	float: right;
+	margin-right: 10px;
+	font-size: 14px;
+	color: #cdcdcd;
+}
+.item_other{
+	height: 50px;
+	padding: 5px 10px;
+	display: block;
+	text-align: left;
+	border-bottom:1px solid #f1f1f1 ;
+	position: relative;
+}
+.item_other_p{
+	margin-right: 85px;
+}
+.item_other_img{
+	position: absolute;
+	top: 10px;
+	right: 5px;
+	height: 40px;
+	width: 84px;
+}
+.activity_head a{
+	color: #ad37c5;
+}
+.activity_head a span{
+	color: #ad37c5;
+	float: right;
+	padding-top: 10px;
+	padding-right: 10px;
+}
+.activity_head a img{
+	float: right;
+	padding-top: 10px;
+	padding-right: 5px;
+	width: 20px;
 }

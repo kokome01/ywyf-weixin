@@ -1,0 +1,571 @@
+* {
+	font-family: "微软雅黑";
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	color: #666;
+}
+
+body {
+	background-color: white;
+}
+
+li {
+	display: inline;
+}
+
+textarea {
+	width: 100%;
+	outline: none;
+	resize: none
+}
+
+table {
+	border-spacing: 0px;
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background-color: #fff;
+}
+
+.ovfHiden {
+	overflow: hidden;
+	height: 100%;
+}
+
+
+/*input{border: none;}*/
+
+input:focus {
+	color: #666;
+	border: 1px solid #f1f1f1;
+	background-color: #fff;
+	outline: none;
+}
+
+.head {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	background-color: #0a79e5;
+	z-index: 500;
+	height: 46px;
+}
+
+.head_l {
+	text-align: center;
+	padding: 10px 0px;
+	position: relative;
+}
+
+.back {
+	float: left;
+	position: absolute;
+	left: 13px;
+	top: 7px;
+}
+
+.back img {
+	width: 25px;
+}
+
+.login_head {
+	font-size: 16px;
+	color: #FFFFFF;
+}
+
+.register_on {
+	position: absolute;
+	right: 15px;
+	top: 10px;
+	color: #FFFFFF;
+}
+
+
+/*body*/
+
+.body {
+	margin: 45px 0px;
+	background-repeat:no-repeat;
+}
+
+.hospital_detailed {
+	margin: auto;
+	padding: 6px 10px;
+	padding-bottom: 15px;
+	position: relative;
+	min-height: 80px;
+	background-image: url(../img/11.jpg);
+	background-color: #0a79e5;
+	background-repeat:no-repeat;
+}
+
+.hospital_detailed>img {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	border: 1px solid #fff;
+}
+
+.hospital_detailed_text {
+	margin-left: 90px;
+	margin-right: 30px;
+}
+
+.hospital_name {
+	font-size: 16px;
+	margin-bottom: 5px;
+	min-height: 40px;
+	color: #fff;
+	font-weight:800 ;
+}
+
+.hospital_window {
+	padding: 20px 0px 20px 0px;
+	display: flex;
+	border-bottom: 5px solid #f1f1f1;
+}
+
+.home_img {
+	height: 80px;
+	flex: 1 1 auto;
+	text-align: center;
+	color: #fff;
+}
+
+.home_img p {
+	margin-top: 5px;
+}
+
+.hospital_tel {
+	color: #fff;
+}
+
+.hospital_tel span {
+	color: #fff;
+}
+
+.hospital_address {
+	color: #fff;
+}
+
+.home_a {
+	display: inline-block;
+	height: 3.4em;
+	width: 3.4em;
+	flex: 1 1 auto;
+	background-image: url(../img/home1.png);
+	background-repeat: no-repeat;
+	background-size: 95px 140px;
+	border-radius: 10px;
+}
+
+.home_canteen a {
+	background-position: 0px 0px;
+	border-radius: 10px;
+}
+
+.home_img_blue {
+	display: inline-block;
+	border-radius: 10px;
+	background-color: #cdcdcd;
+}
+
+.home_img_red {
+	display: inline-block;
+	border-radius: 10px;
+	background-color: #cdcdcd;
+}
+
+.home_img_green {
+	display: inline-block;
+	border-radius: 10px;
+	background-color: #cdcdcd;
+}
+
+.home_shop a {
+	background-position: 0px -93px;
+}
+
+.home_pharmacy a {
+	background-position: 0px -47px;
+}
+
+.hospital_introduce {
+	padding: 10px;
+	border-bottom: 5px solid #f1f1f1;
+}
+
+.introduce_h1 {
+	border-bottom: 1px dashed #666;
+}
+
+.introduce_h1 span {
+	border-left: 5px solid #0a79e5;;
+	display: inline-block;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	font-size: 16px;
+}
+
+.introduce_txt {
+	min-height: 54px;
+	text-indent: 2em;
+	padding: 5px;
+	margin-bottom: 10px;
+	color: #999;
+}
+
+.introduce_but {
+	padding: 5px;
+	text-align: center;
+	border: 1px dashed #666;
+	background-color: #0a79e5;
+	color: #fff;
+}
+
+.introduce_hide {
+	height: 54px;
+	overflow: hidden;
+}
+/**/
+.hospital_medicine{
+	background-color: #f1f1f1;
+	padding: 10px;
+}
+
+/**/
+.hospital_pharmacy{
+	width: 40px;
+	height: 100%;
+	background-color: rgba(0,0,0,0.3);
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	text-align: center;
+}
+.hospital_pharmacy_f{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	margin-top:-27px;
+	margin-left:-11px ;
+}
+.hospital_pharmacy img{
+	width: 20px;
+	height: 20px;
+}
+.hospital_pharmacy p{
+	color: #fff;
+	font-size:12px ;
+}
+/*科室*/
+.office_ul{
+	display: flex;
+}
+.office_li_hide{
+	opacity: 0;
+}
+.doc_hide{
+	display: none;
+}
+.doc_zero{
+	text-align: center;
+	color: #999;
+}
+.office_li{
+	width: 80px;
+	text-align: center;
+	flex: 1 1 auto;
+	display: inline-block;
+	background-color: #fff;
+	color: #666;
+	padding: 3px 3px;
+	border-radius:2px ;
+	margin:10px 5px;
+	border: 1px solid #cdcdcd;
+}
+.office_li_on{
+	background-color: #0A79E5;
+	color: #fff;
+	border: 1px solid #fff;
+}
+.hospital_medicine{
+	background-color: #fff;
+	position: relative;
+	border-bottom: 5px solid #f1f1f1;
+}
+.medicine_ul{
+	display: flex;
+}
+.medicine_li{
+	width: 80px;
+	flex: 1 1 auto;
+	text-align: center;
+}
+.medicine_li p {
+	margin-top: 10px;
+	font-size: 12px;
+}
+.i_medicine{
+	border: 1px solid #cdcdcd;
+	display: inline-block;
+	border-radius:10px; ;
+	width: 50px;
+	height: 50px;
+}
+
+.hospital_departments{
+	text-align: center;
+	margin-top: 10px;
+}
+.i_departments{
+	display: block;
+	width: 25px;
+	height: 20px;
+	background-image: url(../img/departments.png);
+	background-repeat: no-repeat;
+	background-size: 25px 25px;
+	margin:15px auto 2px;
+}
+/*pop*/
+.black_pop{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 800;
+	display: none;
+}
+.pop_box{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	display: none;
+}
+.department_pop{
+	position:absolute;
+	right: -300px;
+	width: 300px;
+	height: 100%;
+	background-color: #fff;
+}
+.department_pop_h{
+	padding: 10px;
+    text-align: center;
+    background-color: #f1f1f1;
+    position: relative;
+}
+.department_pop_h span:first-child{
+	float: left;
+}
+.department_pop_b{
+	display: flex;
+	margin-top: 1px;
+	height: 100%;
+}
+.department_ul{
+	display: block;
+	width: 100px;
+	height: 100%;
+	text-align: center;
+	background-color: #f1f1f1;
+}
+.department_li{
+	display: block;
+	padding: 10px;
+	border-bottom: 3px solid #fff;
+	background-color: #f1f1f1;
+}
+.department_li_on{
+	background-color: #fff;
+	border-left: 5px solid #0a79e5;
+}
+.doctor_ul_box{
+	flex: 1 1 auto;
+	background-color: #fff;
+	padding: 10px;
+	height: 100%;
+	text-align: center;
+}
+.doctor_li{
+	display: block;
+	height: 50px;
+	padding: 5px;
+	position: relative;
+}
+.doctor_img{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+}
+.doctor_content{
+	line-height: 35px;
+	margin-left: 60px;
+}
+.medicine_most{
+	float: right;
+}
+.zero_img{
+	width: 60px;
+	height: 60px;
+	margin-top: 60px;
+	display:none;
+}
+.medicine_zero{
+	margin: 10px 30px;
+	color: #999;
+}
+/*科室*/
+.hospital_department{
+	padding: 10px;
+	border-bottom:5px solid #f1f1f1 ;
+}
+.department_min_ul{
+	display: flex;
+}
+.department_min_li{
+	flex: 1 1 auto;
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom:5px;
+}
+.department_min_img1{
+	background-image: url(../img/department.jpg);
+	background-repeat: no-repeat;
+	background-size: 200px 200px;
+	background-position: 0px 0px;
+}
+.department_min_img2{
+	background-image: url(../img/department.jpg);
+	background-repeat: no-repeat;
+	background-size: 200px 200px;
+	background-position: -50px 0px;
+}
+.department_min_img3{
+	background-image: url(../img/department.jpg);
+	background-repeat: no-repeat;
+	background-size: 200px 200px;
+	background-position:-100px 0px ;
+}
+.department_min_img4{
+	background-image: url(../img/department.jpg);
+	background-repeat: no-repeat;
+	background-size: 200px 200px;
+	background-position:-150px 0px ;
+}
+.department_min_img0{
+	background-image: url(../img/department.jpg);
+	background-repeat: no-repeat;
+	background-size: 200px 200px;
+	background-position: -0px -50px;
+}
+.department_min_span{
+    display: inline-block;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+}
+.department_min_span label{
+    color: #fff;
+}
+/*科室活动*/
+.dep_item{
+	padding: 10px;
+	border-bottom:5px solid #f1f1f1 ;
+}	
+/*项目*/
+.item_index{
+	margin:10px 0px 20px 0px;
+	display: block;
+	box-shadow: -2px 2px 3px #f1f1f1;
+	border-radius: 5px;
+}
+.item_relax{
+	position: relative;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.item_box{
+	background-color: #fff;
+	border-bottom:5px solid #f1f1f1 ;
+	text-align: left;
+}
+.item_img{
+	height: 160px;
+	width: 100%;
+}
+
+.item_abs{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	min-height: 48px;
+	background-color: rgba(0,0,0,0.6);
+}
+.item_name{
+	color: #fff;
+	margin: 5px 10px;
+	font-size: 14px;
+	font-weight:800;
+}
+.item_details{
+	display: inline-block;
+	float: right;
+	margin-right: 10px;
+	font-size: 14px;
+	color: #cdcdcd;
+}
+.item_other{
+	height: 50px;
+	padding: 5px 10px;
+	display: block;
+	text-align: left;
+	border-bottom:1px solid #f1f1f1 ;
+	position: relative;
+}
+.item_other_p{
+	margin-right: 85px;
+}
+.item_other_img{
+	position: absolute;
+	top: 10px;
+	right: 5px;
+	height: 40px;
+	width: 84px;
+}
+.item_zero{
+	margin-top: 20px;
+	text-align: center;
+	color: #999;
+}
+.activity_head a{
+	color: #ad37c5;
+}
+.activity_head a span{
+	color: #ad37c5;
+	float: right;
+	padding-top: 10px;
+	padding-right: 10px;
+}
+.activity_head a img{
+	float: right;
+	padding-top: 10px;
+	padding-right: 5px;
+	width: 20px;
+}

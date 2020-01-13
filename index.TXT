@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>首页</title>
+		<script src="js/url.js"></script>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/index.js"></script>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+	</head>
+	<body>
+		<!--头部-->
+		<div class="head">
+			<div class="home_text_b" >
+				<img src="img/search.png" class="search_img"/>
+				<div class="home_text_box">
+					<input type="text"  placeholder="康肤美"  id="home_text" class="home_text" onclick="window.location.href='other/search.html'" />
+				</div>
+			</div>
+			<div class="news" onclick="window.location.href='other/login.html'">
+				<span class="news_num">99</span>
+				<img src="img/news.png" class="news_img"/>
+			</div>
+		</div>
+		<!--头部-->
+		
+		<div class="body">
+			<!--滚动图-->
+			<div class="ad_b">
+				<ul class="ad_ul">
+					<li onclick="window.location.href='person/blog.html'">
+						<img src="img/ad1.jpg" class="ad" />
+					</li>
+					<li onclick="window.location.href='person/blog.html'">
+						<img src="img/ad2.jpg" class="ad" />
+					</li>
+					<li onclick="window.location.href='person/blog.html'">
+						<img src="img/ad3.jpg" class="ad" />
+					</li>
+				</ul>
+				<div class="ad_spot_b1">
+					<ul class="ad_spot_b">
+						<li><div class="ad_spot ad_spot1" name="1"></div></li>
+					</ul>
+				</div>
+			</div>
+			<!--滚动图-->
+			<!--快捷键-->
+			<div class="key">
+				<table>
+					<tr>
+						<td>
+							<div class="menu" onclick="window.location.href='other/classification.html?txt=1'">
+								<div class="menu_on1 menu_on">
+									<img src="img/menu (7).png"/>
+								</div>
+								<span>中医西药</span>
+							</div>
+						</td>
+						<td>
+							<div class="menu" onclick="window.location.href='other/classification.html?txt=2'">
+								<div class="menu_on2 menu_on">
+									<img src="img/menu (0).png"/>
+								</div>
+								<span>养生保健</span>
+							</div>
+						</td>
+						<td>
+							<div class="menu" onclick="window.location.href='other/classification.html?txt=3'">
+								<div class="menu_on3 menu_on">
+									<img src="img/menu (5).png"/>
+								</div>
+								<span>医疗器械</span>
+							</div>
+						</td>
+						<td>
+							<div class="menu" onclick="window.location.href='other/classification.html?txt=4'">
+								<div class="menu_on4 menu_on">
+									<img src="img/menu (1).png"/>
+								</div>
+								<span>计生用品</span>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="menu" onclick="window.location.href='other/classification.html?txt=5'">
+								<div class="menu_on5 menu_on">
+									<img src="img/menu (6).png"/>
+								</div>
+								<span>中药饮片</span>
+							</div>
+						</td>
+						<td>
+							<div class="menu" onclick="window.location.href='other/classification.html?txt=6'">
+								<div class="menu_on6 menu_on">
+									<img src="img/menu (2).png"/>
+								</div>
+								<span>医学护肤</span>
+							</div>
+						</td>
+						<td>
+							<div class="menu" onclick="window.location.href='other/classification.html?txt=0'">
+								<div class="menu_on7 menu_on">
+									<img src="img/menu (8).png"/>
+								</div>
+								<span>热门商品</span>
+							</div>
+						</td>
+						<td>
+							<div class="menu" onclick="window.location.href='other/classification.html?txt=0'">
+								<div class="menu_on8 menu_on">
+									<img src="img/menu (9).png"/>
+								</div>
+								<span>全部分类</span>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="hot_new">
+					<span class="hot_new_r">快报</span>
+					<strong>HOT</strong>
+					<div class="hot_new_box">
+						<div class="hot_new_box1">
+							<div class="hot_new_b new_b1">
+								<span>【魅力三月，暖春特惠】特惠20元起！本品用于妊娠和哺乳期妇女、更年期妇女、老年人、儿童等的钙补充剂，并帮助防治骨质疏松症。</span>
+							</div>
+						</div>
+					</div>
+					<a class="hot_new_a">|&nbsp;更多</a>
+				</div>
+			</div>
+			<!--快捷键-->
+			<!--活动-->
+			<div class="activity">
+				<div class="activity_head">
+					<strong>今日推荐</strong>
+				</div>
+				<div class="activity_body">
+					<div class="activity_b_box">
+						<ul class="activity_b_ul">
+							<li>
+								<div class="activity_b_list">
+									<img src="img/TB.jpg"/>
+									<p>1钙尔奇)</p>
+								</div>
+							</li>
+							<li>
+								<div class="activity_b_list">
+									<img src="img/TB.jpg"/>
+									<p>2钙尔奇D 碳酸钙D3咀嚼片(Ⅱ)</p>
+								</div>
+							</li>
+							<li>
+								<div class="activity_b_list">
+									<img src="img/TB.jpg"/>
+									<p>3钙尔奇D 碳酸钙D3咀嚼片(Ⅱ)</p>
+								</div>
+							</li>
+							<li>
+								<div class="activity_b_list">
+									<img src="img/TB.jpg"/>
+									<p>4钙尔奇D 碳酸钙D3咀嚼片(Ⅱ)</p>
+								</div>
+							</li>
+							<li>
+								<div class="activity_b_list">
+									<img src="img/TB.jpg"/>
+									<p>5钙尔奇D 碳酸钙D3咀嚼片(Ⅱ)</p>
+								</div>
+							</li>
+							<li>
+								<div class="activity_b_list">
+									<img src="img/TB.jpg"/>
+									<p>6钙尔奇D 碳酸钙D3咀嚼片(Ⅱ)</p>
+								</div>
+							</li>
+							<li>
+								<div class="activity_b_list">
+									<img src="img/TB.jpg"/>
+									<p>7钙尔奇D 碳酸钙D3咀嚼片(Ⅱ)</p>
+								</div>
+							</li>
+							<li>
+								<div class="activity_b_list">
+									<img src="img/TB.jpg"/>
+									<p>8钙尔奇D 碳酸钙D3咀嚼片(Ⅱ)</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--活动-->
+			<!--中西医药-->
+			<div class="ware">
+				<div class="ware_head">
+					<span class="ware_head_a">中/西/医/药</span>
+					<a href="#"><span>更多</span><img src="img/more.png"/></a>
+				</div>
+				<div class="ware_body">
+					<div class="ware_body1">
+						<div class="ware_list">
+							<img src="img/2017.jpg"/>
+							<p><b>钙 300mg*30片</b></p>
+							<span></span>
+							<p ><span style="color: #FF0000;">￥<b >25.00</b></span></p>
+						</div>
+						<div class="ware_list">
+							<img src="img/2017.jpg"/>
+							<p><b>钙 300mg*30片</b></p>
+							<span></span>
+							<p ><span style="color: #FF0000;">￥<b >25.00</b></span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--中西医药-->
+			<!--养生保健-->
+			<div class="ware">
+				<div class="ware_head">
+					<span class="ware_head_a">养/生/保/健</span>
+					<a href="#"><span>更多</span><img src="img/more.png"/></a>
+				</div>
+				<div class="ware_body">
+					<div class="ware_body2">
+						<div class="ware_list">
+							<img src="img/2017.jpg"/>
+							<p><b>钙尔奇D 碳酸钙D3咀嚼片(Ⅱ) 300mg*30片</b></p>
+							<span>国药准字<span>Z20073016</span></span>
+							<p ><span style="color: #FF0000;">￥<b >25.00</b></span><span class="ware_list_w">销量<label>123</label></span></p>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<!--养生保健-->
+			<!--医疗器械-->
+			<div class="ware">
+				<div class="ware_head">
+					<span class="ware_head_a">医/疗/器/械</span>
+					<a href="#"><span>更多</span><img src="img/more.png"/></a>
+				</div>
+				<div class="ware_body">
+					<div class="ware_body3">
+						<div class="ware_list">
+							<img src="img/2017.jpg"/>
+							<p><b>钙尔奇D 碳酸钙D3咀嚼片(Ⅱ) 300mg*30片</b></p>
+							<span>国药准字<span>Z20073016</span></span>
+							<p ><span style="color: #FF0000;">￥<b >25.00</b></span><span class="ware_list_w">销量<label>123</label></span></p>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<!--医疗器械-->
+			<!--计生用品-->
+			<div class="ware">
+				<div class="ware_head">
+					<span class="ware_head_a">计/生/用/品</span>
+					<a href="#"><span>更多</span><img src="img/more.png"/></a>
+				</div>
+				<div class="ware_body">
+					<div class="ware_body4">
+						<div class="ware_list">
+							<img src="img/2017.jpg"/>
+							<p><b>钙尔奇D 碳酸钙D3咀嚼片(Ⅱ) 300mg*30片</b></p>
+							<span>国药准字<span>Z20073016</span></span>
+							<p ><span style="color: #FF0000;">￥<b >25.00</b></span><span class="ware_list_w">销量<label>123</label></span></p>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<!--计生用品-->
+			<!--中药饮片-->
+			<div class="ware">
+				<div class="ware_head">
+					<span class="ware_head_a">中/药/饮/片</span>
+					<a href="#"><span>更多</span><img src="img/more.png"/></a>
+				</div>
+				<div class="ware_body">
+					<div class="ware_body5">
+						<div class="ware_list">
+							<img src="img/2017.jpg"/>
+							<p><b>钙尔奇D 碳酸钙D3咀嚼片(Ⅱ) 300mg*30片</b></p>
+							<span>国药准字<span>Z20073016</span></span>
+							<p ><span style="color: #FF0000;">￥<b >25.00</b></span><span class="ware_list_w">销量<label>123</label></span></p>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<!--中药饮片-->
+			<!--医学护肤-->
+			<div class="ware">
+				<div class="ware_head">
+					<span class="ware_head_a">医/学/护/肤</span>
+					<a href="#"><span>更多</span><img src="img/more.png"/></a>
+				</div>
+				<div class="ware_body">
+					<div class="ware_body6">
+						<div class="ware_list">
+							<img src="img/2017.jpg"/>
+							<p><b>钙尔奇D 碳酸钙D3咀嚼片(Ⅱ) 300mg*30片</b></p>
+							<span>国药准字<span>Z20073016</span></span>
+							<p ><span style="color: #FF0000;">￥<b >25.00</b></span><span class="ware_list_w">销量<label>123</label></span></p>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<!--医学护肤-->
+		</div>
+		<div class="foot">
+			<div class="container">
+				<div class="center center_good foot_img" >
+					<img src="img/home (1).png"/>
+					<p>首页</p>
+				</div>
+				<div class="center foot_img" onclick="window.location.href='other/classification.html'">
+					<img src="img/list (2).png"/>
+					<p>分类</p>
+				</div>
+				<div class="center foot_img" onclick="window.location.href='other/shop.html'">
+					<img src="img/shop (2).png"/>
+					<p>购物车</p>
+				</div>
+				<div class="center foot_img" onclick="window.location.href='person/person.html'">
+					<img src="img/me (2).png"/>
+					<p>我的</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

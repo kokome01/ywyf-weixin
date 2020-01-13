@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<title>院外药-等待页</title>
+		<meta name="keywords" content="人胎盘片,院外药,处方外配,处方,网上药房"/>
+		<meta name="description" content="院外药为你提供人胎盘片，处方外配服务，便民药店"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		
+		<style type="text/css">
+			* {
+				font-family: "微软雅黑";
+				margin: 0px;
+				padding: 0px;
+				font-size: 14px;
+				color: #666;
+			}
+			body {
+				background-color: #ffdede;
+			}
+			li {
+				display: inline;
+			}
+			textarea {
+				width: 100%;
+				outline: none;
+				resize: none
+			}
+			table {
+				border-spacing: 0px;
+				width: 100%;
+			}
+			a {
+				text-decoration: none;
+			}
+			.ovfHiden {
+				overflow: hidden;
+				height: 100%;
+			}
+			/*input{border: none;}*/
+			input:focus {
+				color: #666;
+				border: 1px solid #f1f1f1;
+				background-color: #fff;
+				outline: none;
+			}
+			.wait_box{
+				text-align: center;
+			}
+			.wait_img{
+				margin-top: 50px;
+				width: 100%;
+			}
+			.wait_p{
+				text-align: center;
+				color: 666;
+				font-size: 16px;
+			}
+			.wait_logo{
+				display: block;
+				margin-top: 50px;
+				width: 60px;
+				height: 60px;
+				margin: auto;
+			}
+			/**/
+			.head{
+				width: 100%;
+				height: 50px;
+				background-color: rgba(0,0,0,0.3);
+				position: absolute;
+				z-index: 10;
+			}
+			.body{
+				text-align: center;
+				margin-bottom: 56px;
+			}
+			.home_text_b{
+				text-align: center;
+				padding:7px 30px 16px 1px;
+			}
+			.home_text_box{
+				background-color: #fff;
+				padding:3px 42px;
+				margin:0px 20px 0px 40px;
+				border-radius:25px ;
+			}
+			.home_text{
+				height: 1.4em;
+				padding: 5px 2px;
+				color: #666;
+				width: 100%;
+				background-color: #fff;
+				border: 0px;
+				border-radius:10px;
+			}
+			.search_img{
+				width: 25px;
+				top:12px;
+				left: 55px;
+				position: absolute;
+			}
+			.news{
+				position: absolute;
+				top:8px;
+				right: 10px;
+				font-size:10px !important;
+				color: #FFFFFF;
+				width: 15px;
+				height: 15px;
+				text-align: center;
+				border-radius:10px ;
+			}
+			.news img{
+				width: 25px;
+				position: absolute;
+				top:6px;
+				right: 8px;
+				z-index: 15;
+			}
+			.foot{
+				background-color: #fff;
+				padding-top: 7px;
+				position: fixed;
+				bottom: 0px;
+				width: 100%;
+			}
+			
+			.container {
+			 	display: flex;    /* 设置为 FlexBox 容器 */
+			 	text-align: center;
+			}
+			.center {
+			  	flex: 1 1 auto;  /* 子集平分 */
+			}
+			.foot_img img{
+				width: 25px;
+			}
+			.center_good p{
+				color: #0b74df;
+			}
+			.foot_img p{
+				font-size: 12px;
+			}
+		</style>
+		<script type="text/javascript">
+			var websocket = null;
+			//判断当前浏览器是否支持WebSocket
+			if('WebSocket' in window) { 
+				// id（user1:doc1） / 消息/ 是否是医生（不用在意）
+				websocket = new WebSocket("ws://www.51ywyf.com/ywyf-weixin/websocket/user"+getQueryVariable("id")+"/我是用户"+getQueryVariable("id")+"/0");
+			} else {
+				alert('当前浏览器 Not support websocket')
+			}
+			//连接发生错误的回调方法
+			websocket.onerror = function() {
+				console.log("WebSocket连接发生错误");
+			};
+	
+			//连接成功建立的回调方法
+			websocket.onopen = function() {
+				console.log("WebSocket连接成功");
+				send("doc10|"+getQueryVariable("id")+"已经添加用户|0")
+			}
+			//接收到消息的回调方法
+			websocket.onmessage = function(event) {
+				console.log(event.data);
+				//接收到药单
+				window.location.replace("http://www.51ywyf.com/ywyfwx/other/prescription_pay.html?id="+getQueryVariable("id"))
+			}
+			//连接关闭的回调方法
+			websocket.onclose = function() {
+				console.log("WebSocket连接关闭")
+			}
+			//监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
+			window.onbeforeunload = function() {
+				closeWebSocket();
+			}
+			//关闭WebSocket连接
+			function closeWebSocket() {
+				websocket.close();
+			}
+			//发送消息
+			function send(message) {
+				/*var message = document.getElementById('text').value; //要发送的消息内容
+				var now = getNowFormatDate(); //获取当前时间
+				document.getElementById('message').innerHTML += (now + "发送人：" + userno + '<br/>' + "---" + message) + '<br/>';
+				document.getElementById('message').style.color = "red";
+				var ToSendUserno = document.getElementById('usernoto').value; //接收人编号：4567*/
+				//message=message+"|"+ToSendUserno  //将要发送的信息和内容拼起来，以便于服务端知道消息要发给谁
+				websocket.send(message);
+			}
+			//获取当前时间
+			function getNowFormatDate() {
+				var date = new Date();
+				var seperator1 = "-";
+				var seperator2 = ":";
+				var month = date.getMonth() + 1;
+				var strDate = date.getDate();
+				if(month >= 1 && month <= 9) {
+					month = "0" + month;
+				}
+				if(strDate >= 0 && strDate <= 9) {
+					strDate = "0" + strDate;
+				}
+				var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate +
+					" " + date.getHours() + seperator2 + date.getMinutes() +
+					seperator2 + date.getSeconds();
+				return currentdate;
+			}
+			//获取到url的参数
+			function getQueryVariable(variable){
+		       var query = window.location.search.substring(1);
+		       var vars = query.split("&");
+		       for (var i=0;i<vars.length;i++) {
+		               var pair = vars[i].split("=");
+		               if(pair[0] == variable){return pair[1];}
+		       }
+		       return(false);
+			}
+		</script>
+	</head>
+	<body>
+		<!--头部-->
+		<div class="head">
+			<div class="home_text_b" >
+				<img src="../img/search.png" class="search_img"/>
+				<div class="home_text_box">
+					<input type="text"  placeholder="搜索你需要的产品"  id="home_text" class="home_text" />
+				</div>
+			</div>
+			<div class="news" >
+				<img src="../img/news.png" class="news_img" />
+			</div>
+		</div>
+		<!--头部-->
+		<div class="wait_box">
+			<img class="wait_img" src="../img/timg1.gif"/>
+			<p class="wait_p">请等待，等候医生推送的药单</p>
+		</div>
+		<div class="foot">
+			<div class="container">
+				<div class="center foot_img" >
+					<img src="../img/home (2).png"/>
+					<p>首页</p>
+				</div>
+				<div class="center foot_img" >
+					<img src="../img/list (2).png"/>
+					<p>分类</p>
+				</div>
+				<div class="center foot_img" >
+					<img src="../img/shop (2).png"/>
+					<p>购物车</p>
+				</div>
+				<div class="center foot_img" >
+					<img src="../img/me (2).png"/>
+					<p>我的</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

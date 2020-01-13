@@ -3,87 +3,21 @@
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>购物车</title>
+		<title>院外药-购物车</title>
+		<meta name="keywords" content="人胎盘片,院外药,处方外配,处方,网上药房"/>
+		<meta name="description" content="院外药为你提供人胎盘片，处方外配服务，便民药店"/>
 		<meta name="viewport" content="width=device-width" />
 		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
 		<script src="../js/jquery-1.8.3.min.js"></script>
 		<script src="../js/shop.js"></script>
+		<script src="../js/url.js"></script>
 		<link rel="stylesheet" type="text/css" href="../css/shop.css" />
-		<script type="text/javascript">
-			$(document).ready(function() {
-				var strhtml = "",
-					strhtml_i = "",
-					mailFee = ""
-				$.ajax({
-					url: 'http://192.168.0.103/ywyf-weixin/cart/toCart', //地址
-					dataType: "json",
-					type: "post",
-					timeout: 50000,
-					xhrFields: {
-						withCredentials: true
-					}, //跨域产生问题（跨域请求设置withCredentials）登录，退出登录
-					success: function(data) {
-						//console.log(JSON.stringify(data))
-						if(data.status == 1) {
-							
-							for(i = 0; i < data.proShops.length; i++) {
-								for(j = 0; j < data.proShops[i].buyerItems.length; j++) {
-									strhtml_i += '<li class="shop_list_l" uid="'
-										+data.proShops[i].buyerItems[j].sku.id+
-										'"><input type="checkbox" name="" id="" value="" onclick="commodity(this)" uname="0" /><img src="' +
-										data.proShops[i].buyerItems[j].product.pic +
-										'" /><div class="shop_list_text"><p>' +
-										data.proShops[i].buyerItems[j].product.name +
-										'</p><p class="shop_list_t1">规格：<span>' +
-										data.proShops[i].buyerItems[j].sku.spec +
-										'</span></p><p class="shop_list_t2">￥<span>' +
-										data.proShops[i].buyerItems[j].sku.price +
-										'</span></p><div class="shop_list_but"><input type="button" name="" id="" value="-" class="shop_but shop_reduce" onclick="shop_num(this)" /><input type="text" name="" id="" value="' +
-										data.proShops[i].buyerItems[j].amount +
-										'" class="shop_num" /><input type="button" name="" id="" value="+" class="shop_but shop_add" onclick="shop_num(this)" /></div></div></li>'
-								}
-								//运费
-								if(data.proShops[i].buyerItems[0].product.mailFee==null){
-									mailFee="免运费"
-								}
-								else{
-									mailFee="运费：￥"+data.proShops[i].buyerItems[0].product.mailFee
-								}
-								//
-								strhtml += '<div class="shop_list"><div class="shop_list_head"><input type="checkbox" name="" id="" value="" onclick="factory(this)" uname="0" /><span>' +
-									data.proShops[i].phName +
-									'</span><img src="" /><label>'
-									+mailFee+
-									'</label></div><ul class="shop_list_body">' +
-									strhtml_i +
-									'</ul></div>'
-									//清空值
-									strhtml_i = ""
-							}
-							$(".body").empty().append(strhtml);
-							//总计
-							zhonji()
-						} else {
-							alert("请登录");
-							window.location.href = 'login.html'
-						}
-					},
-					error: function(XMLHttpRequest, textStatus, errorThrown) {
-						/*alert(XMLHttpRequest.status);
-						alert(XMLHttpRequest.readyState);
-						alert(textStatus);*/
-						console.log("网络请求失败，请联系网站管理员!");
-					},
-				})
-			})
-		</script>
 	</head>
-
 	<body>
 		<!--头部-->
 		<div class="head">
 			<div class="head_l">
-				<a href="javascript:history.back(-1);" class="back"><img src="../img/left.png" /></a>
+				<a href="javascript:history.back(-1);" class="back" title="返回院外药上一页"><img src="../img/left.png" /></a>
 				<div>
 					<span class="login_head">购物车</span>
 				</div>
@@ -101,53 +35,13 @@
 					<label>已免运费</label>
 				</div>
 				<ul class="shop_list_body">
-				</ul>
-			</div>
-			<div class="shop_list">
-				<div class="shop_list_head">
-					<input type="checkbox" name="" id="" value="" onclick="factory(this)" uname="0" />
-					<span>修正药业</span>
-					<img src="" />
-					<label>已免运费</label>
-				</div>
-				<ul class="shop_list_body">
 					<li class="shop_list_l">
 						<input type="checkbox" name="" id="" value="" onclick="commodity(this)" uname="0" />
-						<img src="../img/2017.jpg" />
+						<img src="../img/mo1.jpg" />
 						<div class="shop_list_text">
-							<p>气温气温无群二无群二无群二无群二无群二无无群二无群二无群二无群二无群二<label class="shop_list_zero">暂无库存</label></p>
-							<p class="shop_list_t1">规格：<span>25g</span></p>
-							<p class="shop_list_t2">￥<span>250.33</span></p>
-							<div class="shop_list_but">
-								<input type="button" name="" id="" value="-" class="shop_but shop_reduce" onclick="shop_num(this)" />
-								<input type="text" name="" id="" value="1" class="shop_num" />
-								<input type="button" name="" id="" value="+" class="shop_but shop_add" onclick="shop_num(this)" />
-							</div>
-						</div>
-
-					</li>
-					<li class="shop_list_l">
-						<input type="checkbox" name="" id="" value="" onclick="commodity(this)" uname="0" />
-						<img src="../img/2017.jpg" />
-						<div class="shop_list_text">
-							<p>气温气温无群二无群二无群二无群二无群二无无群二无群二无群二无群二无群二</p>
-							<p class="shop_list_t1">规格：<span>25g</span></p>
-							<p class="shop_list_t2">￥<span>250.33</span></p>
-							<div class="shop_list_but">
-								<input type="button" name="" id="" value="-" class="shop_but shop_reduce" onclick="shop_num(this)" />
-								<input type="text" name="" id="" value="1" class="shop_num" />
-								<input type="button" name="" id="" value="+" class="shop_but shop_add" onclick="shop_num(this)" />
-							</div>
-						</div>
-
-					</li>
-					<li class="shop_list_l">
-						<input type="checkbox" name="" id="" value="" onclick="commodity(this)" uname="0" />
-						<img src="../img/2017.jpg" />
-						<div class="shop_list_text">
-							<p>气温气温无群二无群二无群二无群二无群二无无群二无群二无群二无群二无群二</p>
-							<p class="shop_list_t1">规格：<span>25g</span></p>
-							<p class="shop_list_t2">￥<span>250.33</span></p>
+							<p>■■■■■■■■</p>
+							<p class="shop_list_t1">规格：<span>■■</span></p>
+							<p class="shop_list_t2">￥<span>■■</span></p>
 							<div class="shop_list_but">
 								<input type="button" name="" id="" value="-" class="shop_but shop_reduce" onclick="shop_num(this)" />
 								<input type="text" name="" id="" value="1" class="shop_num" />
@@ -163,8 +57,8 @@
 			<div class="shop_balance">
 				<div>
 					<input type="checkbox" name="" id="" value="" onclick="big_box()" uname="0" />
-					<p class="shop_balance_t1">总计：<span>￥</span><span class="zhongji">14850.00</span></p>
-					<p class="shop_balance_t2">运费：<span>￥</span><span id="mailFee">10.00</span></p>
+					<p class="shop_balance_t1">总计：<span>￥</span><span class="zhongji">■■</span></p>
+					<p class="shop_balance_t2">运费：<span>￥</span><span id="mailFee">■■</span></p>
 					<p class="shop_balance_t3" style="display: none;">全选</span>
 					</p>
 				</div>
@@ -180,15 +74,19 @@
 					<img src="../img/home (2).png" />
 					<p>首页</p>
 				</div>
-				<div class="center foot_img">
+				<div class="center foot_img" onclick="window.location.href='../other/classification.html'">
 					<img src="../img/list (2).png" />
 					<p>分类</p>
 				</div>
+				<!--<div class="center foot_img" onclick="window.location.href='../store/store_index.html'">
+					<img src="../img/store.png"/>
+					<p>餐厅</p>
+				</div>-->
 				<div class="center center_good foot_img">
 					<img src="../img/shop (1).png" />
 					<p>购物车</p>
 				</div>
-				<div class="center foot_img">
+				<div class="center foot_img" onclick="window.location.href='../person/person.html'">
 					<img src="../img/me (2).png" />
 					<p>我的</p>
 				</div>

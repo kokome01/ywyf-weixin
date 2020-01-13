@@ -240,7 +240,10 @@
 					"other/login.html",
 					"person/person.html"
 				],
-				"refer": [],
+				"refer": [
+					"other/classification.html",
+					"other/drugstores_hospital.html"
+				],
 				"priority": 0
 			},
 			"other/search.html": {
@@ -250,7 +253,9 @@
 					"img/left.png",
 					"img/search.png"
 				],
-				"refer": [],
+				"refer": [
+					"other/drugstores_hospital.html"
+				],
 				"priority": 0
 			},
 			"other/introduction.html": {
@@ -280,7 +285,10 @@
 					"img/2017.jpg",
 					"other/shop.html"
 				],
-				"refer": [],
+				"refer": [
+					"other/prescription.html",
+					"other/choice.html"
+				],
 				"priority": 0
 			},
 			"other/shop.html": {
@@ -294,7 +302,9 @@
 					"other/pay.html",
 					"index.html"
 				],
-				"refer": [],
+				"refer": [
+					"other/login.html"
+				],
 				"priority": 0
 			},
 			"other/pay.html": {
@@ -348,7 +358,9 @@
 					"other/register.html",
 					"other/forget.html"
 				],
-				"refer": [],
+				"refer": [
+					"other/shop.html"
+				],
 				"priority": 0
 			},
 			"other/register.html": {
@@ -373,7 +385,9 @@
 					"other/shop.html",
 					"js/classification.js"
 				],
-				"refer": [],
+				"refer": [
+					"other/choice.html"
+				],
 				"priority": 0
 			},
 			"person/person.html": {
@@ -443,6 +457,40 @@
 					"person/person.html"
 				],
 				"refer": [],
+				"priority": 0
+			},
+			"other/choice.html": {
+				"resources": [],
+				"refer": [
+					"other/introduction.html",
+					"other/classification.html"
+				],
+				"priority": 0
+			},
+			"other/prescription.html": {
+				"resources": [
+					"other/摄像头.html"
+				],
+				"refer": [
+					"other/sss.html",
+					"other/introduction.html"
+				],
+				"priority": 0
+			},
+			"other/drugstores_hospital.html": {
+				"resources": [],
+				"refer": [
+					"other/search.html",
+					"other/drugstores_home.html"
+				],
+				"priority": 0
+			},
+			"other/drugstores_home.html": {
+				"resources": [],
+				"refer": [
+					"other/drugstores_hospital.html",
+					"other/search.html"
+				],
 				"priority": 0
 			}
 		},

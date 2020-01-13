@@ -3,18 +3,27 @@
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>搜索</title>
+		<title>院外药-搜索</title>
+		<meta name="keywords" content="人胎盘片,院外药,处方外配,处方,网上药房"/>
+		<meta name="description" content="院外药为你提供人胎盘片，处方外配服务，便民药店"/>
 		<meta name="viewport" content="width=device-width" />
 		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
 		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/url.js"></script>
 		<link rel="stylesheet" type="text/css" href="../css/search.css" />
 		<link rel="stylesheet" type="text/css" href="../css/no_search.css" />
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".non_cue_name").text(localStorage.search)
+				 localStorage.removeItem('search');
+			})
+		</script>
 	</head>
 
 	<body>
 		<!--头部-->
 		<div class="head">
-			<a href="javascript:history.back(-1);" class="back"><img src="../img/left.png" /></a>
+			<a href="search.html" class="back" title="返回院外药上一页"><img src="../img/left.png" /></a>
 			<div class="home_text_b">
 				<img src="../img/search.png" class="search_img" />
 				<div class="home_text_box">
@@ -28,33 +37,28 @@
 		<div class="body">
 			<div class="non_cue">
 				<img src="../img/nono.png" />
-				<p>很抱歉，您搜索的“<span>生医容美</span>“商品不存在，可能已下架或者被转移。</p>
+				<p>很抱歉，您搜索的“<span class="non_cue_name">■■■■</span>“商品不存在，可能已下架或者被转移。</p>
 				<p>建议你:</p>
 				<p>1.看看输入的文字是否有误</p>
-				<p>2.致电客服：000-0000-000</p>
-				<p>3.为你推荐一些你可能喜欢的内容</p>
+				<p>2.致电客服：0571-8257-6221</p>
 			</div>
-			<div class="non_recommend">
+			<!--
+            	作者：594412874@qq.com
+            	时间：2018-07-13
+            	描述：
+            <div class="non_recommend">
 				<p>为你推荐</p>
 				<ul>
 					<li class="non_recommend_li">
-						<img src="../img/ad3.jpg"/>
+						<img src="../img/mo1.jpg"/>
 						<div class="non_recommend_li_t">
-							<p>同仁堂踩刹车上插上</p>
-							<p>规格：<span>15g</span></p>
-							<p><span>￥</span><span>15.00</span></p>
-						</div>
-					</li>
-					<li class="non_recommend_li">
-						<img src="../img/ad3.jpg"/>
-						<div class="non_recommend_li_t">
-							<p>同仁堂踩刹车上插上</p>
-							<p>规格：<span>15g</span></p>
-							<p><span>￥</span><span>15.00</span></p>
+							<p>■■■■■■</p>
+							<p>规格：<span>■■</span></p>
+							<p><span>￥</span><span>■■</span></p>
 						</div>
 					</li>
 				</ul>
-			</div>
+			</div>-->
 		</div>
 	</body>
 

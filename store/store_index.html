@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>便利店首页</title>
+		<meta name="keywords" content="人胎盘片,院外药,处方外配,处方,网上药房"/>
+		<meta name="description" content="院外药为你提供人胎盘片，处方外配服务，便民药店"/>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/store_index.js"></script>
+		<script src="../js/url.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=134db1b9cf1f1f2b4427210932b34dcb"></script>
+		<link rel="stylesheet" type="text/css" href="../css/store_index.css" />
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="head">
+			<div class="index_head1">
+				<div class="store_img index_i_back" onclick="window.location.href='../index.html'"></div>
+				<p class="index_head">
+					<span id="index_head_name">商超便利&nbsp;&nbsp;&nbsp;|</span>
+					<span id="province">未获取地址</span>
+				</p>
+				<div class="store_img index_i_news" onclick="window.location.href='../person/news.html'"></div>
+				<span class="index_text_t" id="index_text_t">0</span>
+			</div>
+			<div class="index_head2">
+				<div class="index_search">
+					<input type="text" name="" id="" value="" placeholder="这里输入商家商品名称" onclick="window.location.href='store_search.html'" />
+				</div>
+				<div class="store_img index_i_search"></div>
+			</div>
+		</div>
+		<!--头部-->
+		<!--身躯-->
+		<div class="body">
+			<!--<div class="body_ad">
+				<img src="../img/TB.jpg" />
+			</div>-->
+			<div class="body_clas">
+				<span class="body_clas_span body_clas_on" onclick="index_class(this)">综合排序</span>
+				<span class="body_clas_span" onclick="index_class(this)">距离最近</span>
+			</div>
+			<div class="body_list">
+				<ul>
+					<!--<li class="body_li" onclick="window.location.href='store_store.html'">
+						<img src="../img/TB.jpg" class="body_li_img" />
+						<div class="body_li_text">
+							<p class="body_li_h1">全家便利店（民和路）</p>
+							<p class="body_li_h2"></p>
+							<p class="body_li_h3">月销售<span>25</span>单</p>
+							<p class="body_li_h3">￥<span>25</span>起送&nbsp;|&nbsp;配送费￥<span>3</span><span class="body_li_distance">1.9km</span></p>
+							<div class="body_coupon">
+							</div>
+						</div>
+					</li>
+					<li class="body_li" onclick="window.location.href='store_store.html'">
+						<img src="../img/TB.jpg" class="body_li_img" />
+						<div class="body_li_text">
+							<p class="body_li_h1">全家便利店（民和路）</p>
+							<p class="body_li_h2"><span>食保安</span><span>拒单赔</span><span>开发票</span></p>
+							<p class="body_li_h3">月销售<span>25</span>单</p>
+							<p class="body_li_h3">￥<span>25</span>起送&nbsp;|&nbsp;配送费￥<span>3</span> <span class="body_li_distance">1.9km</span></p>
+							<div class="body_coupon">
+								<p class="body_li_h3"><label class="body_li_symbol body_li_h3_jian">减</label>在线支付满<span>39</span>元减<span>10</span></p>
+								<p class="body_li_h3"><label class="body_li_symbol body_li_h3_shou">首</label>新用户下单立减<span>39</span>元（不包括其他活动共享）</p>
+							</div>
+						</div>
+					</li>-->
+				</ul>
+			</div>
+		</div>
+		<!--身躯-->
+		<!--脚部-->
+		<div class="foot">
+			<div class="container">
+				<a class="center foot_img center_good" href="#">
+					<div class="store_img index_i_index"></div>
+					<p>商超</p>
+				</a>
+				<a class="center foot_img" href="store_shop.html">
+					<div class="store_img index_i_shop"></div>
+					<p>购物车</p>
+				</a>
+				<a class="center foot_img" href="store_order.html">
+					<div class="store_img index_i_order"></div>
+					<p>订单</p>
+				</a>
+				<a class="center foot_img " onclick="set_up()">
+					<div class="store_img index_i_set"></div>
+					<p>设置</p>
+				</a>
+			</div>
+		</div>
+		<!--脚部-->
+		<!--弹框-->
+		<div class="set_up" id="set_up">
+			<a href="store_collection.html">我的收藏</a>
+			<a href="../other/adddress.html">管理地址</a>
+			<a href="../index.html">返回首页</a>
+		</div>
+	</body>
+
+</html>

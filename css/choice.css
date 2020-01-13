@@ -66,8 +66,8 @@ input:focus {
 .back {
 	float: left;
 	position: absolute;
-	left: 15px;
-	top: 5px;
+	left: 13px;
+	top: 7px;
 }
 
 .back img {
@@ -115,7 +115,7 @@ input:focus {
 .choice_li {
 	padding: 10px 0px;
 	height: 83px;
-	display: inline-block;
+	display: block;
 	border-bottom: 1px solid #f1f1f1;
 }
 
@@ -131,7 +131,7 @@ input:focus {
 }
 
 .choice_p p:nth-child(1) {
-	height: 40px;
+	height: 60px;
 	overflow: hidden;
 }
 
@@ -219,7 +219,11 @@ input:focus {
 	text-align: center;
 	background-color: #f1f1f1;
 }
-
+.choice_pop2 ul{
+	overflow: scroll;
+	display: block;
+	overflow-x:hidden;
+}
 .choice_pop_h1 {
 	float: left;
 }
@@ -254,4 +258,43 @@ input:focus {
 	color: #fff;
 	padding: 10px 40px;
 	display: inline-block;
+}
+/*non*/
+.non_cue {
+	width: 250px;
+	margin: auto;
+	text-align: left;
+	position: relative;
+	margin-top: 20px;
+}
+
+.non_cue img {
+	width: 30px;
+	height: 30px;
+	display: block;
+	margin: 20px auto;
+	position: absolute;
+	top: -15px;
+	left: -50px
+}
+
+.non_cue p:nth-child(2) {
+	color: #cc0000;
+}
+
+.non_cue p:nth-child(3) {
+	margin-top: 10px;
+	font-size: 12px;
+}
+
+.non_cue p:nth-child(4) {
+	font-size: 12px;
+}
+
+.non_cue p:nth-child(5) {
+	font-size: 12px;
+}
+
+.non_cue p:nth-child(6) {
+	font-size: 12px;
 }

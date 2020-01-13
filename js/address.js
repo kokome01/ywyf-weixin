@@ -1,3 +1,82 @@
+$(document).ready(function() {
+	//加载地址列表
+	var str = ""
+	var uname = 0
+	$.ajax({
+		url: web_url+'/ywyf-weixin/user/mailList', //地址
+		dataType: "json",
+		type: "post",
+		timeout: 50000,
+		xhrFields: {
+			withCredentials: true
+		},
+		beforeSend:function(XMLHttpRequest){
+			loding1("A1")
+		},
+		success: function(data) {
+			if(data.status == 1) {
+				console.log(JSON.stringify(data))
+				$(".body1 ul").empty()
+				for(i = 0; i < data.mailLists.length; i++) {
+					if(data.mailLists[i].isDefault) {
+						uname = 1
+					} else {
+						uname = 0
+					}
+					str += '<li id="' +
+						data.mailLists[i].id +
+						'"><div class="address_list" uname="' +
+						uname +
+						'" edit="0"><img src="../img/address.png" /><div class="address_list_b"><p><span class="address_name">' +
+						data.mailLists[i].name +
+						'</span><span class="address_phone">' +
+						data.mailLists[i].tel +
+						'</span></p><span class="address_di">' +
+						data.mailLists[i].address +
+						'</span></p></div><div class="address_list_f"><span class="address_gou"></span><span onclick="mo_set(this)">默认地址</span><img src="../img/del.png" /><span onclick="del(this)">删除</span><img src="../img/editor.png" /><span onclick="edit(this)">编辑</span></div></div></li>'
+				}
+				$(".body1 ul").append(str);
+				//判断是否新增，新增表示吧默认设置为最后一个，并且跳转到pay.html页面
+				if(getQueryString("new") == 1) {
+					var len = $(".body1").find("li").length - 1;
+					$.ajax({
+						url: web_url + '/ywyf-weixin/user/setDefault', //地址
+						dataType: "json",
+						type: "post",
+						timeout: 50000,
+						xhrFields: {
+							withCredentials: true
+						},
+						data: 'mailId=' + $(".body1").find("li").eq(len).attr("id"),
+						success: function(data) {
+							//console.log(JSON.stringify(data))
+							window.location.href = "pay.html"
+						},
+						error: function(XMLHttpRequest, textStatus, errorThrown) {
+							console.log("网络请求失败，请联系网站管理员!");
+						},
+					})
+				}else{
+					console.log("不是新增")
+				}
+				//设置默认
+				mo()
+			} else {
+				
+			}
+
+		},
+		complete:function(XMLHttpRequest,textStatus){
+			loding2()
+            // alert('远程调用成功，状态文本值：'+textStatus);
+        },
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			console.log("网络请求失败，请联系网站管理员!");
+		},
+	})
+	//加载默认地址
+	
+})
 window.onload = function() {
 	//默认地址
 	mo()
@@ -29,22 +108,19 @@ function cue_but() {
 	}
 	//ajax
 	$.ajax({
-		url: 'http://192.168.0.103/ywyf-weixin/user/delMailAddr', //地址
+		url: web_url+'/ywyf-weixin/user/delMailAddr', //地址
 		dataType: "json",
 		type: "post",
 		timeout: 50000,
 		xhrFields: {
 			withCredentials: true
 		},
-		data: 'mid='+$(".order_li_del").attr("id")+'&returnUrl=',
+		data: 'mid=' + $(".order_li_del").attr("id") + '&returnUrl=',
 		success: function(data) {
 			window.location.reload()
 			//console.log(JSON.stringify(data))
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			/*alert(XMLHttpRequest.status);
-			alert(XMLHttpRequest.readyState);
-			alert(textStatus);*/
 			console.log("网络请求失败，请联系网站管理员!");
 		},
 	})
@@ -73,6 +149,8 @@ function edit(ob) {
 		"href": "#",
 		"onclick": "back()"
 	})
+	//修改确认按钮
+	$(".register_on").attr("onclick","edit_on()")
 	//取值
 	var name = $(ob).parents(".address_list").find(".address_name").text();
 	var photo = $(ob).parents(".address_list").find(".address_phone").text();
@@ -99,7 +177,7 @@ function edit_on() {
 	}
 	//赋值
 	$.ajax({
-		url: 'http://192.168.0.103/ywyf-weixin/user/mailSOU', //地址
+		url: web_url+'/ywyf-weixin/user/mailSOU', //地址
 		dataType: "json",
 		type: "post",
 		timeout: 50000,
@@ -111,9 +189,6 @@ function edit_on() {
 			window.location.reload();
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			/*alert(XMLHttpRequest.status);
-			alert(XMLHttpRequest.readyState);
-			alert(textStatus);*/
 			console.log("网络请求失败，请联系网站管理员!");
 		},
 	})
@@ -141,6 +216,8 @@ function add() {
 		$("#collect_name").val("");
 		$("#collect_photo").val("");
 		$("#collect_address").val("");
+		//修改确认按钮
+		$(".register_on").attr("onclick","add_on()")
 	} else {
 		$(".cue_box").show()
 		$(".cue_box span").text("地址最多为6个");
@@ -173,7 +250,7 @@ function add_on() {
 		//新增
 		var strhtml = ""
 		$.ajax({
-			url: 'http://192.168.0.103/ywyf-weixin/user/mailSOU', //地址
+			url: web_url+'/ywyf-weixin/user/mailSOU', //地址
 			dataType: "json",
 			type: "post",
 			timeout: 50000,
@@ -183,25 +260,20 @@ function add_on() {
 			data: 'name=' + $("#collect_name").val() + '&tel=' + $("#collect_photo").val() + '&address=' + $("#collect_address").val() + '&mailId=0',
 			success: function(data) {
 				//console.log(JSON.stringify(data))
-				strhtml = '<li><div class="address_list" uname="0" edit="0"><img src="../img/address.png" /><div class="address_list_b"><p><span class="address_name">' +
-					$("#collect_name").val() +
-					'</span><span class="address_phone">' +
-					$("#collect_photo").val() +
-					'</span></p><p ><span class="address_di">' +
-					$("#collect_address").val() +
-					'</span></p></div><div class="address_list_f"><span class="address_gou"></span><span onclick="mo_set(this)">默认地址</span><img src="../img/del.png" /><span onclick="del(this)">删除</span><img src="../img/editor.png" /><span onclick="edit(this)">编辑</span></div></div></li>'
-				$(".body1 ul").append(strhtml);
+				window.location.reload()
 				//清空
 				$("#collect_name").val("");
 				$("#collect_photo").val("");
 				$("#collect_address").val("")
 				//
 				$(".foot_but ").html("<span>新增地址</span>").attr("onclick", "add()");
+				//修改确认按钮
+				$(".register_on").attr("onclick","address_butt()")
+				//设置为默认
+				window.location.href = "adddress.html?new=1"
+				
 			},
 			error: function(XMLHttpRequest, textStatus, errorThrown) {
-				/*alert(XMLHttpRequest.status);
-				alert(XMLHttpRequest.readyState);
-				alert(textStatus);*/
 				console.log("网络请求失败，请联系网站管理员!");
 			},
 		})
@@ -215,21 +287,18 @@ function mo_set(ob) {
 	//ajax
 	//console.log('mailId=' +$(ob).parents("li").attr("id"))
 	$.ajax({
-		url: 'http://192.168.0.103/ywyf-weixin/user/setDefault', //地址
+		url: web_url+'/ywyf-weixin/user/setDefault', //地址
 		dataType: "json",
 		type: "post",
 		timeout: 50000,
 		xhrFields: {
 			withCredentials: true
 		},
-		data: 'mailId=' +$(ob).parents("li").attr("id"),
+		data: 'mailId=' + $(ob).parents("li").attr("id"),
 		success: function(data) {
 			//console.log(JSON.stringify(data))
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			/*alert(XMLHttpRequest.status);
-			alert(XMLHttpRequest.readyState);
-			alert(textStatus);*/
 			console.log("网络请求失败，请联系网站管理员!");
 		},
 	})
@@ -243,5 +312,33 @@ function back() {
 	$(".address_list").attr("edit", "0");
 	$(".foot_but ").html("<span>新增地址</span>").attr("onclick", "add()")
 	setTimeout('$(".back").attr({"href":"javascript:history.back(-1)","onclick":""})', 200);
-
+	setTimeout('$(".register_on").attr({"href":"#","onclick":"address_butt()"})', 200);
+}
+//确认
+function address_butt(){
+	var addressId = "";
+	var addressName = "";
+	var addressAddress = "";
+	var addressTel = "";
+	if(getQueryString("html")==1){
+		var set_address = {};
+		for(i=0;i<$(".address_list").length;i++){
+			if($(".address_list").eq(i).attr("uname")==1){
+				addressId = $(".address_list").eq(i).parents("li").attr("id");
+				addressName = $(".address_list").eq(i).parents("li").find(".address_name").text();
+				addressAddress = $(".address_list").eq(i).parents("li").find(".address_di").text();
+				addressTel = $(".address_list").eq(i).parents("li").find(".address_phone").text();
+			}
+		}
+		set_address.addressId = addressId;
+		set_address.addressName = addressName;
+		set_address.addressAddress = addressAddress;
+		set_address.addressTel = addressTel;
+		
+		sessionStorage.set_address = JSON.stringify(set_address)
+		//console.log(sessionStorage.set_address)
+		window.location.href='../store/store_settling.html?spmktId='+getQueryString("spmktId")
+	}else{
+		history.back(-1)
+	}
 }

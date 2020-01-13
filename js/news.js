@@ -5,7 +5,7 @@ $(document).ready(function() {
 	
 	//加载地址列表
 	$.ajax({
-		url: 'http://192.168.0.102/ywyf-weixin/user/msgList', //地址
+		url: web_url+'/ywyf-weixin/user/msgList', //地址
 		dataType: "json",
 		type: "post",
 		timeout: 50000,
@@ -43,26 +43,26 @@ $(document).ready(function() {
 				//判断是否已读
 				isread()
 			} else {
-				alert("请登录");
-				window.location.href = '../other/login.html'
+				/*alert("请登录");
+				window.location.href = '../other/login.html'*/
 			}
 
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			/*alert(XMLHttpRequest.status);
-			alert(XMLHttpRequest.readyState);
-			alert(textStatus);*/
-			console.log("网络请求失败，请联系网站管理员!");
+			getcode()
 		},
 	})
-	//加载默认地址
+	
+	//判断是否为空
+	if($(".body").find(".new_li").length==0){
+		$(".body").html('<div class="payment_zero"></div>')
+	}
 
 })
 //时间戳
 function formatDateTime(inputTime) { var date = new Date(inputTime); var y = date.getFullYear(); var m = date.getMonth() + 1; m = m < 10 ? ('0' + m) : m; var d = date.getDate(); d = d < 10 ? ('0' + d) : d; var h = date.getHours(); h = h < 10 ? ('0' + h) : h; var minute = date.getMinutes(); var second = date.getSeconds(); minute = minute < 10 ? ('0' + minute) : minute; second = second < 10 ? ('0' + second) : second; return y + '-' + m + '-' + d+' '+h+':'+minute+':'+second; }
 //
 function del(ob) {
-	
 	$(ob).parent(".new_li").addClass("del_shop_list");
 	$(".black").show();
 }
@@ -71,7 +71,7 @@ function read_top(ob) {
 	if($(ob).attr("untf") == 0) {
 		//ajax
 		$.ajax({
-			url: 'http://192.168.0.102/ywyf-weixin/user/modifyMsgStatus', //地址
+			url: web_url+'/ywyf-weixin/user/modifyMsgStatus', //地址
 			dataType: "json",
 			type: "post",
 			timeout: 50000,
@@ -86,10 +86,7 @@ function read_top(ob) {
 				isread()
 			},
 			error: function(XMLHttpRequest, textStatus, errorThrown) {
-				/*alert(XMLHttpRequest.status);
-				alert(XMLHttpRequest.readyState);
-				alert(textStatus);*/
-				console.log("网络请求失败，请联系网站管理员!");
+				getcode()
 			},
 		})
 		$(ob).attr("untf", "1");
@@ -118,7 +115,7 @@ function cue_but() {
 	$(".black").hide();
 	//ajax
 	$.ajax({
-		url: 'http://192.168.0.102/ywyf-weixin/user/delMsg', //地址
+		url: web_url+'/ywyf-weixin/user/delMsg', //地址
 		dataType: "json",
 		type: "post",
 		timeout: 50000,
@@ -133,10 +130,7 @@ function cue_but() {
 			$(".del_shop_list").remove();
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			/*alert(XMLHttpRequest.status);
-			alert(XMLHttpRequest.readyState);
-			alert(textStatus);*/
-			console.log("网络请求失败，请联系网站管理员!");
+			getcode()
 		},
 	})
 }

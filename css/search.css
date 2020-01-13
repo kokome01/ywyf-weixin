@@ -8,9 +8,8 @@ body{
 	background-color: #fff;
 }
 input:focus{
-	 color: #f1f1f1;
-	 border: 1px solid #fff;
-	 background-color: #f1f1f1;
+	 -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    outline: 0; /*消除获取焦点时的黄色高亮边框*/
 }
 .head{
 	width: 100%;
@@ -117,4 +116,41 @@ input:focus{
 	height: 20px;
 	float: right;
 	margin-right: 0px;
+}
+.search_mode{
+	background-color: #FFF;
+	border: 1px solid #f1f1f1;
+	border-top-right-radius:50px ;
+	border-bottom-right-radius:50px ;
+	width: 50px;
+	height: 21px;
+	position: absolute;
+	top: 8px;
+	right: 50px;
+	padding: 5px;
+	padding-left: 10px;
+	color: #999;
+}
+.search_mode_i{
+	width: 10px;
+}
+.search_mode_list{
+	width: 65px;
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	display: none;
+	z-index: 1000;
+	background-color: #fff;
+}
+.search_mode_list li{
+	display: block;
+	color: #999;
+	border: 1px solid #f1f1f1;
+	padding: 5px 5px;
+	text-align: center;
+}
+.search_mode_list_o{
+	background-color: #0A79E5;
+	color: #fff !important;
 }

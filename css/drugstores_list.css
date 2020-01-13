@@ -1,0 +1,185 @@
+* {
+	font-family: "微软雅黑";
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	color: #666;
+}
+
+body {
+	background-color: white;
+}
+
+li {
+	display: inline;
+}
+
+textarea {
+	width: 100%;
+	outline: none;
+	resize: none
+}
+
+table {
+	border-spacing: 0px;
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background-color: #fff;
+}
+
+.ovfHiden {
+	overflow: hidden;
+	height: 100%;
+}
+
+
+/*input{border: none;}*/
+
+input:focus {
+	color: #666;
+	border: 1px solid #f1f1f1;
+	background-color: #fff;
+	outline: none;
+}
+
+.head {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	background-color: #fff;
+	z-index: 500;
+}
+
+.head_l {
+	text-align: center;
+	padding: 10px 0px;
+	position: relative;
+	border-bottom: 8px solid #f1f1f1;
+}
+
+.back {
+	float: left;
+	position: absolute;
+	left: 13px;
+	top: 7px;
+}
+
+.back img {
+	width: 25px;
+}
+
+.login_head {
+	font-size: 16px;
+}
+
+.register_on {
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}
+
+
+/*body*/
+
+.body {
+	margin: 50px 0px;
+}
+.drugstores_li>div{
+	position: relative;
+	padding: 10px;
+	border-bottom:1px solid #F1F1F1;
+	min-height:80px ;
+}
+.drugstores_img{
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	
+}
+.drugstores_text{
+	margin-left: 90px;
+}
+.drugstores_collect{
+	color: #cc0000;
+}
+.drugstores_distance{
+	float: right;
+}
+.drugstores_price{
+	color: #cc0000;
+}
+.drugstores_price span{
+	color: #cc0000;
+}
+.drugstores_address{
+	height: 20px;
+	overflow: hidden;
+}
+.hospital_address{
+	height: 20px;
+	overflow: hidden;
+}
+.drugstores_class{
+	margin-top: 5px;
+	border-bottom: 5px solid #f1f1f1;
+}
+.drugstores_class_ul{
+	padding:0px 10px;
+	display: flex;
+}
+.drugstores_class_li{
+	background-color: #F1F1F1;
+	padding: 10px;
+	margin: 5px;
+	flex: 1 1 auto; 
+	text-align: center;
+}
+.drugstores_li{
+	display: block;
+	min-height:100px ;
+}
+/*non*/
+.non_cue {
+	width: 250px;
+	margin: auto;
+	text-align: left;
+	position: relative;
+	margin-top: 20px;
+}
+
+.non_cue img {
+	width: 30px;
+	height: 30px;
+	display: block;
+	margin: 20px auto;
+	position: absolute;
+	top: -15px;
+	left: -50px
+}
+
+.non_cue p:nth-child(2) {
+	color: #cc0000;
+}
+
+.non_cue p:nth-child(3) {
+	margin-top: 10px;
+	font-size: 12px;
+}
+
+.non_cue p:nth-child(4) {
+	font-size: 12px;
+}
+
+.non_cue p:nth-child(5) {
+	font-size: 12px;
+}
+
+.non_cue p:nth-child(6) {
+	font-size: 12px;
+}

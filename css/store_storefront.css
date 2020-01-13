@@ -1,0 +1,216 @@
+		* {
+			font-family: "微软雅黑";
+			margin: 0px;
+			padding: 0px;
+			font-size: 14px;
+			color: #666;
+		}
+		
+		body {
+			background-color: white;
+		}
+		
+		li {
+			display: inline;
+		}
+		
+		textarea {
+			width: 100%;
+			outline: none;
+			resize: none;
+		}
+		
+		table {
+			border-spacing: 0px;
+			width: 100%;
+		}
+		
+		a {
+			text-decoration: none;
+		}
+		
+		body {
+			background-color: #fff;
+		}
+		
+		.ovfHiden {
+			overflow: hidden;
+			height: 100%;
+		}
+		/*input{border: none;}*/
+		
+		input:focus {
+			color: #666;
+			border: 1px solid #f1f1f1;
+			background-color: #fff;
+			outline: none;
+		}
+		/*综合图标*/
+		
+		.store_img {
+			background-image: url(../img/便利店标签.png);
+		}
+		
+		.head {
+			width: 100%;
+			z-index: 500;
+			background-color: #454a50;
+			position: relative;
+			position: fixed;
+			top: 0px;
+		}
+		
+		.head span {
+			color: #fff;
+		}
+		.index_i_back {
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			top: 8px;
+			left: 5px;
+			background-position: -150px -30px;
+			background-repeat: no-repeat;
+			background-size: 240px 150px;
+		}
+		
+		.index_head {
+			text-align: center;
+			font-size: 16px;
+			padding: 15px;
+		}
+		
+		.index_head span:nth-child(1) {
+			padding: 10px;
+			font-size: 16px;
+		}
+		.index_head2{
+			color: #fff;
+			font-size: 14px;
+			position: absolute;
+			top: 16px;
+			right: 10px;
+		}
+		.font_12{
+			font-size: 12px;
+			color: #999;
+			padding: 5px 0px;
+		}
+		/*body*/
+		
+		.body {
+			margin-top: 50px;
+			margin-bottom: 10px;
+			position: relative;
+		}
+		.body_details{
+			padding:10px;
+			border-bottom:8px solid #f1f1f1 ;
+		}
+		.body_details b{
+			display: inline-block;
+			padding-bottom: 3px;
+		}
+		.body_details1{
+			text-align: center;
+		}
+		.store_logo{
+			width: 80px;
+			height: 80px;
+			border:1px solid #fff ;
+			box-shadow: 0px 0px 10px #f1f1f1;
+			margin: 10px;
+		}
+		.body_details1 p{
+			padding:5px ;
+		}
+		.index_i_grade{
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			background-position: -30px -30px;
+			background-repeat: no-repeat;
+			background-size: 120px 75px;
+		}
+		.storefront_grade{
+			display: inline-block;
+		}
+		.storefront_notice{
+			text-align: left;
+		}
+		.distribution_mode{
+			background-color: #0A79E5;
+			color: #fff;
+			font-size: 10px;
+			padding: 0px 5px;
+			margin: 5px 10px 5px 0px;
+		}
+		.body_li_h3{
+			font-size:12px ;
+			color: #999;
+			margin: 5px 0px;
+		}
+		.body_li_h3 span{
+			font-size:12px ;
+			color: #999;
+		}
+		.body_li_symbol {
+			display: inline-block;
+			text-align: center;
+			font-size: 12px;
+			color: #fff;
+			width: 18px;
+			height: 18px;
+			margin-right: 5px;
+			border-radius: 3px;
+		}
+		
+		.body_li_h3_jian {
+			background-color: #ea6953;
+		}
+		
+		.body_li_h3_shou {
+			background-color: #62a710;
+		}
+		.storefront_information{
+			padding: 10px 0px;
+			border-top:1px solid #f1f1f1 ;
+		}
+		.storefront_information>.font_12{
+			float: right;
+			margin-right: 10px;
+			padding: 0px;
+		}
+		.body_details4{
+			padding-bottom:0px;
+		}
+		.storefront_scene{
+			text-align: left;
+		}
+		.storefront_scene img{
+			width: 80px;
+			height: 80px;
+		}
+		.index_i_next{
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			top: -5px;
+			right: 5px;
+			background-position: -30px -30px;
+			background-repeat: no-repeat;
+			background-size: 240px 150px;
+		}
+		.storefront_aptitude{
+			position: relative;
+		}
+		.storefront_report{
+			position: relative;
+		}
+		.aptitude_images{
+			padding-top: 10px;
+		}
+		.aptitude_images img{
+			width: 80px;
+			height: 80px;
+		}

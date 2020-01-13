@@ -66,8 +66,8 @@ input:focus {
 .back {
 	float: left;
 	position: absolute;
-	left: 15px;
-	top: 5px;
+	left: 13px;
+	top: 7px;
 }
 
 .back img {
@@ -88,7 +88,7 @@ input:focus {
 /*body*/
 
 .body {
-	margin: 85px 0px;
+	margin: 50px 0px;
 }
 
 .order_head {
@@ -127,6 +127,7 @@ input:focus {
 .order_name {
 	margin-left: 70px;
 	height: 60px;
+	position: relative;
 }
 
 .order_name p {
@@ -196,11 +197,19 @@ input:focus {
 	font-size: 12px;
 }
 
-.order_name p:nth-child(1) {
+.order_name p:nth-child(2) {
 	height: 40px;
 	display: block;
+	padding-right:80px ;
 }
-
+.order_status{
+	position: absolute;
+	top: 3px;
+	right: 10px;
+	color: #cdcdcd;
+	font-size:12px ;
+	width: 70px;
+}
 
 /*cue*/
 

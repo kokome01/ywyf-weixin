@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>院外药-医院详情</title>
+		<meta name="keywords" content="人胎盘片,院外药,医院列表,医院,湖南医院"/>
+		<meta name="description" content="院外药为你提供人胎盘片，处方外配服务，便民药店"/>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/url.js"></script>
+		<script src="../js/drugstores_home.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/drugstores_home.css" />
+	</head>
+
+	<body>
+		<div class="black_pop" id="black_pop"></div>
+		<div class="pop_box" id="pop_box">
+			<div class="department_pop">
+				<div class="department_pop_h">
+					<span onclick="pop_hide()">取消</span>
+					<span>科室选择</span>
+				</div>
+				<div class="department_pop_b">
+					<ul class="department_ul">
+						<li class="department_li department_li_on" onclick="department_li(this,0)">全部</li>
+					</ul>
+					<div class="doctor_ul_box">
+						<ul class="doctor_ul">
+							<!--<li class="doctor_li" typeId="1">
+								<img src="../img/1455356212095395900-1.jpg" class="doctor_img"/>
+								<div class="doctor_content">
+									<p class="doctor_name">曹雪芹主任</p>
+								</div>
+							</li>-->
+						</ul>
+						<img src="../img/zero.png" class="zero_img"/>
+					</div>
+				</div>
+					
+			</div>
+		</div>
+		<!--头部-->
+		<div class="head">
+			<div class="head_l">
+				<a href="drugstores_hospital.html" title="返回院外药上一页"  class="back" ><img src="../img/left(1).png" /></a>
+				<div>
+					<span class="login_head">医院详情</span>
+				</div>
+				<div>
+					<a href="search.html?search=1" class="register_on">搜索医院</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="body">
+			<div class="hospital_detailed">
+				<img src="../img/2017.jpg" id="hospital_img" onerror="javascript:this.src='../img/2017.jpg'" />
+				<div class="hospital_detailed_text">
+					<p class="hospital_name" id="hospital_name">-</p>
+					<p class="hospital_tel">电话：<span id="hospital_tel">-</span></p>
+					<p class="hospital_address" id="hospital_address">-</p>
+				</div>
+				<div class="hospital_pharmacy" >
+					<div class="hospital_pharmacy_f">
+						<img src="../img/menu (7).png" alt="" />
+						<p>关联</p>
+						<p>药店</p>
+					</div>
+				</div>
+			</div>
+			<!--<div class="hospital_window" >
+				<div class="home_img home_canteen" onclick="store_index(1)">
+					<div class="home_img_blue">
+						<a href="#" class=" home_a"></a>
+					</div>
+					<p>医院餐厅</p>
+				</div>
+				<div class="home_img home_shop" onclick="store_index(0)">
+					<div class="home_img_red">
+						<a href="#" class=" home_a"></a>
+					</div>
+					<p>便利超市</p>
+				</div>
+				<div class="home_img home_pharmacy">
+					<div class="home_img_green">
+						<a href="#" class="home_a"></a>
+					</div>
+					<p>便民药店</p>
+				</div>
+			</div>-->
+			<div class="hospital_department">
+				<p class="introduce_h1"><span>科室</span> <label class="medicine_most" onclick="pop_show()">查看更多科室>></label></p>
+				<ul class="department_min_ul">
+					<!--<li class="department_min_li" onclick="department_detailed(0)">
+						<span class="department_min_span department_min_img1">
+							<label>皮肤科</label>
+						</span>
+					</li>-->
+				</ul>
+				<p class="medicine_zero">暂时未添加科室</p>
+				<!--<div class="hospital_departments" id="">
+					<i></i>
+					<div class="introduce_but">
+						查看更多
+					</div>
+				</div>-->
+			</div>
+			<div class="hospital_medicine">
+				<p class="introduce_h1"><span>医生</span> <label class="medicine_most" onclick="pop_show()">查看更多医生>></label></p>
+				<ul class="office_ul">
+					
+				</ul>
+				<p class="medicine_zero">暂时未添加科室</p>
+				<ul class="medicine_ul">
+					<!--<li class="medicine_li">
+						<i class="i_medicine i_cosmetology"></i>
+						<p>美容科</p>
+					</li>-->
+				</ul>
+				<p class="doc_zero">此科室暂时未添加医生</p>
+				<!--<div class="hospital_departments" id="">
+					<i></i>
+					<div class="introduce_but">
+						查看更多
+					</div>
+				</div>-->
+			</div>
+			<div class="dep_item">
+				<p class="introduce_h1"><span>科室项目</span><label class="medicine_most" onclick="item_most()">查看更多项目></label></p>
+				<div class="item_index" id="item_index">
+					<div class="item_relax" id="item_relax" onclick="item(0)">
+						<img class="item_img" id="item_img" src="img/ad3.jpg" onerror="javascript:this.src='../img/ad1.jpg'"/>
+						<div class="item_abs">
+							<p class="item_name" id="item_name">0</p>
+						</div>
+					</div>
+					<ul class="item_ul" id="item_ul">
+						<!--<li class="item_other">
+							<p class="item_other_p">激光美容激光美容容激光美容激光美容激光美容激光美容激光美容激光美容激光美容激光美容激光美容激光美容激光美容</p>
+							<img class="item_other_img" src="img/ad1.jpg"/>
+						</li>-->
+					</ul>
+				</div>
+				<p class="item_zero" id="item_zero">暂时未开展项目</p>
+			</div>
+			<div class="hospital_introduce">
+				<p class="introduce_h1"><span>简介</span></p>
+				<p class="introduce_txt introduce_hide" id="hospital_content"></p>
+				<p class="introduce_but" id="introduce_but" onclick="introduce_hos()" int="0">查看详情</p>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,162 @@
+		* {
+			font-family: "微软雅黑";
+			margin: 0px;
+			padding: 0px;
+			font-size: 14px;
+			color: #666;
+		}
+		
+		body {
+			background-color: white;
+		}
+		
+		li {
+			display: inline;
+		}
+		
+		textarea {
+			width: 100%;
+			outline: none;
+			resize: none
+		}
+		
+		table {
+			border-spacing: 0px;
+			width: 100%;
+		}
+		
+		a {
+			text-decoration: none;
+		}
+		
+		body {
+			background-color: #f1f1f1;
+		}
+		
+		.ovfHiden {
+			overflow: hidden;
+			height: 100%;
+		}
+		/*input{border: none;}*/
+		
+		input:focus {
+			color: #666;
+			border: 1px solid #f1f1f1;
+			background-color: #fff;
+			outline: none;
+		}
+		/*综合图标*/
+		
+		.store_img {
+			background-image: url(../img/便利店标签.png);
+		}
+		
+		.head {
+			width: 100%;
+			background-color: #fff;
+			position: fixed;
+			top: 0px;
+			width: 100%;
+			height: 50px;
+			background-color: #fff;
+			z-index: 200;
+			border-bottom: 1px solid #F1F1F1;
+		}
+		
+		.head span {
+			color: #000;
+		}
+		.index_head {
+			text-align: center;
+			font-size: 16px;
+			padding: 15px;
+			
+		}
+		
+		.index_head span:nth-child(1) {
+			padding: 10px;
+			font-size: 16px;
+		}
+		.index_i_back {
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			top: 8px;
+			left: 5px;
+			background-position: -120px -30px;
+			background-repeat: no-repeat;
+			background-size: 240px 150px;
+			z-index: 500;
+		}
+		/*body*/
+		.body{
+			padding: 10px;
+			margin: 50px 0px;
+		}
+		.collection_li{
+			display: block;
+			background-color: #fff;
+			position: relative;
+			margin-bottom: 10px;
+		}
+		.collection_li>img{
+			width: 60px;
+			height: 60px;
+			margin: 10px;
+			position: absolute;
+			top: 0px;
+		}
+		.collection_text{
+			margin-left:70px ;
+			padding: 10px;
+			position: relative;
+			min-height: 60px;
+		}
+		.collection_name{
+			color: #000;
+			font-size:15px ;
+			margin-bottom:5px ;
+		}
+		.collection_cancel{
+			float: right;
+		}
+		.collection_i_xin{
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 30px;
+			left: 10px;
+			background-position: -40px -40px;
+			background-repeat: no-repeat;
+			background-size: 160px 100px;
+			z-index: 500;
+		}
+		.collection_grade{
+			color: #FFB400;
+			margin-left: 25px;
+		}
+		.collection_t{
+			color: #999;
+			font-size:12px ;
+		}
+		.collection_t span{
+			color: #999;
+			font-size:12px ;
+		}
+		.collection_dispatching_style{
+			background-color: #0A79E5;
+			color: #fff !important;
+			padding: 1px 3px;
+			float: right;
+		}
+		.collection_range{
+			float: right;
+			margin-left:10px;
+		}
+		.collection_storefront{
+			width: 70%;
+			height: 97px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}

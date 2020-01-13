@@ -1,3 +1,48 @@
+$(document).ready(function() {
+	var sex = "",
+		age = "",
+		pic = "../img/tou.png";
+	//加载地址列表
+	$.ajax({
+		url: web_url + '/ywyf-weixin/user/info', //地址
+		dataType: "json",
+		type: "post",
+		timeout: 50000,
+		xhrFields: {
+			withCredentials: true
+		},
+		success: function(data) {
+			console.log(JSON.stringify(data))
+			//赋值
+			if(data.status == 1) {
+				//头像
+				if(data.user.pic != null) {
+					pic = data.user.pic
+				}
+				//性别
+				if(data.user.sex != null) {
+					if(data.user.sex == 0) {
+						sex = "女"
+					} else {
+						sex = "男"
+					}
+				}
+				//console.log(JSON.stringify(data));
+				$(".safety_image").attr("src", pic)
+				$(".safety_name").find(".safety_val").text(data.user.nickname);
+				$(".safety_sexuality").find(".safety_val").text(sex);
+				$("#login_name").val(data.user.tel)
+				//如果是医生端1地址管理隐藏，如果是用户端0地址管理显示
+
+			} else {
+				console.log("状态为0")
+			}
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			getcode()
+		},
+	})
+})
 window.onload = function() {
 	//加载年月日
 	time()
@@ -18,7 +63,7 @@ function body2(ob, txt, fun) {
 	$(".head2").show();
 	$(".safety_title").text(txt)
 	$(ob).removeClass("safety_hide")
-	$(".register_on").attr("onclick", fun)
+	$(".register_on").attr("onclick", fun);
 }
 /*修改名字*/
 function name() {
@@ -48,7 +93,7 @@ function ajax_but() {
 	console.log($(".safety_image").attr("src"));
 	//ajax
 	$.ajax({
-		url: 'http://192.168.0.102/ywyf-weixin/user/apply', //地址
+		url: web_url + '/ywyf-weixin/user/apply', //地址
 		dataType: "json",
 		type: "post",
 		xhrFields: {
@@ -61,10 +106,7 @@ function ajax_but() {
 			window.location.reload()
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			//alert(XMLHttpRequest.status);
-			//alert(XMLHttpRequest.readyState);
-			//alert(textStatus);
-			console.log("网络请求失败，请联系网站管理员!");
+			getcode()
 		},
 	})
 }
@@ -96,7 +138,7 @@ function sex_button() {
 	ajax_but()
 }
 /*修改生日*/
-function birthday() {  
+function birthday() {
 	body2(".safety_birthday_b", "出生日期", "birthday_button()");
 	$(".year_val").text($(".safety_times").find(".safety_val").find("label").eq(0).text());
 	$(".month_val").text($(".safety_times").find(".safety_val").find("label").eq(1).text());
@@ -151,31 +193,59 @@ function password() {
 }
 //验证码倒计时
 function sendMobileCode(ob) {
-	if($(ob).val() == "获取验证码") {
-		$(ob).css({
-			"background-color": "#cdcdcd",
-			"color": "#fff",
-			"border-color": "#fff"
-		})
-		var times = ""
-		var num = 30
-		times = setInterval(function() {
-			num--
-			if(num <= 0) {
-				clearInterval(times); //清除js定时器
-				$(ob).disabled = false;
-				$(ob).val("获取验证码");
-				nums = 30; //重置时间
-				$(ob).css({
-					"background-color": "#0e90d2",
-					"color": "#fff",
-					"border-color": "#0b74df"
-				})
-			} else {
-				$(ob).val(num);
-			}
-		}, 1000);
+
+	var tel = $("#login_name").val()
+	if(/^1\d{10}$/.test(tel)) {
+		if($(ob).val() == "获取验证码") {
+			$.ajax({
+				url: web_url + '/ywyf-weixin/sendAliyunSms?tel=' + tel, //地址 czPwdSms
+				dataType: "json",
+				type: "post",
+				timeout: 50000,
+				success: function(data) {
+					console.log(JSON.stringify(data))
+					$("#login_test").attr("token", data.token);
+					if(data.msg == "短信发送成功，请注意查收!") {
+						$(".cue_box").text("短信发送成功，请注意查收!").fadeIn(500).delay(1).fadeOut(500);
+						//倒计时效果
+						$(ob).css({
+							"background-color": "#cdcdcd",
+							"color": "#fff",
+							"border-color": "#fff"
+						})
+						var times = "";
+						var num = 60;
+						times = setInterval(function() {
+							num--
+							if(num <= 0) {
+								clearInterval(times); //清除js定时器
+								$(ob).disabled = false;
+								$(ob).val("获取验证码");
+								nums = 60; //重置时间
+								$(ob).css({
+									"background-color": "#0A79E5",
+									"color": "#fff",
+									"border-color": "#0A79E5"
+								})
+							} else {
+								$(ob).val(num);
+							}
+						}, 1000);
+
+					} else {
+						$(".cue_box").text("请输入正确的手机号").fadeIn(500).delay(1).fadeOut(500);
+					}
+
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown) {
+					getcode()
+				},
+			})
+		}
+	} else {
+		console.log(132)
 	}
+
 }
 /*提示*/
 var login_phone = false
@@ -184,8 +254,8 @@ function login() {
 	if($("#login_test").val() == "") {
 		$(".cue_box").text("您的验证码为空").fadeIn(500).delay(1).fadeOut(500);
 		login_phone = false
-	} else if($("#login_test").val() != "2016") {
-		$(".cue_box").text("您的验证码不正确").fadeIn(500).delay(1).fadeOut(500);
+	} else if($("#login_test").val() == "") {
+		$(".cue_box").text("您的验证码为空").fadeIn(500).delay(1).fadeOut(500);
 		login_phone = false
 	} else if($("#login_password").val() == "") {
 		$(".cue_box").text("您的新密码为空").fadeIn(500).delay(1).fadeOut(500);
@@ -198,9 +268,30 @@ function login() {
 function password_button() {
 	login()
 	if(login_phone == true) {
-		$(".cue_box").text("密码修改成功").fadeIn(500).delay(1).fadeOut(500);
-		$(".cue_box").hide()
-		back();
+		console.log($('#form1').serialize() + '&token=' + $("#login_test").attr("token") + '&pwd1=' + $("#login_password").val() + $("#login_name").val())
+		//ajax
+		$.ajax({
+			url: web_url + '/ywyf-weixin/user/czPwdApply', //地址
+			dataType: "json",
+			type: "post",
+			timeout: 50000,
+			data: $('#form1').serialize() + '&token=' + $("#login_test").attr("token") + '&pwd1=' + $("#login_password").val() + '&tel=' + $("#login_name").val(),
+			success: function(data) {
+				console.log(JSON.stringify(data));
+				//成功
+				if(data.msg == "修改成功") {
+					alert("修改成功");
+					sex_button()
+				} else {
+					alert("修改失败")
+				}
+
+			},
+			error: function(XMLHttpRequest, textStatus, errorThrown) {
+				getcode()
+			},
+		})
+
 	}
 }
 /*修改头像*/
@@ -218,14 +309,14 @@ function password_button() {
 //var imgFile = obj.files[0];
 
 /*}*/
-function uploadPic(){
+function uploadPic() {
 	var formData = new FormData();
 	console.log(document.getElementById("file").files[0]);
 	formData.append('pic', document.getElementById("file").files[0]);
 	console.log(formData);
 	///ajax
 	$.ajax({
-		url: 'http://192.168.0.102/ywyf-weixin/upload/uploadPic1.do', //地址
+		url: web_url + '/ywyf-weixin/upload/uploadPic1.do', //地址
 		dataType: "json",
 		type: "post",
 		xhrFields: {
@@ -233,21 +324,43 @@ function uploadPic(){
 		},
 		timeout: 50000,
 		data: formData,
-		async:false,
-		processData : false,
-		contentType : false,
+		async: false,
+		processData: false,
+		contentType: false,
 		success: function(data) {
 			console.log(JSON.stringify(data));
-			$(".safety_image").attr("src",data.url);
+			$(".safety_image").attr("src", data.url);
 			//window.location.reload()
 			ajax_but()
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			//alert(XMLHttpRequest.status);
-			//alert(XMLHttpRequest.readyState);
-			//alert(textStatus);
-			console.log("网络请求失败，请联系网站管理员!");
+			getcode()
 		},
 	})
-	
+}
+//退出登录
+function exit() {
+	///ajax
+	$.ajax({
+		url: web_url + '/ywyf-weixin/login/exit', //地址
+		dataType: "json",
+		type: "post",
+		xhrFields: {
+			withCredentials: true
+		},
+		timeout: 50000,
+		async: false,
+		processData: false,
+		contentType: false,
+		success: function(data) {
+			console.log(JSON.stringify(data));
+			window.location.reload()
+			localStorage.removeItem('json_shop');
+			localStorage.removeItem('ywyfWx_userId'); 
+			sessionStorage.removeItem('set_address');
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			getcode()
+		},
+	})
 }

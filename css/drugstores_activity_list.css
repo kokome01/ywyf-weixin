@@ -1,0 +1,158 @@
+* {
+	font-family: "微软雅黑";
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	color: #666;
+}
+
+body {
+	background-color: white;
+}
+
+li {
+	display: inline;
+}
+
+textarea {
+	width: 100%;
+	outline: none;
+	resize: none
+}
+
+table {
+	border-spacing: 0px;
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background-color: #fff;
+}
+
+.ovfHiden {
+	overflow: hidden;
+	height: 100%;
+}
+
+
+input:focus {
+	color: #666;
+	border: 1px solid #f1f1f1;
+	background-color: #fff;
+	outline: none;
+}
+
+.head {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	background-color: #fff;
+	z-index: 500;
+}
+
+.head_l {
+	text-align: center;
+	padding: 10px 0px;
+	position: relative;
+	border-bottom: 8px solid #f1f1f1;
+}
+
+.back {
+	float: left;
+	position: absolute;
+	left: 13px;
+	top: 7px;
+}
+
+.back img {
+	width: 25px;
+}
+
+.login_head {
+	font-size: 16px;
+}
+
+.register_on {
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}
+/*body*/
+.body{
+	margin: 50px 0px;
+}
+.item_box{
+	padding: 10px;
+}
+.item_ul{
+	padding-top: 10px;
+}
+.item_li{
+	display: block;
+	margin-bottom: 20px;
+}
+.item_relax{
+	position: relative;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.item_box{
+	background-color: #fff;
+	text-align: left;
+}
+.item_img{
+	height: 160px;
+	width: 100%;
+}
+
+.item_abs{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	min-height: 48px;
+	background-color: rgba(0,0,0,0.6);
+}
+.item_name{
+	color: #fff;
+	margin: 5px 10px;
+	font-size: 14px;
+	font-weight:800;
+}
+.item_details{
+	display: inline-block;
+	float: right;
+	margin-right: 10px;
+	font-size: 14px;
+	color: #cdcdcd;
+}
+.item_other{
+	height: 50px;
+	padding: 5px 10px;
+	display: block;
+	text-align: left;
+	border-bottom:1px solid #f1f1f1 ;
+	position: relative;
+}
+.item_other_p{
+	margin-right: 85px;
+}
+.item_other_img{
+	position: absolute;
+	top: 10px;
+	right: 5px;
+	height: 40px;
+	width: 84px;
+}
+.item_zero{
+	display: none;
+	text-align: center;
+	padding-top: 20px;
+}
+.item_zero img{
+	width: 100px;
+	height: 100px;
+}

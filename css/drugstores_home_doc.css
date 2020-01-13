@@ -1,0 +1,197 @@
+* {
+	font-family: "微软雅黑";
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	color: #666;
+}
+
+body {
+	background-color: white;
+}
+
+li {
+	display: inline;
+}
+
+textarea {
+	width: 100%;
+	outline: none;
+	resize: none
+}
+
+table {
+	border-spacing: 0px;
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background-color: #f1f1f1;
+}
+
+.ovfHiden {
+	overflow: hidden;
+	height: 100%;
+}
+
+
+/*input{border: none;}*/
+
+input:focus {
+	color: #666;
+	border: 1px solid #f1f1f1;
+	background-color: #fff;
+	outline: none;
+}
+
+.head {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	background-color: #fff;
+	z-index: 500;
+}
+
+.head_l {
+	text-align: center;
+	padding: 10px 0px;
+	position: relative;
+	border-bottom: 8px solid #f1f1f1;
+}
+
+.back {
+	float: left;
+	position: absolute;
+	left: 13px;
+	top: 7px;
+}
+
+.back img {
+	width: 25px;
+}
+
+.login_head {
+	font-size: 16px;
+}
+
+.register_on {
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}
+/**/
+.body{
+	margin-top: 50px;
+	background-color: #fff;
+}
+.doc_img_box{
+	text-align: center;
+	padding: 30px 0px;
+}
+
+.doc_img{
+	width: 80px;
+	height: 80px;
+	border: 1px solid #fff;
+	box-shadow: 0px 0px 10px #f1f1f1;
+}
+.doc_hos{
+	line-height: 35px;
+}
+.doc_information{
+	text-align: center;
+	margin-bottom: 20px;
+}
+.doc_name{
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+.doc_work{
+	padding:0px 10px;
+}
+.doc_department{
+	background-color: #0A79E5;
+	color: #fff;
+	padding: 3px 10px;
+	line-height: 40px;
+	border-radius: 5px;
+	font-size: 14px;
+}
+.inf_head{
+	background-color: #F1F1F1;
+    padding: 10px;
+    border-bottom: 3px solid #fff;
+    position: relative;
+}
+.inf_synopsis{
+	margin:5px 10px;
+	text-indent:2em;
+	font-size: 14px;
+}
+.inf_good_ul{
+	padding: 10px;
+}
+.inf_good_li{
+	background-color: #f1f1f1;
+	padding: 3px 15px;
+}
+.inf_kong{
+	padding: 10px;
+	font-size: 14px;
+	color: #cdcdcd;
+}
+.consult_b{
+	display: flex;
+}
+.consult_box{
+	flex: 1 1 auto;
+	position: relative;
+	margin-right: 30px;
+	padding: 10px;
+	border-bottom:1px solid #f1f1f1 ;
+}
+.department_box{
+	flex: 1 1 auto;
+	position: relative;
+	padding: 10px;
+	border-bottom:1px solid #f1f1f1 ;
+}
+.department_box span{
+	color: #999;
+}
+.consult_price:nth-child(2){
+	padding-left: 10px;
+}
+.consult_price{
+	color: #cdcdcd;
+}
+.consult_right{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 8px;
+	right: -25px;
+}
+.departments_box{
+	float: right;
+}
+.question_img{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+.text_img{
+	width: 20px;
+	height: 20px;
+	float: left;
+	margin-left:10px ;
+}
+.departments_box2{
+	min-height: 80px;
+}

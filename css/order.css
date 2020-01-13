@@ -66,8 +66,8 @@ input:focus {
 .back {
 	float: left;
 	position: absolute;
-	left: 15px;
-	top: 5px;
+	left: 13px;
+	top: 7px;
 }
 
 .back img {
@@ -101,7 +101,17 @@ input:focus {
 	padding: 5px;
 	flex: 1 1 auto;
 }
-
+.order_refund{
+	float: right;
+	margin-right: 5px;
+	border: 1px solid #f1f1f1;
+	padding: 5px;
+	border-radius: 15px;
+	font-size: 12px;
+	position: relative;
+	width: 60px;
+	text-align: center;
+}
 .order_head_but {
 	border-bottom: 2px solid #0A79E5;
 	color: #0A79E5;
@@ -110,8 +120,16 @@ input:focus {
 .order_vender {
 	padding: 5px 10px;
 	border-bottom: 1px solid #f1f1f1;
+	position: relative;
+	background-color: #f1f1f1;
+	
 }
-
+.order_vender p{
+	font-size: 12px;
+}
+.order_vender p span{
+	font-size: 12px;
+}
 .order_li {
 	display: block;
 	padding: 10px;
@@ -127,8 +145,13 @@ input:focus {
 .order_name {
 	margin-left: 70px;
 	height: 60px;
+	
 }
-
+.order_condition{
+	position: absolute;
+	top: 12px;
+	right: 20px;
+}
 
 .order_price {
 	padding: 5px 0px;
@@ -144,8 +167,12 @@ input:focus {
 
 .order_operation {
 	height: 27px;
+	padding: 5px;
+	border-bottom: 5px solid #f1f1f1;
 }
-
+.order_vender_num{
+	margin-right: 20px;
+}
 .order_operation span {
 	float: right;
 	margin-right: 10px;
@@ -215,6 +242,7 @@ input:focus {
 	border-radius: 5px;
 	text-align: center;
 	margin-top: 200px;
+	display: none;
 }
 
 .cue p {
@@ -238,4 +266,67 @@ input:focus {
 	padding: 8px;
 	color: #fff;
 	border-bottom-right-radius: 5px;
+}
+.express{
+	display: none;
+}
+.express_cue{
+	margin: auto;
+	background-color: #fff;
+	width: 280px;
+	height:134px;
+	border-radius: 5px;
+	text-align: center;
+	margin-top: 200px;
+	
+}
+.express_cue b{
+	background-color: #fff;
+	text-align: left;
+	display: block;
+	padding: 5px;
+	border-bottom:1px solid #cdcdcd;
+	border-radius: 5px;
+}
+.express_cue p{
+	background-color: #fff;
+	text-align: left;
+	display: block;
+	padding: 5px;
+	border-bottom:1px solid #cdcdcd;
+	font-size: 12px;
+	color: #cdcdcd;
+}
+.express_cue_tx{
+	display: inline-blockk;
+	border: none;
+	margin: 5px;
+	padding: 5px;
+	background-color: #F1F1F1;
+	width: 260px;
+}
+.express_cue_bt{
+	display: block;
+	background-color: #cc0000;
+	color: #FFFFFF;
+	border: none;
+	width: 280px;
+	padding: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px
+}
+.express_cue span{
+	display: inline-block;
+width: 122px;
+}
+/*tips*/
+.tips{
+	background-color: #FFC736;
+	padding: 2px 10px;
+	opacity: 0.5;
+	display: none;
+}
+.tips p{
+	font-size: 12px;
+	color: #cc0000;
 }

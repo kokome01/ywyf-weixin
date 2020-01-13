@@ -1,0 +1,129 @@
+		* {
+			font-family: "微软雅黑";
+			margin: 0px;
+			padding: 0px;
+			font-size: 14px;
+			color: #666;
+		}
+		
+		body {
+			background-color: white;
+		}
+		
+		li {
+			display: inline;
+		}
+		
+		textarea {
+			width: 100%;
+			outline: none;
+			resize: none;
+		}
+		
+		table {
+			border-spacing: 0px;
+			width: 100%;
+		}
+		
+		a {
+			text-decoration: none;
+		}
+		
+		body {
+			background-color: #fff;
+		}
+		
+		.ovfHiden {
+			overflow: hidden;
+			height: 100%;
+		}
+		/*input{border: none;}*/
+		
+		input:focus {
+			color: #666;
+			border: 1px solid #f1f1f1;
+			background-color: #fff;
+			outline: none;
+		}
+		/*综合图标*/
+		
+		.store_img {
+			background-image: url(../img/便利店标签.png);
+		}
+		
+		.head {
+			width: 100%;
+			z-index: 500;
+			background-color: #454a50;
+			position: relative;
+			position: fixed;
+			top: 0px;
+		}
+		
+		.head span {
+			color: #fff;
+		}
+		.index_i_back {
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			top: 8px;
+			left: 5px;
+			background-position: -150px -30px;
+			background-repeat: no-repeat;
+			background-size: 240px 150px;
+		}
+		
+		.index_head {
+			text-align: center;
+			font-size: 16px;
+			padding: 15px;
+		}
+		
+		.index_head span:nth-child(1) {
+			padding: 10px;
+			font-size: 16px;
+		}
+		.index_head2{
+			color: #fff;
+			font-size: 14px;
+			position: absolute;
+			top: 16px;
+			right: 10px;
+		}
+		/*body*/
+		
+		.body {
+			margin-top: 50px;
+			margin-bottom: 10px;
+			position: relative;
+		}
+		.evaluate_list_li{
+			display: block;
+			padding: 10px;
+			border-bottom:1px solid #f1f1f1 ;
+			position: relative;
+		}
+		.evaluate_list_li img{
+			width:50px;
+			height: 50px;
+			border-radius:60px ;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+		.evaluate_list_text{
+			margin-left:60px ;
+		}
+		.evaluate_list_times{
+			float: right;
+		}
+		.evaluate_list_txt{
+			font-size: 14px;
+			color: #666
+		}
+		.evaluate_list_end{
+			text-align: center;
+			color: #999;
+			margin: 5px;
+		}

@@ -3,86 +3,15 @@
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>确认订单</title>
+		<title>院外药-个人中心</title>
+		<meta name="keywords" content="人胎盘片,院外药,处方外配,处方,网上药房"/>
+		<meta name="description" content="院外药为你提供人胎盘片，处方外配服务，便民药店"/>
 		<meta name="viewport" content="width=device-width" />
 		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
 		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/url.js"></script>
+		<script src="../js/person.js"></script>
 		<link rel="stylesheet" type="text/css" href="../css/person.css" />
-		<script type="text/javascript">
-			window.onload = function() {
-				if($(".person_body_li").length > 3) {
-					for(i = 3; i < $(".person_body_li").length; i++) {
-						$(".person_body_li").eq(i).remove()
-					}
-				}
-			}
-
-			$(document).ready(function() {
-				var tou_img = "../img/head_img.png";
-				var strhtml = ""
-
-				//加载地址列表
-				$.ajax({
-					url: 'http://192.168.0.102/ywyf-weixin/user/userCenter', //地址
-					dataType: "json",
-					type: "post",
-					timeout: 50000,
-					xhrFields: {
-						withCredentials: true
-					},
-					success: function(data) {
-						
-						//赋值
-						if(data.status == 1) {
-							//console.log(JSON.stringify(data));
-							//判断头像是否为空
-							if(data.user.pic==null){
-								tou_img = "../img/head_img.png"
-							}
-							else{
-								tou_img = data.user.pic
-							}
-							//消息个数
-							if(data.msgNum==0){
-								$(".msgNum").css("display","none")
-							}
-							$(".head_tou_img").find("img").attr("src",tou_img);
-							$(".head_tou_name").find("span").text(data.user.nickname);
-							$(".msgNum").text(data.msgNum)
-							$("#a").text(data.a);
-							$("#b").text(data.b);
-							$("#c").text(data.c);
-							$("#d").text(data.d);
-							//订单
-							$(".person_body ul").empty();
-							for(i=0;i<3;i++){
-								strhtml += '<li class="person_body_li" onclick="window.location.href='+"'../other/introduction.html'"+'"><img src="'
-								+data.orders[i].orderProduct.sku.product.pic+
-								'" /><div class="person_body_li_t"><b>'
-								+data.orders[i].orderProduct.sku.product.name+
-								'</b><p>规格：<span>'
-								+data.orders[i].orderProduct.sku.product.specs+
-								'</span></p></div></li>'
-							}
-							$(".person_body ul").append(strhtml)
-							$(".person_ad").find("img").attr("src",data.banners[0].pic);
-						} else {
-							alert("请登录");
-							window.location.href = '../other/login.html'
-						}
-
-					},
-					error: function(XMLHttpRequest, textStatus, errorThrown) {
-						/*alert(XMLHttpRequest.status);
-						alert(XMLHttpRequest.readyState);
-						alert(textStatus);*/
-						console.log("网络请求失败，请联系网站管理员!");
-					},
-				})
-				//加载默认地址
-
-			})
-		</script>
 	</head>
 
 	<body>
@@ -90,16 +19,17 @@
 		<div class="head">
 			<div class="head_img">
 				<div class="head_new" onclick="window.location.href='news.html'">
-					<img src="../img/news.png" />
-					<span class="msgNum">19</span>
+					<img src="../img/news.png" onerror="javascript:this.src='../img/news.png'"/>
+					<span class="msgNum" ></span>
 				</div>
 				<img src="../img/cilun.png" onclick="window.location.href='safety.html'" />
+				
 			</div>
 			<div class="head_tou">
 				<div class="head_tou_img">
 					<img src="../img/head_img.png" />
 				</div>
-				<p class="head_tou_name">(<span>陈莎莎</span>)</p>
+				<p class="head_tou_name">(<span>■■■■</span>)</p>
 				<p class="head_tou_vip">VIP</p>
 			</div>
 		</div>
@@ -108,21 +38,41 @@
 				<p>我的订单</p>
 			</div>
 			<div class="person_head">
-				<div class="person_h_order" onclick="window.location.href='order.html'">
+				<div class="person_h_order" onclick="window.location.href='order.html?name=0'">
 					<img src="../img/dai (2).png" />
-					<span>待支付<label id="a">2</label></span>
+					<span>待支付<label id="a">■</label></span>
 				</div>
-				<div class="person_h_order" onclick="window.location.href='order.html'">
+				<div class="person_h_order" onclick="window.location.href='order.html?name=1'">
+					<img src="../img/dai (2.5).png" />
+					<span>待发货<label id="b">■</label></span>
+				</div>
+				<div class="person_h_order" onclick="window.location.href='order.html?name=2'">
 					<img src="../img/dai (3).png" />
-					<span>待收货<label id="b">2</label></span>
+					<span>待收货<label id="c">■</label></span>
 				</div>
-				<div class="person_h_order" onclick="window.location.href='order.html'">
+				<div class="person_h_order" onclick="window.location.href='order.html?name=3'">
 					<img src="../img/dai (5).png" />
-					<span>待评价<label id="c">99</label></span>
+					<span>待评价<label id="d">■</label></span>
 				</div>
-				<div class="person_h_order" onclick="window.location.href='order.html'">
+				<div class="person_h_order" onclick="window.location.href='chang.html'">
 					<img src="../img/dai (1).png" />
-					<span>退换货<label id="d">2</label></span>
+					<span>退换货<label id="e">■</label></span>
+				</div>
+			</div>
+			<div class="person_head">
+				<div class="person_h_order" onclick="window.location.href='collection.html'">
+					<img src="../img/dai(6).png" />
+					<span>我的收藏<label ></label></span>
+				</div>
+				<div class="person_h_order" onclick="window.location.href='billlist.html'">
+					<img src="../img/dai(7).png" />
+					<span>我的账单<label ></label></span>
+				</div>
+				<div class="person_h_order" onclick="window.location.href='billlist.html'">
+					<a class="service" href="tel:057182576221">
+						<img src="../img/service.png" />
+						<span>客服热线<label ></label></span>
+					</a>
 				</div>
 			</div>
 			<div class="person_wo">
@@ -130,31 +80,17 @@
 			</div>
 			<div class="person_body">
 				<ul>
-					<li class="person_body_li" onclick="window.location.href='../other/introduction.html'">
-						<img src="../img/2017.jpg" />
+					<!--<li class="person_body_li" onclick="window.location.href='../other/introduction.html'">
+						<img src="../img/mo1.jpg" />
 						<div class="person_body_li_t">
-							<b>美康粉黛醉美唇膏 持久保湿滋润防水不掉色</b>
-							<p>规格：<span>25g</span></p>
+							<b>■■■■■■■■</b>
+							<p>规格：<span>■■</span></p>
 						</div>
-					</li>
-					<li class="person_body_li" onclick="window.location.href='../other/introduction.html'">
-						<img src="../img/2017.jpg" />
-						<div class="person_body_li_t">
-							<b>美康粉黛醉美唇膏 持久保湿滋润防水不掉色</b>
-							<p>规格：<span>25g</span></p>
-						</div>
-					</li>
-					<li class="person_body_li" onclick="window.location.href='../other/introduction.html'">
-						<img src="../img/2017.jpg" />
-						<div class="person_body_li_t">
-							<b>美康粉黛醉美唇膏 持久保湿滋润防水不掉色</b>
-							<p>规格：<span>25g</span></p>
-						</div>
-					</li>
+					</li>-->
 				</ul>
 			</div>
 			<div class="person_ad">
-				<img src="../img/TJ2.jpg" onclick="window.location.href='blog.html'" />
+				<img src="../img/TJ2.jpg"  />
 			</div>
 		</div>
 
@@ -168,6 +104,10 @@
 					<img src="../img/list (2).png" />
 					<p>分类</p>
 				</div>
+				<!--<div class="center foot_img" onclick="window.location.href='../store/store_index.html'">
+					<img src="../img/store.png"/>
+					<p>餐厅</p>
+				</div>-->
 				<div class="center foot_img" onclick="window.location.href='../other/shop.html'">
 					<img src="../img/shop (2).png" />
 					<p>购物车</p>

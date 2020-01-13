@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>填写快递单号发货</title>
+		<meta name="keywords" content="人胎盘片,院外药,处方外配,处方,网上药房"/>
+		<meta name="description" content="院外药为你提供人胎盘片，处方外配服务，便民药店"/>
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<style type="text/css">
+			* {
+				font-family: "微软雅黑";
+				margin: 0px;
+				padding: 0px;
+				font-size: 14px;
+				color: #666;
+			}
+			body {
+				background-color: white;
+			}
+			li {
+				display: inline;
+			}
+			textarea {
+				width: 100%;
+				outline: none;
+				resize: none
+			}
+			table {
+				border-spacing: 0px;
+				width: 100%;
+			}
+			.head{
+				height: 40px;
+			}
+			.head p{
+				font-size: 16px;
+				line-height: 40px;
+				text-align: center;
+				border-bottom:1px solid #f1f1f1;
+			}
+			.body{
+				margin: 10px;
+			}
+			.courier_li{
+				margin-top: 10px;
+				display: block;
+				padding: 10px;
+				border: 1px solid #f1f1f1;
+				border-radius:5px ;
+				box-shadow: 0px 2px 5px #f1f1f1;
+			}
+			.li_time{
+				color: #cdcdcd;
+			}
+			.li_tel{
+				float: right;
+			}
+			.li_input_box{
+				margin-top: 15px;
+				background-color: #f1f1f1;
+				padding: 5px;
+			}
+			.courier{
+				width: 100%;
+				display: block;
+				border: none;
+				background-color: #f1f1f1;
+			}
+			.li_button{
+				text-align: center;
+				background-color: #0A79E5;
+				color: #fff;
+				margin-top: 15px;
+				border-radius:3px ;
+				padding: 5px;
+				height: 20px;
+				line-height: 20px;
+			}
+		</style>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$.ajax({
+					url: 'http://www.51ywyf.com/ywyf-weixin/order/orderListForYL', //地址
+					dataType: "json",
+					type: "get",
+					timeout: 50000,
+					xhrFields: {
+						withCredentials: true
+					},
+					success: function(data) {
+						console.log(JSON.stringify(data))
+							var strhtml = "";
+							for(i=0;i<data.list.length;i++){
+								if(data.list[i].mailList!=null){
+									strhtml += '<li class="courier_li"><p><span class="li_time">'
+									+formatDateTime(data.list[i].mailList.addtime*1000)+
+									'</span></p><p><span class="li_name">'
+									+data.list[i].mailList.name+
+									'</span><span class="li_tel">'
+									+data.list[i].mailList.tel+
+									'</span></p><p><span class="li_address">'
+									+data.list[i].mailList.address+
+									'</span></p><div class="li_input_box"><input type="text" name="courier" class="courier" placeholder="这里输入快递单号"/></div><div class="li_button" onclick="send(this)">发货</div></li>'
+								}
+							} 
+							$("#courier_ul").empty().append(strhtml);
+					},
+					error: function(XMLHttpRequest, textStatus, errorThrown) {
+						console.log("网络请求失败，请联系网站管理员!");
+					},
+				})
+			})
+			//发货
+			function send(ob){
+				var val = $(ob).parents("。courier_li").find("。courier").val();
+				console.log(val)
+				$.ajax({
+					url: '', //地址
+					dataType: "json",
+					type: "post",
+					timeout: 50000,
+					xhrFields: {
+						withCredentials: true
+					},
+					success: function(data) {
+						console.log(JSON.stringify(data))
+						if(data.status == 1) {
+							
+						} else {
+							
+						}
+					},
+					error: function(XMLHttpRequest, textStatus, errorThrown) {
+						console.log("网络请求失败，请联系网站管理员!");
+					},
+				})
+			}
+			//时间戳
+			function formatDateTime(inputTime) {
+				var date = new Date(inputTime);
+				var y = date.getFullYear();
+				var m = date.getMonth() + 1;
+				m = m < 10 ? ('0' + m) : m;
+				var d = date.getDate();
+				d = d < 10 ? ('0' + d) : d;
+				var h = date.getHours();
+				h = h < 10 ? ('0' + h) : h;
+				var minute = date.getMinutes();
+				var second = date.getSeconds();
+				minute = minute < 10 ? ('0' + minute) : minute;
+				second = second < 10 ? ('0' + second) : second;
+				return y + '-' + m + '-' + d + ' ' + h + ':' + minute + ':' + second;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="head">
+			<p>填写快递单号</p>
+		</div>
+		<div class="body">
+			<ul class="courier_ul" id="courier_ul">
+				<!---->
+				<li class="courier_li">
+					<p><span class="li_time">2019-21-12</span></p>
+					<p><span class="li_name">徐顺望</span><span class="li_tel">15967125243</span></p>
+					<p><span class="li_address">杭州市萧山区民营企业发展大厦</span></p>
+					<div class="li_input_box">
+						<input type="text" name="courier" class="courier" placeholder="这里输入快递单号"/>						
+					</div>
+					<div class="li_button" onclick="send(this)">发货</div>
+				</li>
+			</ul>
+		</div>
+		
+	</body>
+</html>

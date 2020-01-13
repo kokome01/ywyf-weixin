@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>搜索</title>
+		<meta name="keywords" content="人胎盘片,院外药,处方外配,处方,网上药房"/>
+		<meta name="description" content="院外药为你提供人胎盘片，处方外配服务，便民药店"/>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/url.js"></script>
+		<script src="../js/store_choice.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/store_choice.css" />
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="head">
+			<a class="store_img index_i_back" href="javascript:history.back(-1)"></a>
+			<div class="home_text_b">
+				<div class="store_img index_i_search"></div>
+				<div class="home_text_box">
+					<input type="text" placeholder="请在此搜索店家" id="home_text" class="home_text" onclick="window.location.href='store_search.html'" />
+				</div>
+			</div>
+			<div class="search_text" onclick="search_button()">
+				<span>搜索</span>
+			</div>
+		</div>
+		<!--热门搜索-->
+		<div class="body">
+			<div class="body_clas">
+				<span class="body_clas_span body_clas_on" onclick="index_class(this)">综合排序</span>
+				<span class="body_clas_span" onclick="index_class(this)">距离最近</span>
+			</div>
+			<div class="body_list">
+				<ul>
+					<!--<li class="body_li" onclick="window.location.href='store_store.html'">
+						<div class="body_li_store">
+							<img src="../img/TB.jpg" class="body_li_img" />
+							<div class="body_li_text">
+								<p class="body_li_h1">全家便利店（民和路）</p>
+								<p class="body_li_h3">店铺地址：<span></span></p>
+								<p class="body_li_h3">店铺通告:<span></span><span class="body_li_distance">1.9km</span></p>
+							</div>
+						</div>
+						<div class="body_li_commodity">
+							<img src="../img/TB.jpg" class="commodity_img" />
+							<div class="commodity_text">
+								<p class="body_li_h1">全家便利店（民和路）</p>
+								<p class="body_li_h2"></p>
+								<p class="body_li_h3">月销售<span>25</span>单</p>
+								<p class="body_li_h4">￥<span>25</span><del>￥<span>100</span></del></p>
+							</div>
+						</div>
+					</li>-->
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>

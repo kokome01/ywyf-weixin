@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>院外药-集赞18个 领医学护肤品“婴儿洗发沐浴泡泡露”</title>
+		<meta name="keywords" content="人胎盘片,院外药,处方外配,处方,网上药房"/>
+		<meta name="description" content="院外药为你提供人胎盘片，处方外配服务，便民药店"/>
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<style type="text/css">
+			* {
+				font-family: "微软雅黑";
+				margin: 0px;
+				padding: 0px;
+				font-size: 14px;
+				color: #666;
+			}
+			
+			body {
+				background-color: white;
+			}
+			
+			li {
+				display: inline;
+			}
+			
+			textarea {
+				width: 100%;
+				outline: none;
+				resize: none
+			}
+			
+			table {
+				border-spacing: 0px;
+				width: 100%;
+			}
+			.activity_background{
+				position: relative;
+			}
+			.activity_background img{
+				width: 100%;
+			}
+			.activity_cue{
+				position: fixed;
+				left: 0px;
+				top: 0px;
+				height: 100%;
+				width: 100%;
+				z-index: 50;
+				display: none;
+			}
+			.cue_black{
+				background-color: rgba(0,0,0,0.6);
+				width: 100%;
+				height: 100%;
+				
+			}
+			.cue_text{
+				position: fixed;
+				left: 0px;
+				top: 0px;
+				width: 100%;
+			}
+			.cue_show_b{
+				position: absolute;
+				width: 100%;
+				height: 550px;
+				bottom: 0px;
+			}
+			.cue_show{
+				opacity: 0;
+				text-align: center;
+				margin:30px auto;
+			}
+		</style>
+		<script type="text/javascript">
+			function show(){
+				$(".activity_cue").show();
+			}
+			function hide(){
+				$(".activity_cue").hide();
+			}
+		</script>
+	</head>
+	<body>
+		<img src="../img/2019-1-9-1.jpg" style="display: none;"/>
+		<div class="activity_background">
+			<img src="../img/2019-1-9.jpg"/>
+			<div class="cue_show_b" onclick="show()">
+				<p class="cue_show">我要集赞</p>
+			</div>
+		</div>
+		<div class="activity_cue">
+			<div class="cue_black" onclick="hide()"></div>
+			<div>
+				<img alt="提示" src="../img/cue2.png" class="cue_text"/>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,167 @@
+		* {
+			font-family: "微软雅黑";
+			margin: 0px;
+			padding: 0px;
+			font-size: 14px;
+			color: #666;
+		}
+		
+		body {
+			background-color: white;
+		}
+		
+		li {
+			display: inline;
+		}
+		
+		textarea {
+			width: 100%;
+			outline: none;
+			resize: none;
+		}
+		
+		table {
+			border-spacing: 0px;
+			width: 100%;
+		}
+		
+		a {
+			text-decoration: none;
+		}
+		
+		body {
+			background-color: #fff;
+		}
+		
+		.ovfHiden {
+			overflow: hidden;
+			height: 100%;
+		}
+		/*input{border: none;}*/
+		
+		input:focus {
+			color: #666;
+			border: 1px solid #f1f1f1;
+			background-color: #fff;
+			outline: none;
+		}
+		/*综合图标*/
+		
+		.store_img {
+			background-image: url(../img/便利店标签.png);
+		}
+		
+		.head {
+			width: 100%;
+			z-index: 500;
+			background-color: #454a50;
+			position: relative;
+			position: fixed;
+			top: 0px;
+		}
+		
+		.head span {
+			color: #fff;
+		}
+		.index_i_back {
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			top: 8px;
+			left: 5px;
+			background-position: -150px -30px;
+			background-repeat: no-repeat;
+			background-size: 240px 150px;
+		}
+		
+		.index_head {
+			text-align: center;
+			font-size: 16px;
+			padding: 15px;
+		}
+		
+		.index_head span:nth-child(1) {
+			padding: 10px;
+			font-size: 16px;
+		}
+		.index_head2{
+			color: #fff;
+			font-size: 14px;
+			position: absolute;
+			top: 16px;
+			right: 10px;
+		}
+		/*body*/
+		
+		.body {
+			margin-top: 50px;
+			margin-bottom: 10px;
+			position: relative;
+		}
+		.report_style{
+			padding: 10px;
+		}
+		.report_style p{
+			padding-bottom: 10px;
+			font-weight: 800;
+		}
+		.report_style_li{
+			display: inline-block;
+			border: 1px solid #999;
+			color: #999;
+			padding:3px 5px;
+			margin: 5px;
+			border-radius:3px ;
+		}
+		.report_text{
+			padding: 10px;
+		}
+		.report_text p{
+			padding-bottom: 10px;
+			font-weight: 800;
+		}
+		.report_text_b{
+			background-color: #f1f1f1;
+			padding: 5px;
+		}
+		.report_text textarea{
+			background-color: #f1f1f1;
+			border: 0px;
+		}
+		.report_button{
+			margin: 10px;
+			background-color: #0A79E5;
+			color: #fff;
+			text-align: center;
+			padding: 8px;
+			border-radius:5px ;
+			font-size: 16px;
+		}
+		.report_images{
+			padding: 10px;
+			position: relative;
+		}
+		.report_style_on{
+			border: 1px solid #0A79E5;
+			color:  #fff;
+			background-color: #0A79E5;
+		}
+		.fileimg_imgs{
+			width: 80px;
+			height: 80px;
+		}
+		.fileimg_f{
+			border: 1px solid #000;
+			width: 80px;
+			height: 80px;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			opacity: 0;
+		}
+		.report_images_t{
+			color: #cdcdcd;
+			position: absolute;
+			left: 100px;
+			top: 10px;
+		}

@@ -1,0 +1,264 @@
+		* {
+			font-family: "微软雅黑";
+			margin: 0px;
+			padding: 0px;
+			font-size: 14px;
+			color: #666;
+		}
+		
+		body {
+			background-color: white;
+		}
+		
+		li {
+			display: inline;
+		}
+		
+		textarea {
+			width: 100%;
+			outline: none;
+			resize: none
+		}
+		
+		table {
+			border-spacing: 0px;
+			width: 100%;
+		}
+		
+		a {
+			text-decoration: none;
+		}
+		
+		body {
+			background-color: #f1f1f1;
+		}
+		
+		.ovfHiden {
+			overflow: hidden;
+			height: 100%;
+		}
+		/*input{border: none;}*/
+		
+		input:focus {
+			color: #666;
+			border: 1px solid #f1f1f1;
+			background-color: #fff;
+			outline: none;
+		}
+		/*综合图标*/
+		
+		.store_img {
+			background-image: url(../img/便利店标签.png);
+		}
+		
+		.head {
+			width: 100%;
+			background-color: #fff;
+			position: fixed;
+			top: 0px;
+			width: 100%;
+			height: 50px;
+			background-color: #fff;
+			z-index: 200;
+			border-bottom: 1px solid #F1F1F1;
+		}
+		
+		.head span {
+			color: #000;
+		}
+		.index_head {
+			text-align: center;
+			font-size: 16px;
+			padding: 15px;
+			
+		}
+		
+		.index_head span:nth-child(1) {
+			padding: 10px;
+			font-size: 16px;
+		}
+		.index_i_back {
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			top: 8px;
+			left: 5px;
+			background-position: -120px -30px;
+			background-repeat: no-repeat;
+			background-size: 240px 150px;
+			z-index: 500;
+		}
+		/*body*/
+		.body{
+			padding: 10px;
+			margin: 50px 0px;
+		}
+		.evaluate_courier{
+			background-color: #fff;
+			padding: 10px;
+			position: relative;
+		}
+		.evaluate_courier img{
+			width: 40px;
+			height: 40px;
+			border-radius:40px ;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+		.evaluate_text{
+			margin-left: 60px;
+			padding-bottom: 10px;
+			height: 50px;
+			position: relative;
+		}
+		.evaluate_botton_box{
+			height: 40px;
+			border-top:1px  solid #F1F1F1;
+			padding-top:10px ;
+			text-align: center;
+			position: relative;
+		}
+		.evaluate_botton{
+			display: inline-block;
+			padding: 5px 15px 5px 25px;
+			margin: 5px;
+			border-radius:30px ;
+			width: 50px;
+			text-align: center;
+			position: relative;
+		}
+		.evaluate_red{
+			border: 1px solid #cc0000;
+			color: #cc0000;
+		}
+		.evaluate_blue{
+			border: 1px solid #0A79E5;
+			color: #0A79E5;
+		}
+		.evaluate_yellow{
+			border: 1px solid #ffb400;
+			color: #ffb400;
+		}
+		.evaluate_thing{
+			background-color: #fff;
+			padding: 10px;
+			position: relative;
+			margin-top:10px ;
+		}
+		.evaluate_thing>img{
+			width: 40px;
+			height: 40px;
+			border-radius:40px ;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+		.store_i_bottom{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			background-position: -40px -20px;
+			background-repeat: no-repeat;
+			background-size: 160px 100px;
+			z-index: 500;
+			bottom: 0px;
+			right: 10px;
+		}
+		.store_i_countenance1{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 5px;
+			left: 10px;
+			background-position: -80px -0px;
+			background-repeat: no-repeat;
+			background-size: 160px 100px;
+			z-index: 500;
+		}
+		.store_i_countenance2{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 5px;
+			left: 15px;
+			background-position: -0px -0px;
+			background-repeat: no-repeat;
+			background-size: 160px 100px;
+			z-index: 500;
+		}
+		.store_i_countenance3{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 5px;
+			left: 15px;
+			background-position: -40px -0px;
+			background-repeat: no-repeat;
+			background-size: 160px 100px;
+			z-index: 500;
+		}
+		.evaluate_list{
+			border-top:1px solid #F1F1F1 ;
+			padding: 5px;
+		}
+		.evaluate_list li{
+			display: block;
+		}
+		.evaluate_list_right{
+			float: right;
+			padding-right: 10px;
+		}
+		.evaluate_criticism{
+			margin:15px 0px;
+			background-color: #f1f1f1;
+			padding: 5px;
+		}
+		.evaluate_criticism textarea{
+			background-color: #f1f1f1;
+			border: 0px;
+		}
+		.store_i_star{
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			background-position: -120px -80px;
+			background-repeat: no-repeat;
+			background-size: 320px 200px;
+			z-index: 500;
+		}
+		.report_images{
+			position: relative;
+		}
+		.store_file{
+			width: 80px;
+			height: 80px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			border: 1px solid #000; 
+			opacity: 0;
+		}
+		.fileimg_imgs{
+			width: 80px;
+			height: 80px;
+		}
+		/*foot*/
+		.foot{
+			background-color: #0A79E5;
+			position: fixed;
+			bottom: 0px;
+			color: #fff;
+			width: 100%;
+			text-align: center;
+			height: 30px;
+			padding: 10px;
+		}
+		.foot span{
+			color: #FFFFFF;
+			font-size:18px ;
+		}

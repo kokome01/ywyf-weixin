@@ -66,8 +66,8 @@ input:focus {
 .back {
 	float: left;
 	position: absolute;
-	left: 15px;
-	top: 5px;
+	left: 13px;
+	top: 7px;
 }
 
 .back img {
@@ -115,7 +115,7 @@ input:focus {
 	display: inline-block;
 	text-align: center;
 	border: 1px solid #cdcdcd;
-	width: 60px;
+	min-width: 60px;
 	padding: 5px;
 	margin-right: 25px;
 	margin-top: 10px;

@@ -1,3 +1,69 @@
+$(document).ready(function() {
+	var strhtml = "",
+		strhtml_i = "",
+		mailFee = ""
+	$.ajax({
+		url: web_url+'/ywyf-weixin/cart/toCart', //地址
+		dataType: "json",
+		type: "post",
+		timeout: 50000,
+		xhrFields: {
+			withCredentials: true
+		}, //跨域产生问题（跨域请求设置withCredentials）登录，退出登录
+		beforeSend:function(XMLHttpRequest){
+			loding1("A3");
+		},
+		success: function(data) {
+			console.log(JSON.stringify(data))
+			if(data.status == 1) {
+
+				for(i = 0; i < data.proShops.length; i++) {
+					for(j = 0; j < data.proShops[i].buyerItems.length; j++) {
+						strhtml_i += '<li class="shop_list_l" uid="' +
+							data.proShops[i].buyerItems[j].sku.id +
+							'"><input type="checkbox" name="" id="" value="" onclick="commodity(this)" uname="0" /><img src="' +
+							data.proShops[i].buyerItems[j].product.pic +
+							'" /><div class="shop_list_text"><p>' +
+							data.proShops[i].buyerItems[j].product.name +
+							'</p><p class="shop_list_t1">规格：<span>' +
+							data.proShops[i].buyerItems[j].sku.spec +
+							'</span></p><p class="shop_list_t2">￥<span>' +
+							data.proShops[i].buyerItems[j].sku.price +
+							'</span></p><div class="shop_list_but"><input type="button" name="" id="" value="-" class="shop_but shop_reduce" onclick="shop_num(this)" /><input type="text" name="" id="" value="' +
+							data.proShops[i].buyerItems[j].amount +
+							'" class="shop_num" disabled="true"/><input type="button" name="" id="" value="+" class="shop_but shop_add" onclick="shop_num(this)" /></div></div></li>'
+					}
+					//运费
+					if(data.proShops[i].buyerItems[0].product.mailFee == null) {
+						mailFee = "免运费"
+					} else {
+						mailFee = "运费：￥" + data.proShops[i].buyerItems[0].product.mailFee
+					}
+					//
+					strhtml += '<div class="shop_list"><div class="shop_list_head"><input type="checkbox" name="" id="" value="" onclick="factory(this)" uname="0" /><span>' +
+						data.proShops[i].phName +
+						'</span><img src="" /><label>' +
+						mailFee +
+						'</label></div><ul class="shop_list_body">' +
+						strhtml_i +
+						'</ul></div>'
+					//清空值
+					strhtml_i = ""
+				}
+				$(".body").empty().append(strhtml);
+				//总计
+				zhonji()
+			} 
+		},
+		complete:function(XMLHttpRequest,textStatus){
+			loding2()
+            // alert('远程调用成功，状态文本值：'+textStatus);
+        },
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			getcode()
+		},
+	})
+})
 /*加载完毕后执行*/
 window.onload = function() {
 
@@ -16,7 +82,7 @@ function shop_num(ob) {
 	zhonji()
 	//ajax
 	$.ajax({
-		url: 'http://192.168.0.103/ywyf-weixin/cart/modifyAmount', //地址
+		url: web_url+'/ywyf-weixin/cart/modifyAmount', //地址
 		dataType: "json",
 		type: "post",
 		xhrFields: {
@@ -32,10 +98,7 @@ function shop_num(ob) {
 			}
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			//alert(XMLHttpRequest.status);
-			//alert(XMLHttpRequest.readyState);
-			//alert(textStatus);
-			console.log("网络请求失败，请联系网站管理员!");
+			getcode()
 		},
 	})
 }
@@ -164,17 +227,25 @@ function commodity_del() {
 /*点击结算或者删除*/
 function result() {
 	var len = $(".shop_list_l").length;
-	var len_l = $(".shop_list_l").find("input[uname='1']").length;
+	var len_l = 0;
+	for(i=0;i<len;i++){
+		if($(".shop_list_l").eq(i).find("input").attr("uname")==1){
+			len_l+=1
+		}
+	}
 	var sku = new Array();
 	if($(".settlement").attr("set") == "0") {
 		if(len_l >= 1) {
-			//skuId
 			//console.log($(".shop_list_l").find("input[uname='1']"))
-			for(i = 0; i <= len_l - 1; i++) {
-				sku.push($(".shop_list_l").find("input[uname='1']").eq(i).parents(".shop_list_l").attr("uid"));
+			//console.log(len)
+			for(i=0;i<=len;i++) {
+				
+				if($(".shop_list_l").eq(i).find("input").attr("uname")==1){
+					sku[i]=$(".shop_list_l").eq(i).attr("uid")
+				}
 			}
 			//ajax
-			localStorage.drug=sku;
+			localStorage.drug = sku;
 			window.location.href = 'pay.html'
 
 		} else {
@@ -251,7 +322,7 @@ function cue_but() {
 		}
 	}
 	$.ajax({
-		url: 'http://192.168.0.103/ywyf-weixin/cart/delByIds', //地址
+		url: web_url+'/ywyf-weixin/cart/delByIds', //地址
 		dataType: "json",
 		type: "post",
 		timeout: 50000,
@@ -269,10 +340,7 @@ function cue_but() {
 			//console.log(JSON.stringify(data))
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			/*alert(XMLHttpRequest.status);
-			alert(XMLHttpRequest.readyState);
-			alert(textStatus);*/
-			console.log("网络请求失败，请联系网站管理员!");
+			getcode()
 		},
 	})
 	$(".del_shop_list_o").remove();

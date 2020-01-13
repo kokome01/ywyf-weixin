@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>院外药-药房信息</title>
+		<meta name="keywords" content="人胎盘片,院外药,药房,药房信息,药房电话"/>
+		<meta name="description" content="院外药为你提供人胎盘片，处方外配服务，便民药店"/>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/url.js"></script>
+		<script src="../js/drugstrores_info.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/drugstores_info.css" />
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="head">
+			<div class="head_l">
+				<a href="javascript:history.back(-1)" title="返回院外药上一页"  class="back" ><img src="../img/left.png" /></a>
+				<div>
+					<span class="login_head">药房信息</span>
+				</div>
+			</div>
+		</div>
+		<div class="body">
+			<div class="drugstores_search">
+				<input type="text" name="" id="drugstores_search_val" value="" placeholder="搜索本药房的商品" />
+				<img src="../img/search.png" onclick="search_self(1,'')" />
+			</div>
+			<div class="drugstores_info">
+				<img src="../img/2017.jpg" onerror="javascript:this.src='../img/2017.jpg'"/>
+				<div class="drugstores_info_text">
+					<p id="pharmacy_name"></p>
+					<p><span class="drugstores_collect_y"></span><span class="drugstores_collect" onclick="collection()"></span></p>
+				</div>
+			</div>
+			<div class="drugstores_address">
+				<img src="../img/address.png" class="drugstores_address_i1" />
+				<span class="drugstores_address_t2"></span>
+				<img src="../img/right (1).png" class="drugstores_address_i3" />
+			</div>
+			<div class="drugstores_details">
+				<div class="drugstores_details_h">
+					<p>药房详情</p>
+				</div>
+				<div class="drugstores_details_b">
+					<p>药房负责人：<label id="drugstores_details_b1"></label></p>
+					<p>详细方式：<label id="drugstores_details_b2"></label></p>
+					<p>关联医院：<label id="drugstores_details_b3"></label></p>
+				</div>
+			</div>
+			<div class="drugstores_drug">
+				<div class="drugstores_drug_h">
+					<p>药房推荐 <img src="../img/right (1).png" /><span class="drugstores_drug_quang" onclick="search_self('', '')">查看全部</span></p>
+				</div>
+				<ul class="drugstores_drug_ul">
+					<!--<li class="drugstores_drug_li">
+						<img src="../img/2017.jpg" />
+						<div class="drugstores_drug_text">
+							<p class="drugstores_drug_name">康肤美诶姐姐诶额阶级将诶额姐姐姐</p>
+							<p class="drugstores_drug_price">￥<span>250.00</span></p>
+						</div>
+					</li>-->
+				</ul>
+			</div>
+			<div class="drugstores_class">
+				<ul class="drugstores_class_ul">
+					<li class="drugstores_class_li" onclick="search_self(0,1)">中西医药</li>
+					<li class="drugstores_class_li" onclick="search_self(0,2)">养生保健</li>
+					<li class="drugstores_class_li" onclick="search_self(0,3)">医疗器械</li>
+				</ul>
+				<ul class="drugstores_class_ul">
+					<li class="drugstores_class_li" onclick="search_self(0,9)">计生用品</li>
+					<li class="drugstores_class_li" onclick="search_self(0,10)">中药饮片</li>
+					<li class="drugstores_class_li" onclick="search_self(0,11)">医学护肤</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>

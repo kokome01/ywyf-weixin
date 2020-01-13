@@ -1,0 +1,226 @@
+* {
+	font-family: "微软雅黑";
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	color: #666;
+}
+
+body {
+	background-color: white;
+}
+
+li {
+	display: inline;
+}
+
+textarea {
+	width: 100%;
+	outline: none;
+	resize: none
+}
+
+table {
+	border-spacing: 0px;
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background-color: #f1f1f1;
+}
+
+.ovfHiden {
+	overflow: hidden;
+	height: 100%;
+}
+
+
+input:focus {
+	color: #666;
+	border: 1px solid #f1f1f1;
+	background-color: #fff;
+	outline: none;
+}
+
+.head {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	background-color: #fff;
+	z-index: 500;
+}
+
+.head_l {
+	text-align: center;
+	padding: 10px 0px;
+	position: relative;
+	border-bottom: 8px solid #f1f1f1;
+}
+
+.back {
+	float: left;
+	position: absolute;
+	left: 13px;
+	top: 7px;
+}
+
+.back img {
+	width: 25px;
+}
+
+.login_head {
+	font-size: 16px;
+}
+
+.register_on {
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}
+/*head*/
+.communication_head{
+	position: relative;
+	position: fixed;
+	top: 48px;
+	left: 0px;
+	background-color: rgba(0,0,0,.5);
+}
+.communication_relative{
+	position: relative;
+	height: 65px;
+}
+.doc_tou{
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	margin: 5px;
+	position: absolute;
+	top: 0px;
+	left: 5px;
+}
+.doc_content{
+	margin: 5px 10px 5px 70px;
+}
+.doc_content p:nth-child(2){
+	margin-top: 5px;
+}
+.doc_name{
+	font-size: 16px;
+	color: #fff;
+}
+.doc_work{
+	color: #fff;
+	font-size: 12px;
+	margin-left: 10px;
+}
+.doc_hos{
+	font-size: 12px;
+	color: #cdcdcd;
+}
+.doc_department{
+	font-size: 12px;
+	color: #cdcdcd;
+}
+/*body*/
+.body{
+	margin-bottom:70px ;
+}
+.communication_body{
+	margin-top: 130px;
+}
+.communication_time{
+	text-align: center;
+}
+.communication_time p{
+	display: inline-block;
+	padding: 2px 5px;
+	font-size: 12px;
+	color: #888;
+	background-color: #e1e1e1;
+}
+.dialogue_doc{
+	margin:0px 10px;
+}
+.dialogue_text{
+	display: block;
+	margin: 10px;
+	padding: 10px;
+	border-radius:5px ;
+}
+.dialogue_text p{
+	text-indent:2em; 
+}
+.dialogue_img_ul{
+	margin-top: 20px;
+	display: flex;
+}
+.dialogue_img_li{
+	display: block;
+	flex: 1 1 auto;
+	text-align: center;
+}
+.dialogue_img_li img{
+	width: 60px;
+	height: 60px;
+}
+.dialogue_text1{
+	border: 1px solid #fff;
+	background-color: #fff;
+	margin-left: 60px;
+	position: relative;
+}
+.dialogue_text1 img{
+	left: -50px;
+}
+.dialogue_text2{
+	border: 1px solid #fff;
+	background-color: #fff;
+	margin-right: 60px;
+	position: relative;
+}
+.dialogue_text2 img{
+	right: -50px;
+}
+.dialogue_img{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	border-radius:40px ;
+	position: absolute;
+	top: 0px;
+}
+.dialogue_shop{
+	margin:20px 10px 10px 10px;
+	text-align: right;
+}
+.dialogue_shop span{
+	padding: 2px 10px;
+	border-radius: 5px;
+	background-color: #0A79E5;
+	color: #fff;
+}
+/*foot*/
+.foot{
+	background-color: #fff;
+	position: fixed;
+	bottom: 0px;
+	height: 50px;
+	width: 100%;
+	border-top:1px solid #f1f1f1 ;
+}
+.foot_input{
+	display: block;
+	border: none;
+	margin: 10px;
+	height: 30px;
+	background-color: #f1f1f1;
+}
+.foot_input p{
+	line-height: 30px;
+	padding: 0px 10px;
+	color: #999;
+}

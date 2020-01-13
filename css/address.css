@@ -66,8 +66,8 @@ input:focus {
 .back {
 	float: left;
 	position: absolute;
-	left: 15px;
-	top: 5px;
+	left: 13px;
+	top: 7px;
 }
 
 .back img {
@@ -125,7 +125,7 @@ input:focus {
 }
 
 .address_list_b p:first-child span:first-child {
-	margin-right: 25px;
+	margin-right: 25px ;
 }
 
 .address_list_f span:nth-child(1) {
@@ -186,6 +186,7 @@ input:focus {
 	position: fixed;
 	bottom: 0px;
 	width: 100%;
+	z-index: 200;
 }
 
 .foot_but {
@@ -214,6 +215,8 @@ input:focus {
 .cue_box span {
 	color: #fff;
 }
+
+
 /*cue*/
 
 .black {
@@ -259,3 +262,5 @@ input:focus {
 	color: #fff;
 	border-bottom-right-radius: 5px;
 }
+
+

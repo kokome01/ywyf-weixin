@@ -1,0 +1,214 @@
+* {
+	font-family: "微软雅黑";
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	color: #666;
+}
+
+body {
+	background-color: white;
+}
+
+li {
+	display: inline;
+}
+
+textarea {
+	width: 100%;
+	outline: none;
+	resize: none
+}
+
+table {
+	border-spacing: 0px;
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background-color: #fff;
+}
+
+.ovfHiden {
+	overflow: hidden;
+	height: 100%;
+}
+
+
+/*input{border: none;}*/
+
+input:focus {
+	color: #666;
+	border: 1px solid #f1f1f1;
+	background-color: #fff;
+	outline: none;
+}
+
+.head {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	background-color: #fff;
+	z-index: 500;
+}
+
+.head_l {
+	text-align: center;
+	padding: 10px 0px;
+	position: relative;
+	border-bottom: 8px solid #f1f1f1;
+	height: 20px;
+}
+
+.back {
+	float: left;
+	position: absolute;
+	left: 13px;
+	top: 7px;
+}
+
+.back img {
+	width: 25px;
+}
+
+.login_head {
+	font-size: 16px;
+}
+
+.register_on {
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}
+
+
+/*body*/
+
+.body {
+	margin: 50px 0px;
+}
+.drugstores_info{
+	height: 40px;
+	padding: 10px;
+	position: relative;
+	border-bottom:1px solid #f1f1f1  ;
+}
+.drugstores_info>img{
+	width: 80px;
+	height: 40px;
+	position: absolute;
+}
+.drugstores_info_text{
+	margin-left:90px ;
+}
+.drugstores_collect{
+	float: right;
+	border: 1px solid #666;
+	padding: 0px 10px;
+	border-radius: 10px;
+}
+.drugstores_address{
+	padding: 10px;
+	border-bottom:1px solid #f1f1f1 ;
+}
+.drugstores_address_i1{
+	width: 20px;
+	float: left;
+}
+.drugstores_address_t2{
+	padding-left:5px ;
+	overflow: hidden;
+	height: 20px;
+	width: 80%;
+	display: inline-block;
+}
+.drugstores_address_i3{
+	width: 20px;
+	float: right;
+}
+.drugstores_drug_h{
+	background-color: #F1F1F1;
+	padding: 10px;
+	border-bottom:3px solid #fff ;
+}
+.drugstores_drug_quang{
+	float: right;
+}
+.drugstores_drug_h img{
+ 	width:20px;
+ 	float: right;
+}
+.drugstores_drug_ul{
+	background-color: #F1F1F1;
+	padding: 10px;
+}
+.drugstores_drug_li{
+	background-color: #FFFFFF;
+	display: inline-block;
+	padding: 10px;
+	width: 43%;
+	border-bottom:2px solid #f1f1f1 ;
+}
+.drugstores_drug_li:nth-child(2n) {
+	float: right;
+}
+.drugstores_drug_li>img{
+	width: 100%;
+	height: 150px;
+}
+.drugstores_drug_name{
+	height: 40px;
+	overflow: hidden;
+}
+.drugstores_drug_price{
+	color: #cc0000;
+}
+.drugstores_drug_price span{
+	color: #cc0000;
+}
+.drugstores_class{
+	margin-top: 5px;
+}
+.drugstores_class_ul{
+	padding:0px 10px;
+	display: flex;
+}
+.drugstores_class_li{
+	background-color: #F1F1F1;
+	padding: 10px;
+	margin: 5px;
+	flex: 1 1 auto; 
+	text-align: center;
+}
+.drugstores_search{
+	text-align: left;
+}
+.drugstores_search input{
+	width: 75%;
+	border-radius:20px ;
+	border: none;
+	background-color: #FFFFFF;
+	padding: 6px 10px;
+	margin: 8px;
+}
+.drugstores_search img{
+	float: right;
+	width: 30px;
+	margin: 10px 20px 10px 0px;
+}
+.drugstores_search{
+	height: 50px;
+	background-color: rgba(0,0,0,0.5);
+}
+.drugstores_details_h{
+	background-color: #F1F1F1;
+	padding: 10px;
+	border-bottom: 3px solid #fff;
+}
+.drugstores_details_b{
+	padding: 10px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>商家举报</title>
+		<meta name="keywords" content="人胎盘片,院外药,处方外配,处方,网上药房"/>
+		<meta name="description" content="院外药为你提供人胎盘片，处方外配服务，便民药店"/>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/url.js"></script>
+		<script src="../js/store_report.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/store_report.css" />
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="head">
+			<div class="index_head1">
+				<a class="store_img index_i_back" href="javascript:history.back(-1)"></a>
+				<p class="index_head">
+					<span>商家举报</span>
+				</p>
+			</div>
+		</div>
+		<!--头部-->
+		<!--身躯-->
+		<div class="body">
+			<div class="report_style">
+				<p>举报类型</p>
+				<span class="report_style_li" onclick="styles(this)" ty="1">商超刷单</span>
+				<span class="report_style_li " onclick="styles(this)" ty="2">外卖价格高于店内价格</span>
+				<span class="report_style_li" onclick="styles(this)" ty="3">商家资质问题</span>
+				<span class="report_style_li" onclick="styles(this)" ty="4">其他</span>
+			</div>
+			<div class="report_text">
+				<p>举报说明</p>
+				<div class="report_text_b">
+					<textarea placeholder="这里输入文字" rows="5" cols="20" id="report_info"></textarea>
+				</div>
+			</div>
+			<div class="report_images">
+				<input type="file"  onchange="upimg(this)" class="fileimg_f" id="file" capture="camera" accept="image/*" />
+				<img src="../img/detail.png" class="fileimg_imgs"/>
+				<span class="report_images_t">图片可选择性添加</span>
+			</div>
+			<div class="report_button" onclick="report_but()">
+				提交举报
+			</div>
+		</div>
+		<!--身躯-->
+		
+
+	</body>
+
+</html>

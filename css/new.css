@@ -66,8 +66,8 @@ input:focus {
 .back {
 	float: left;
 	position: absolute;
-	left: 15px;
-	top: 5px;
+	left: 13px;
+	top: 7px;
 }
 
 .back img {
@@ -150,7 +150,15 @@ input:focus {
 .onread {
 	background-color: #cdcdcd;
 }
-
+		.payment_zero{
+			width: 100px;
+			height: 100px;
+			margin: auto;
+			margin-top: 150px;
+			background-image: url(../img/zero.png);
+			background-repeat:no-repeat;
+			background-size:100px 100px;
+		}
 
 /*cue*/
 

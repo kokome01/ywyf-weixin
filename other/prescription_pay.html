@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>院外药-药单确认</title>
+		<meta name="keywords" content="人胎盘片,院外药,处方外配,处方,网上药房"/>
+		<meta name="description" content="院外药为你提供人胎盘片，处方外配服务，便民药店"/>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/prescription_pay.js"></script>
+		<script src="../js/url.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/prescription_pay.css" />
+	</head>
+	<body>
+		<!--头部-->
+		<div class="head">
+			<div class="head_l">
+				<a href="javascript:history.back(-1);" class="back" title="返回院外药上一页"><img src="../img/left.png" /></a>
+				<div>
+					<span class="login_head">药单确认</span>
+				</div>
+				<!--<div>
+					<a class="register_on" onclick="commodity_del()">编辑</a>
+				</div>-->
+			</div>
+		</div>
+		<div class="body">
+			<div class="shop_list">
+				<div class="shop_list_head">
+					<input type="checkbox" checked="checked" name="" id="" value="" onclick="factory(this)" uname="0" />
+					<span>支付直接点击右下角结算</span>
+					<img src="" />
+					<label>已免运费</label>
+				</div>
+				<ul class="shop_list_body">
+					<!--<li class="shop_list_l">
+						<input type="checkbox" checked="checked" name="" id="" value="" onclick="commodity(this)" uname="0" />
+						<div class="shop_list_text_pay">
+							<p>■■■■■■■■</p>
+							<p class="shop_list_t1">规格：<span>■■</span></p>
+							<p class="shop_list_t2">￥<span>■■</span></p>
+							<div class="shop_list_but">
+								<input type="text" name="" id="" value="" class="shop_num" />
+							</div>
+						</div>
+					</li>-->
+				</ul>
+			</div>
+		</div>
+		<div class="foot">
+			<div class="shop_balance">
+				<div>
+					<input type="checkbox" checked="checked" name="" id="" value="" onclick="big_box()" uname="0" />
+					<p class="shop_balance_t1">总计：<span>￥</span><span class="zhongji">■■</span></p>
+					<p class="shop_balance_t2">运费：<span>￥</span><span id="mailFee">■■</span></p>
+					<p class="shop_balance_t3" style="display: none;">全选</span>
+					</p>
+				</div>
+				<div class="settlement" uset="0" onclick="result()" set="0">
+					<span class="settlement_cue">你未选择任何商品</span>
+					<div class="settlement_cue_b">
+					</div>
+					立即结算
+				</div>
+			</div>
+			
+		</div>
+		<div class="foot1">
+			<div class="cue_box">
+				<span></span>
+			</div>
+		</div>
+		<div class="black">
+			<div class="cue">
+				<p class="cue_text">你确认要删除这些商品</p>
+				<span class="cue_cancel" onclick="cue_del()">取消</span>
+				<span class="cue_confirm" onclick="cue_but()">确认</span>
+			</div>
+		</div>
+	</body>
+
+</html>

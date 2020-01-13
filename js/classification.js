@@ -1,17 +1,115 @@
+$(document).ready(function() {
+	$.ajax({
+		url: web_url + '/ywyf-weixin/product/typesList', //地址
+		dataType: "json",
+		type: "post",
+		timeout: 50000,
+		xhrFields: {
+			withCredentials: true
+		}, //跨域产生问题（跨域请求设置withCredentials）登录，退出登录
+		beforeSend:function(XMLHttpRequest){
+			loding1("A2")
+		},
+		success: function(data) {
+			console.log(JSON.stringify(data))
+			if(data.status == 1) {
+				var shtml = "<div class='class_left'>" +
+					"<ul>" +
+					"<li>" +
+					"<div class='class_list class_on' onclick='class_but(this,0)'>" +
+					"全部" +
+					"</div>" +
+					"</li>"
+				for(var i = 0; i < data.data.length; i++) {
+					shtml += "<li>" +
+						"<div class='class_list class' x='" + data.data[i].id + "' onclick='class_but(this," + (i+1) + ")'>" +
+						data.data[i].typeName +
+						"</div>" +
+						"</li>";
+
+				}
+				shtml +=
+					"</ul>" +
+					"</div>" +
+					"<div class='class_right'>" +
+					"<ul>";
+				for(var j = 0; j < data.data.length; j++) {
+					for(var k = 0; k < data.data[j].funTypes.length; k++) {
+						shtml += "<li class='class_r_li ' id=" + data.data[j].id + " x=" + (j + 1) + ">" +
+							"<div class=''>" +
+							"<div class='class_r_head'>" +
+							data.data[j].funTypes[k].name +
+							"</div>" +
+							"<div class='class_r_body'>" +
+							"<ul>";
+						for(var h = 0; h < data.data[j].funTypes[k].diseases.length; h++) {
+							shtml += "<li onclick='search(this)' sea='"+data.data[j].funTypes[k].diseases[h].id+"'>" +
+								"<span>" + data.data[j].funTypes[k].diseases[h].name + "</span>" +
+								"</li>";
+						}
+						shtml += "</ul>" +
+							"</div>" +
+							"</div>" +
+							"</li>";
+					}
+				}
+
+				shtml += "</ul>" +
+					"</div>";
+			}
+
+			$(".body").empty();
+			$(shtml).appendTo($(".body"));
+
+			//获取到index 的url值
+			//console.log(GetQueryString("txt"))
+			if(GetQueryString("txt") != 0 || GetQueryString("txt") != "") {
+				$(".class_r_li").css("display", "none");
+				$(".class_r_li[x=" + GetQueryString("txt") + "]").css("display", "inline-block");
+				$(".class_list").removeClass("class_on");
+				$(".class_left ul").find("li").eq(GetQueryString("txt")).find("div").addClass("class_on")
+			} else {
+				$(".class_r_li").css("display", "inline-block");
+				$(".class_list").removeClass("class_on");
+				$(".class_left ul").find("li").eq(0).find("div").addClass("class_on");
+			}
+			//展开收缩
+			deploy();
+		},
+		complete:function(XMLHttpRequest,textStatus){
+			loding2()
+            // alert('远程调用成功，状态文本值：'+textStatus);
+        },
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			getcode()
+		},
+	})
+	//获取到url的值
+
+	function GetQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg); //获取url中"?"符后的字符串并正则匹配           
+		var context = "";
+		if(r != null) context = r[2];
+		reg = null;
+		r = null;
+		return context == null || context == "" || context == "undefined" ? "" : context;
+	}
+	/*var storage=window.localStorage;
+	storage.a=1;
+	alert(storage.a)*/
+})
 window.onload = function() {
 	deploy()
 }
 //分类第一级点击
 function class_but(ob, pid) {
-	if(pid!=0)
-	{
-		$(".class_r_li").css("display","none");
+	if(pid != 0) {
+		$(".class_r_li").css("display", "none");
 		//var ida="#"+pid;
-		$(".class_r_li[x="+pid+"]").css("display","inline-block");
-	}
-	else
-	{
-		$(".class_r_li").css("display","inline-block");
+		$(".class_r_li[x=" + pid + "]").css("display", "inline-block");
+	} else {
+		$(".class_r_li").css("display", "inline-block");
 	}
 	$(".class_list").removeClass("class_on");
 	$(ob).addClass("class_on");
@@ -47,47 +145,7 @@ function deploy_dowm(ob) {
 	$(ob).parents(".class_r_body").find("li").css("display", "inline");
 	$(ob).css("display", "none");
 }
-/*ajax*/
-$(document).ready(function() {
-	var cla1 = '<li ><div class="class_list class_on" onclick="class_but(this,8)">全部</div></li>'
-	var cla2 = ""
-	var cla3 = ""
-	$.ajax({
-		url: "http://192.168.0.102/ywyf-weixin//product/typesList", //地址
-		dataType: "json",
-		type: "post",
-		timeout: 5000,
-		success: function(data) {
-			$(".class_left ul").empty();
-			for(i = 0; i < data.data.length; i++) {
-				cla1 += '<li ><div class="class_list" onclick="class_but(this,' + i + ')">' +
-					data.data[i].typeName +
-					'</div></li>'
-			}
-			$(".class_left ul").append(cla1);
-			for(i = 0; i < data.data.length; i++) {
-				for(l = 0; l < data.data[i].funTypes.length; l++) {
-					for(j = 0; j < data.data[i].funTypes[l].diseases.length; j++) {
-						cla3 += '<li onclick="window.location.href=' + "shop.html" + '"><span>' +
-							data.data[i].funTypes[l].diseases[j].name +
-							'</span></li>'
-					}
-
-					cla2 += '<li class="class_r_li"><div class=""><div class="class_r_head">' +
-						data.data[i].funTypes[l].name +
-						'</div><div class="class_r_body"><ul>' +
-						cla3 +
-						'</ul></div></div></li>	'
-				}
-			}
-			$(".class_right>ul").append(cla2);
-			deploy();
-		},
-		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			/*alert(XMLHttpRequest.status);
-			alert(XMLHttpRequest.readyState);
-			alert(textStatus);*/
-		},
-
-	})
-})
+function search(ob){
+	window.location.href='choice.html?cla='+$(ob).attr("sea")
+	sessionStorage.mainSearch = $(ob).find("span").text();
+}

@@ -3,16 +3,19 @@
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>我的账单</title>
+		<title>院外药-我的账单</title>
+		<meta name="keywords" content="人胎盘片,院外药,处方外配,处方,网上药房"/>
+		<meta name="description" content="院外药为你提供人胎盘片，处方外配服务，便民药店"/>
 		<meta name="viewport" content="width=device-width" />
 		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
 		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/url.js"></script>
 		<link rel="stylesheet" type="text/css" href="../css/billist.css" />
 		<script type="text/javascript">
 			$(document).ready(function(){
 				var strhtml = ""
 				$.ajax({
-					url: 'http://192.168.0.102/ywyf-weixin/user/toBill', //地址
+					url: web_url+'/ywyf-weixin/user/toBill', //地址
 					dataType: "json",
 					type: "post",
 					timeout: 50000,
@@ -20,21 +23,26 @@
 						withCredentials: true
 					},   //跨域产生问题（跨域请求设置withCredentials）登录，退出登录
 					success: function(data) {
-						for(i=0;i<data;i++){
-							strhtml += '<li><div class="bill_list"><p>订单编号：<span>'
-							+123456789+
-							'</span></p><p>'
-							+康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美+
-							'</p><p>'
-							+formatDateTime(inputTime)+
-							'</p></div></li>'
+						console.log(JSON.stringify(data))
+						if(data.msg!="请登录"){
+							for(i=0;i<data.pagination.list.length;i++){
+								strhtml += '<li><div class="bill_list"><p>订单编号：<span>'
+								+data.pagination.list[i].outTradeNo+
+								'</span></p><p>购买商品支付金额'
+								+data.pagination.list[i].money+
+								'元</p><p>'
+								+formatDateTime(data.pagination.list[i].addtime*1000)+
+								'</p></div></li>'
+							}
+							$(".bill_ul").empty().append(strhtml)
+						}else{
+							/*alert("请登录")
+							window.location.href = '../other/login.html'*/
 						}
+						
 					},
 					error: function(XMLHttpRequest,textStatus, errorThrown) {
-						/*alert(XMLHttpRequest.status);
-						alert(XMLHttpRequest.readyState);
-						alert(textStatus);*/
-						console.log("网络请求失败，请联系网站管理员!");
+						getcode()
 					},
 				})
 			})
@@ -46,7 +54,7 @@
 		<!--头部-->
 		<div class="head">
 			<div class="head_l">
-				<a href="javascript:history.back(-1);" class="back"><img src="../img/left.png" /></a>
+				<a href="javascript:history.back(-1);" class="back" title="返回院外药上一页"><img src="../img/left.png" /></a>
 				<div>
 					<span class="login_head">我的账单</span>
 				</div>
@@ -57,22 +65,8 @@
 				<li>
 					<div class="bill_list">
 						<p>订单编号：<span>123456789</span></p>
-						<p>康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美花费25软妹币</p>
-						<p>2018-06-12 16：40</p>
-					</div>
-				</li>
-				<li>
-					<div class="bill_list">
-						<p>订单编号：<span>123456789</span></p>
-						<p>康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美</p>
-						<p>2018-06-12 16：40</p>
-					</div>
-				</li>
-				<li>
-					<div class="bill_list">
-						<p>订单编号：<span>123456789</span></p>
-						<p>康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美康肤美</p>
-						<p>2018-06-12 16：40</p>
+						<p></p>
+						<p></p>
 					</div>
 				</li>
 			</ul>

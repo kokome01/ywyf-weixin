@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>我的订单</title>
+		<meta name="keywords" content="人胎盘片,院外药,处方外配,处方,网上药房"/>
+		<meta name="description" content="院外药为你提供人胎盘片，处方外配服务，便民药店"/>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/url.js"></script>
+		<script src="../js/store_order.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/store_order.css" />
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="head">
+			<div class="index_head1">
+				<p class="index_head">
+					<span>我的订单</span>
+				</p>
+			</div>
+		</div>
+		<!--头部-->
+		<!--身躯-->
+		<div class="body">
+			<p id="payment_1_head">进行中订单</p>
+			<ul id="payment_1">
+				<!--<li class="order_li">
+					<img src="../img/1455356212095395900-1.jpg"/>
+					<div class="order_text">
+						<span class="order_t_name">临武大超3213123213市</span>
+						<div class="store_img order_i_right"></div>
+						<span  class="order_t_state">正在配送中...</span>
+						<p class="order_t_favourable">满60减25</p>
+						<div class="order_t_commodity">
+							<div class="store_img order_i_bottom"></div>
+							<ul class="order_tc_ul order_tc_height" onclick="height(this)" hei="1">
+								<li class="order_tc_li">
+									<span>肥仔快乐水3213123150ml</span>
+									<span>x<span>2</span></span>
+									<span>￥<span>62.33</span></span>
+								</li>
+								<li class="order_tc_li">
+									<span>肥仔快乐水3213123150ml</span>
+									<span>x<span>2</span></span>
+									<span>￥<span>62.33</span></span>
+								</li>
+							</ul>
+						</div>
+						<p class="order_t_balance">共<span>3</span>件产品，实际付款<span>￥</span><span>263.33</span></p>
+					</div>
+					<div class="order_t_button">
+						<span onclick="urge(this)" urge = "1">催单</span>
+					</div>
+				</li>-->
+			</ul>
+			<p>订单分类</p>
+			<div class="order_menu">
+				<span class="order_menu_list order_menu_on" onclick="order_menu(this)">待支付</span>
+				<span class="order_menu_list" onclick="order_menu(this)">待评价</span>
+				<span class="order_menu_list" onclick="order_menu(this)">已完成</span>
+				<span class="order_menu_list" onclick="order_menu(this)">售后中</span>
+				<span class="order_menu_list" onclick="order_menu(this)">已取消</span>
+			</div>
+			<ul id="payment_2">
+				
+				<!--<li class="order_li">
+					<img src="../img/1455356212095395900-1.jpg"/>
+					<div class="order_text">
+						<span class="order_t_name">临武大超3213123213市</span>
+						<div class="store_img order_i_right"></div>
+						<span  class="order_t_state">配送已经完成</span>
+						<p class="order_t_favourable">满60减25</p>
+						<div class="order_t_commodity">
+							<div class="store_img order_i_bottom"></div>
+							<ul class="order_tc_ul order_tc_height" onclick="height(this)" hei="1">
+								<li class="order_tc_li">
+									<span>肥仔快乐水3213123150ml</span>
+									<span>x<span>2</span></span>
+									<span>￥<span>62.33</span></span>
+								</li>
+								<li class="order_tc_li">
+									<span>肥仔快乐水3213123150ml</span>
+									<span>x<span>2</span></span>
+									<span>￥<span>62.33</span></span>
+								</li>
+							</ul>
+						</div>
+						<p class="order_t_balance">共<span>3</span>件产品，实际付款<span>￥</span><span>263.33</span></p>
+					</div>
+					<div class="order_t_button">
+						<span onclick="window.location.href='store_store.html'">再次购买</span>
+						<span onclick="window.location.href='store_evaluate.html'">评价</span>
+					</div>
+				</li>-->
+			</ul>
+		</div>
+		<!--身躯-->
+		<!--脚部-->
+		<div class="foot">
+			<div class="container">
+				<a class="center foot_img " href="store_index.html">
+					<div class="store_img index_i_index"></div>
+					<p>商超</p>
+				</a>
+				<a class="center foot_img" href="store_shop.html">
+					<div class="store_img index_i_shop"></div>
+					<p>购物车</p>
+				</a>
+				<a class="center foot_img center_good" href="#">
+					<div class="store_img index_i_order"></div>
+					<p>订单</p>
+				</a>
+				<a class="center foot_img " onclick="set_up()">
+					<div class="store_img index_i_set"></div>
+					<p>设置</p>
+				</a>
+			</div>
+		</div>
+		<!--脚部-->
+		<!--弹框-->
+		<div class="set_up" id="set_up">
+			<a href="store_collection.html">我的收藏</a>
+			<a href="../other/adddress.html">管理地址</a>
+			<a href="../index.html">返回首页</a>
+		</div>
+	</body>
+
+</html>

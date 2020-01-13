@@ -1,3 +1,7 @@
+$(document).ready(function(){
+	$(".commodity_name").text(localStorage.prescription_name);
+	$(".commodity_price").text(localStorage.prescription_price)
+})
 /*添加图片*/
 function upimg(obj) {
 	var formData = new FormData();
@@ -6,7 +10,7 @@ function upimg(obj) {
 	//console.log(formData);
 	///ajax
 	$.ajax({
-		url: 'http://192.168.0.102/ywyf-weixin/upload/uploadPic1.do', //地址
+		url: web_url+'/ywyf-weixin/upload/uploadPic1.do', //地址
 		dataType: "json",
 		type: "post",
 		xhrFields: {
@@ -18,15 +22,13 @@ function upimg(obj) {
 		processData: false,
 		contentType: false,
 		success: function(data) {
+			
 			console.log(JSON.stringify(data));
 			$(".fileimg_imgs").attr("src", data.url);
 			//window.location.reload()
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			//alert(XMLHttpRequest.status);
-			//alert(XMLHttpRequest.readyState);
-			//alert(textStatus);
-			console.log("网络请求失败，请联系网站管理员!");
+			getcode()
 		},
 	})
 }
@@ -55,7 +57,7 @@ function presc0() {
 	$(".body1").show();
 	$(".body2").hide();
 	$(".body3").hide();
-	$(".back").attr("onclick", "window.location.href='introduction.html'")
+	$(".back").attr("onclick", "window.location.href='introduction.html?id="+getQueryString("id")+"'")
 	$(".register_on").text("")
 }
 //点击确认
@@ -119,9 +121,10 @@ function sex_x(ob) {
 }
 //ajax
 function ajax_but(fr,zhi){
+	console.log(fr + '&pic='+zhi)
 	//ajax
 	$.ajax({
-		url: 'http://192.168.0.102/ywyf-weixin/user/preApply', //地址
+		url: web_url+"/ywyf-weixin/user/preApply", //地址
 		dataType: "json",
 		type: "post",
 		timeout: 50000,
@@ -130,23 +133,36 @@ function ajax_but(fr,zhi){
 		},
 		data: fr + '&pic='+zhi,
 		success: function(data) {
-			//console.log(JSON.stringify(data))
+			console.log(JSON.stringify(data))
 			if(data.status == 1) {
 				if(data.msg=="更新成功"){
 					$(".cue_box").css("background-color", "#4FD24E").text("提交成功").fadeIn(500).delay(1).fadeOut(500);
-					window.location.href = 'introduction.html';
+					perscription()
+					window.location.href = 'introduction.html?id='+getQueryString("id");
 				}
 			} else {
-				alert("请登录");
-				window.location.href = 'login.html';
+				/*alert("请登录");
+				window.location.href = 'login.html';*/
 			}
 
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			/*alert(XMLHttpRequest.status);
-			alert(XMLHttpRequest.readyState);
-			alert(textStatus);*/
-			console.log("网络请求失败，请联系网站管理员!");
+			getcode()
 		},
 	})
+}
+//缓存需求登记
+function perscription(){
+	if(sessionStorage.prescription==undefined||sessionStorage.prescription=="undefined"){
+		var prescription = {};
+		var pre_nu = [];
+		prescription.pre_nu = pre_nu;
+		pre_nu.push({"pre_id":getQueryString("id")})
+		sessionStorage.prescription = JSON.stringify(prescription);
+	}else{
+		var prescription = JSON.parse(sessionStorage.prescription)
+		prescription.pre_nu.push({"pre_id":getQueryString("id")})
+		sessionStorage.prescription = JSON.stringify(prescription);
+	}
+	
 }

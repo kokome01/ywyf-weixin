@@ -4,19 +4,21 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>评价商品</title>
+		<meta name="keywords" content="人胎盘片,院外药,处方外配,处方,网上药房"/>
+		<meta name="description" content="院外药为你提供人胎盘片，处方外配服务，便民药店"/>
 		<meta name="viewport" content="width=device-width" />
 		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
 		<script src="../js/jquery-1.8.3.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="../css/assess.css" />
 		<script src="../js/assess.js"></script>
-		
+		<script src="../js/url.js"></script>
 	</head>
 
 	<body>
 		<!--头部-->
 		<div class="head">
 			<div class="head_l">
-				<a href="javascript:history.back(-1);" class="back"><img src="../img/left.png" /></a>
+				<a href="javascript:history.back(-1);" class="back" title="返回院外药上一页"><img src="../img/left.png" /></a>
 				<div>
 					<span class="login_head">商品评价</span>
 				</div>
@@ -24,9 +26,9 @@
 		</div>
 		<div class="body">
 			<div class="evaluate_head">
-				<img src="../img/ad3.jpg" />
+				<img src="../img/mo1.jpg" />
 				<div class="evaluate_name">
-					<p>如何更靠谱换个靠谱换个卡活泼克欧靠谱换个卡活泼克欧卡活泼克欧克破口</p>
+					<p ><span class="evaluate_name_p">■■■■■■■■■■■■■■</span><span></span></p>
 					<p>商品品评分：<span class="pin pin_good" onclick="pin(this)" pin="0">好评</span><span class="pin" onclick="pin(this)" pin="1">中评</span><span class="pin" onclick="pin(this)" pin="2">差评</span></p>
 				</div>
 			</div>
@@ -36,7 +38,7 @@
 			<div class="imgOnloadWrap">
 				<p>晒照片(<label class="fileimg_num">0</label>/5)</p>
 				<div class="filePic">
-					<input type="file" accept="image/jpeg,image/jpg,image/png,image/svg" onchange="upimg(this)" class="fileimg_f" />
+					<input type="file"  onchange="uploadPic()" class="fileimg_f" id="file"/>
 					<img src="../img/image.jpg" class="fileimg_imgs" />
 				</div>
 

@@ -40,7 +40,14 @@ body {
 
 
 /*input{border: none;}*/
+.shop_list_text_pay{
+	margin-left: 30px;
+}
 
+.shop_list_text_pay p:first-child {
+	height: 60px;
+	padding-top: 5px;
+}
 input:focus {
 	color: #666;
 	border: 1px solid #f1f1f1;
@@ -64,8 +71,8 @@ input:focus {
 .back {
 	float: left;
 	position: absolute;
-	left: 15px;
-	top: 5px;
+	left: 13px;
+	top: 7px;
 }
 
 .back img {

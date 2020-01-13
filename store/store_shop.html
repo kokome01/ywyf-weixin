@@ -1,0 +1,96 @@
+
+ <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>购物车</title>
+		<meta name="keywords" content="人胎盘片,院外药,处方外配,处方,网上药房"/>
+		<meta name="description" content="院外药为你提供人胎盘片，处方外配服务，便民药店"/>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/store_shop.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/store_shop.css" />
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="head">
+			<a class="store_img index_i_back" href="javascript:history.back(-1)"></a>
+			<div class="index_head1">
+				<p class="index_head">
+					<span>购物车</span>
+				</p>
+			</div>
+			<a class="shop_kong" onclick="kong()">清空</a>
+		</div>
+		<!--头部-->
+		<!--身躯-->
+		<div class="body">
+			<ul>
+				<li class="shop_li">
+					<div class="shop_li_head">
+						<span class="shop_li_name">杭州临武便利店（民和路）</span>
+						<span class="store_img shop_i_right"></span>
+						<span class="store_img shop_i_del" onclick="del(this)"></span>
+					</div>
+					<ul class="shop_commodity_ul">
+						<li class="shop_commodity_li">
+							<img src="../img/1455356212095395900-1.jpg"/>
+							<div class="shop_commodity_text">
+								<p><span class="shop_commodity_name">到时候发大声喊道生还得说</span><span class="shop_red shop_commodity_price">15.66</span><span class="shop_red">￥</span></p>
+								<p><span>x</span><span class="shop_commodity_num">2</span></p>
+							</div>
+						</li>
+						<li class="shop_commodity_li">
+							<img src="../img/1455356212095395900-1.jpg"/>
+							<div class="shop_commodity_text">
+								<p><span class="shop_commodity_name">到时候发大声喊道生还得说</span><span class="shop_red shop_commodity_price">15.66</span><span class="shop_red">￥</span></p>
+								<p><span>x</span><span class="shop_commodity_num">2</span></p>
+							</div>
+						</li>
+					</ul>
+					<div class="shop_other">
+						<p><b>餐盒</b><span class="shop_red shop_lunchbox">0.9</span><span class="shop_red">￥</span></p>
+					</div>
+					<div class="shop_other">
+						<p><b>配送</b><span class="shop_red shop_dispatching">0.9</span><span class="shop_red">￥</span></p>
+					</div>
+					<div class="shop_other shop_settle">
+						<p><span class="shop_settle_but" onclick="settle_but()">去结算</span><span class="shop_red shop_total" >18.90</span><span class="shop_red">￥</span><b>合计</b></p>
+					</div>
+				</li>
+				
+			</ul>
+		</div>
+		<!--身躯-->
+		<!--脚部-->
+		<div class="foot">
+			<div class="container">
+				<a class="center foot_img " href="store_index.html">
+					<div class="store_img index_i_index"></div>
+					<p>商超</p>
+				</a>
+				<a class="center foot_img center_good" href="#">
+					<div class="store_img index_i_shop"></div>
+					<p>购物车</p>
+				</a>
+				<a class="center foot_img" href="store_order.html">
+					<div class="store_img index_i_order"></div>
+					<p>订单</p>
+				</a>
+				<a class="center foot_img " onclick="set_up()">
+					<div class="store_img index_i_set"></div>
+					<p>设置</p>
+				</a>
+			</div>
+		</div>
+		<!--脚部-->
+		<!--弹框-->
+		<div class="set_up" id="set_up">
+			<a href="store_collection.html">我的收藏</a>
+			<a href="../other/adddress.html">管理地址</a>
+			<a href="../index.html">返回首页</a>
+		</div>
+
+</html>

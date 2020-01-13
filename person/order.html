@@ -3,75 +3,96 @@
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>我的订单</title>
+		<title>院外药-我的订单</title>
+		<meta name="keywords" content="人胎盘片,院外药,处方外配,处方,网上药房"/>
+		<meta name="description" content="院外药为你提供人胎盘片，处方外配服务，便民药店"/>
 		<meta name="viewport" content="width=device-width" />
 		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
 		<script src="../js/jquery-1.8.3.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="../css/order.css" />
+		<script src="../js/url.js"></script>
 		<script src="../js/order.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/order.css" />
 	</head>
 
 	<body>
 		<!--头部-->
 		<div class="head">
-			<div class="head_l">
-				<a href="javascript:history.back(-1);" class="back"><img src="../img/left.png" /></a>
+			<div class="head_l" >
+				<a href="javascript:history.back(-1);" class="back" title="返回院外药上一页"><img src="../img/left.png" /></a>
 				<div>
-					<span class="login_head">我的订单</span>
+					<span class="login_head" >我的订单</span>
 				</div>
 			</div>
 			<div class="order_head">
-				<span onclick="list(this)" class="order_head_i order_head_but">全部</span>
-				<span onclick="list(this)" class="order_head_i">待付款</span>
-				<span onclick="list(this)" class="order_head_i">待发货</span>
-				<span onclick="list(this)" class="order_head_i">待收货</span>
-				<span onclick="list(this)" class="order_head_i">待评价</span>
+				<span onclick="list(this)" class="order_head_i order_head_but" uname="">全部</span>
+				<span onclick="list(this)" class="order_head_i" uname="0">待付款</span>
+				<span onclick="list(this)" class="order_head_i" uname="1">待发货</span>
+				<span onclick="list(this)" class="order_head_i" uname="2">待收货</span>
+				<span onclick="list(this)" class="order_head_i" uname="3">待评价</span>
+				<span onclick="list(this)" class="order_head_i" uname="5">已评价</span>
 			</div>
 		</div>
 		<div class="body">
-			
 			<div class="order_box">
+				<div class="tips">
+					<p>注:因为不同品牌，会由不同地区发货，在发货页面存在订单延迟与订单信息滞后的问题</p>
+				</div>
 				<ul>
-					<li class="order_list">
+					<li class="order_list" oid="">
 						<div class="order_vender">
-							<span>湖南一格</span>
+							<p>订单编号：<span class="order_vender_num">123123123</span>订单时间：<span class="order_vender_time">2018-15-12 12:00:00</span></p>
+							<p class="order_condition">待付款</p>
 						</div>
-						<ul>
-							<li class="order_li" >
-								<img src="../img/ad2.jpg"/>
+						<ul id="order_b_ul">
+						</ul>
+						<div class="order_operation">
+							<span class="order_del" onclick="del(this)">删除订单</span>
+							<span class="order_warn" onclick="warn(this)"><b>提醒发货</b><label>一天只能提醒一次</label></span>
+							<span class="order_take" onclick="take(this)">确认收货</span>
+							<span class="order_assess">评价商品</span>
+							<span class="order_pay" onclick="window.location.href='../other/pay.html'">一键支付</span>
+							<span class="order_del" onclick="express(this)">填写快递单</span>
+						</div>
+					</li>
+					<li class="order_list" oid="">
+						<div class="order_vender">
+							<p>订单编号：<span class="order_vender_num">123123123</span>订单时间：<span class="order_vender_time">2018-15-12 12:00:00</span></p>
+							<p class="order_condition">待付款</p>
+						</div>
+						<ul id="order_b_ul">
+							<li class="order_li" oidi="">
+								<span class="order_refund" onclick="window.location.href='../person/refund.html'">申请售后</span>
+								<img src="../img/mo1.jpg" />
 								<div class="order_name">
 									<p>问问企翁无群二翁无群二</p>
 									<p class="order_spec">规格：<span>125g</span></p>
+
 								</div>
 								<div class="order_price">
 									<p>共<span>2</span>件商品，实付<span>￥</span><span>286.00</span></p>
-								</div>
-								<div class="order_operation">
-									<span class="order_del" onclick="del(this)">删除订单</span>
-									<span class="order_warn"  onclick="warn(this)"><b>提醒发货</b><label>一天只能提醒一次</label></span>
-									<span class="order_take" onclick="take(this)">确认收货</span>
-									<span class="order_assess">评价商品</span>
-									<span class="order_pay" onclick="window.location.href='../other/pay.html'">一键支付</span>
 								</div>
 							</li>
-							<li class="order_li" >
-								<img src="../img/ad2.jpg"/>
+							<li class="order_li" oidi="">
+								<span class="order_refund" onclick="window.location.href='../person/refund.html'">申请售后</span>
+								<img src="../img/mo1.jpg" />
 								<div class="order_name">
 									<p>问问企翁无群二翁无群二</p>
 									<p class="order_spec">规格：<span>125g</span></p>
+
 								</div>
 								<div class="order_price">
 									<p>共<span>2</span>件商品，实付<span>￥</span><span>286.00</span></p>
-								</div>
-								<div class="order_operation">
-									<span class="order_del" onclick="del(this)">删除订单</span>
-									<span class="order_warn"  onclick="warn(this)"><b>提醒发货</b><label>一天只能提醒一次</label></span>
-									<span class="order_take" onclick="take(this)">确认收货</span>
-									<span class="order_assess">评价商品</span>
-									<span class="order_pay" onclick="window.location.href='../other/pay.html'">一键支付</span>
 								</div>
 							</li>
 						</ul>
+						<div class="order_operation">
+							<span class="order_del" onclick="del(this)">删除订单</span>
+							<span class="order_warn" onclick="warn(this)"><b>提醒发货</b><label>一天只能提醒一次</label></span>
+							<span class="order_take" onclick="take(this)">确认收货</span>
+							<span class="order_assess" onclick="assess(this)">评价商品</span>
+							<span class="order_pay" onclick="window.location.href='../other/pay.html'">一键支付</span>
+							<span class="order_del" onclick="express(this)">填写快递单</span>
+						</div>
 					</li>
 				</ul>
 			</div>
@@ -81,6 +102,15 @@
 				<p class="cue_text"></p>
 				<span class="cue_cancel" onclick="cue_del()">取消</span>
 				<span class="cue_confirm" onclick="cue_but()">确认</span>
+			</div>
+			<div class="express">
+				<div class="express_cue">
+					<b>请填写回寄的订单快递单号</b>
+					<input type="text" name="" id="" value="" placeholder="填写快递单号" class="express_cue_tx" />
+					<p>注：快递单号填写完毕后不可再修改，请谨慎填写</p>
+					<span class="cue_cancel" onclick="express_del()">取消</span>
+					<span class="cue_confirm" onclick="express_but()">确认</span>
+				</div>
 			</div>
 		</div>
 	</body>

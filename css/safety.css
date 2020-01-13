@@ -64,8 +64,8 @@
 			.back {
 				float: left;
 				position: absolute;
-				left: 15px;
-				top: 5px;
+				left: 13px;
+				top: 7px;
 			}
 			
 			.back img {
@@ -361,4 +361,7 @@
 			
 			.cue_box span {
 				color: #fff;
+			}
+			.hide{
+				display: none;
 			}

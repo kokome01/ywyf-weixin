@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>便利店</title>
+		<meta name="keywords" content="人胎盘片,院外药,处方外配,处方,网上药房"/>
+		<meta name="description" content="院外药为你提供人胎盘片，处方外配服务，便民药店"/>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/url.js"></script>
+		<script src="../js/store_settling.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/store_settling.css" />
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="head">
+			<div class="index_head1">
+				<a class="store_img index_i_back" href="store_index.html"></a>
+				<p class="index_head">
+					<span>账单结算</span>
+				</p>
+			</div>
+		</div>
+		<!--身躯-->
+		<div class="body">
+			<div class="settling_background"></div>
+			<div class="settling_body">
+				<div class="settling_address" onclick="address()">
+					<p class="settling_address1">&nbsp;</p>
+					<p class="settling_address2"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></p>
+					<div class="settling_add">
+						<span>新增地址</span>
+						<div class="store_img store_i_add"></div>
+						<div class="store_img store_i_address"></div>
+					</div>
+				</div>
+				<div class="settling_commodity">
+					<p class="commodity_shop">杭州临武大超市</p>
+					<ul class="settling_commodity_ul">
+						<li class="settling_commodity_li">
+							<img src="../img/1455356212095395900-1.jpg" />
+							<div class="settling_commodity_text">
+								<p class="settling_commodity_name">看就看撒打算果汁<span class="settling_commodity_price ">￥<span class="settling_commodity_price_num ">15.22</span></span>
+								</p>
+								<p class="settling_commodity_num">x<span class="settling_commodity_num_z">4</span></p>
+							</div>
+						</li>
+						<li class="settling_commodity_li">
+							<img src="../img/1455356212095395900-1.jpg" />
+							<div class="settling_commodity_text">
+								<p class="settling_commodity_name">看就看撒打算果汁<span class="settling_commodity_price">￥<span class="settling_commodity_price_num">15.22</span></span>
+								</p>
+								<p class="settling_commodity_num">x<span class="settling_commodity_num_z">2</span></p>
+							</div>
+						</li>
+					</ul>
+					<div class="settling_packing">
+						<!--<p>包装费<span class="settling_commodity_price">￥<span id="packing_cost">11.45</span></span></p>-->
+						<p>配送费<span class="settling_commodity_price">￥<span id="transport_cost">4.55</span></span>
+						</p>
+					</div>
+					<!--<div class="settling_discount" id="settling_discount" over="100"  >
+						<span class="discount_mang">满减优惠</span><span>满100减25</span><span class="red_t right_t stroke_de">￥<span class="red_t stroke_de" id="discount_cost">-22.00</span></span>
+					</div>-->
+					<div class="settling_balance">
+						<span>最后结算</span>
+						<span class="right_t">
+							<span class="stroke_del">已优惠</span>
+						<span class="red_t stroke_del">￥</span>
+						<span class="red_t stroke_del" id="discount_plan">23.00</span>
+						<span>小计</span>
+						<span class="red_t">￥</span>
+						<span class="red_t small_plan" id="small_plan">150.86</span>
+						</span>
+					</div>
+				</div>
+				<div class="settling_other">
+					<div class="settling_other_list" onclick="other()">
+						<p>备注</p><span class="other_txt" id="other_txt"></span>
+						<div class="store_img store_i_remarks"></div>
+					</div>
+					<div class="settling_other_list">
+						<p>支付方式<span class="right_t">微信支付</span></p>
+					</div>
+					<!--<div class="settling_other_list">
+						<p>发票</p>
+						<div class="settling_invoice_box" id="settling_invoice_box" onclick="invoice()" inv="0">
+							<div class="settling_invoice" id="settling_invoice"></div>
+						</div>
+					</div>-->
+				</div>
+			</div>
+		</div>
+
+		<!--脚部-->
+		<div class="foot">
+			<div class="store_img store_i_box"><label class="store_i_box_t" id="store_i_box_t">0</label></div>
+			<div class="store_money">
+				<p>￥<span id="big_plan">0.00</span>元</p>
+			</div>
+			<div class="store_balance" onclick="place()">
+				<p>立即支付</p>
+			</div>
+		</div>
+		<!--脚部-->
+		<!--备注-->
+		<div class="other">
+			<div class="other_box">
+				<div class="store_img store_i_del"></div>
+				<p>请在下方输入备注</p>
+				<div class="other_text">
+					<textarea placeholder="这里输入文字" rows="5" cols="20"></textarea>
+				</div>
+			</div>
+			<div class="other_complete">
+				<p onclick="other_complete()">完成</p>
+				<p onclick="other_del()">取消</p>
+			</div>
+		</div>
+		<!--备注-->
+
+	</body>
+
+</html>
