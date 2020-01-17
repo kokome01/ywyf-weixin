@@ -175,7 +175,7 @@ $(document).ready(function() {
 			},
 		})
 		$.ajax({
-			url: 'http://www.mryisheng.com/ywyf-weixin/departmentActivity/list?pageNo=1&hospitalId='+getQueryString("id")+'&departmentId=', //地址web_url + 
+			url: 'http://www.51ywyf.com/ywyf-weixin/departmentActivity/list?pageNo=1&hospitalId='+getQueryString("id")+'&departmentId=', //地址web_url + 
 			dataType: "json",
 			type: "post",
 			timeout: 50000,
@@ -353,6 +353,19 @@ function introduce_hos() {
 }
 //跳转到科室详情
 function department_detailed(id) {
+	var data = JSON.parse(sessionStorage.home_inf);
+	var arr = null;
+	for(i=0;i<data.department.length;i++){
+		if(data.department[i].id == id){
+			arr = i;
+			break;
+		}
+	}
+	var inf = {
+		doc:data.department[arr],
+		hosName:$("#hospital_name").text(),
+	}
+	sessionStorage.dep_inf = JSON.stringify(inf)
 	window.location.href = 'drugstores_department.html?dep=' + id + '&hos=' + getQueryString("id");
 }
 //跳转到科室项目

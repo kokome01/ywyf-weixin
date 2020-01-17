@@ -4,7 +4,7 @@ $(document).ready(function() {
 		window.location.href = 'drugstores_activity_list.html?act='+getQueryString("act")+'&hos='+getQueryString("hos");
 	}else{
 		$.ajax({
-			url: 'http://www.mryisheng.com/ywyf-weixin/departmentActivity/info?id='+getQueryString("act"), //地址web_url + 
+			url: 'http://www.51ywyf.com/ywyf-weixin/departmentActivity/info?id='+getQueryString("act"), //地址web_url + 
 			dataType: "json",
 			type: "post",
 			timeout: 50000,

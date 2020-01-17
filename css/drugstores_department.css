@@ -229,5 +229,19 @@ input:focus {
 	padding: 10px;
 }
 .introduce_text{
-	padding: 10px;
+}
+.introduce_text_val{
+	min-height: 30px;
+	overflow: hidden;
+	margin: 10px;
+}
+.introduce_text_but{
+	padding: 5px;
+	text-align: center;
+	border: 1px dashed #666;
+	background-color: #0a79e5;
+	color: #fff;
+}
+.introduce_text_hide{
+	max-height: 50px;
 }

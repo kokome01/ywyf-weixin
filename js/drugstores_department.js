@@ -1,6 +1,7 @@
 $(document).ready(function() {
+	console.log(sessionStorage.dep_inf.hosName)
 	$.ajax({
-		url: 'http://www.mryisheng.com/ywyf-weixin/department/info?id=' + getQueryString("dep"), //地址web_url + 
+		url: 'http://www.51ywyf.com/ywyf-weixin/department/info?id=' + getQueryString("dep"), //地址web_url + 
 		dataType: "json",
 		type: "post",
 		timeout: 50000,
@@ -23,18 +24,19 @@ $(document).ready(function() {
 				$("#dep_tel").text("暂未填写");
 			}
 			//科室医生
-			/*var dochtml = "";
-			for(i=0;i<4;i++){
+			var dochtml = "";
+			var dep_inf = JSON.parse(sessionStorage.dep_inf);
+			for(i=0;i<dep_inf.doc.doctors.length;i++){
 				dochtml += '<li class="doc_li"><div><img class="doc_img" src="'
-				+'../img/1455356212095395900-1.jpg'+
+				+dep_inf.doc.doctors[i].pic+
 				'"/><p class="doc_name"><span class="doc_name">'
-				+'陈世事'+
+				+dep_inf.doc.doctors[i].name+
 				'</span>医生</p></div></li>'
 			}
-			$("#doc_ul").empty().append(strhtml)
+			$("#doc_ul").empty().append(dochtml)
 			if($(".doc_li").length >= 1) {
 				$("#doc_zero").hide();
-			}*/
+			}
 			//科室介绍
 			if(data.department.description == null) {
 				$("#introduce_text").text('暂无科室介绍');
@@ -48,7 +50,7 @@ $(document).ready(function() {
 		},
 	})
 	$.ajax({
-			url: 'http://www.mryisheng.com/ywyf-weixin/departmentActivity/list?pageNo=1&hospitalId='+getQueryString("hos")+'&departmentId='+getQueryString("dep"), //地址web_url + 
+			url: 'http://www.51ywyf.com/ywyf-weixin/departmentActivity/list?pageNo=1&hospitalId='+getQueryString("hos")+'&departmentId='+getQueryString("dep"), //地址web_url + 
 			dataType: "json",
 			type: "post",
 			timeout: 50000,
@@ -75,7 +77,7 @@ $(document).ready(function() {
 						}else{
 							title = "暂无介绍"
 						}
-						//
+						//医生
 						acthtml += '<li class="item_other" onclick="item(' 
 						+data.list[i].id +
 						')"><p class="item_other_p">'
@@ -123,4 +125,14 @@ function back() {
 //跳转到项目详情
 function item(id) {
 	window.location.href = 'drugstores_activity.html?act=' + id + '&hos=' + getQueryString("id");
+}
+//显示科室详情
+function introduceShow(){
+	if($("#introduce_text").hasClass("introduce_text_hide")){
+		$("#introduce_text").removeClass("introduce_text_hide")
+		$("#introduce_text_hide").text("点击收起")
+	}else{
+		$("#introduce_text").addClass("introduce_text_hide")
+		$("#introduce_text_hide").text("查看详情")
+	}
 }

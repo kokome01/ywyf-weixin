@@ -216,7 +216,7 @@ $(document).ready(function() {
 	})
 	
 	$.ajax({
-			url: 'http://www.mryisheng.com/ywyf-weixin/departmentActivity/list?pageNo=1&hospitalId=&departmentId=', //地址web_url + 
+			url: 'http://www.51ywyf.com/ywyf-weixin/departmentActivity/list?pageNo=1&hospitalId=&departmentId=', //地址web_url + 
 			dataType: "json",
 			type: "post",
 			timeout: 50000,
